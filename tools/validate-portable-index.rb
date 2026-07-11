@@ -175,6 +175,16 @@ unless missing_setting_gap_coverage.empty?
   fail_with("settings missing evidence-gap coverage: #{missing_setting_gap_coverage.sort.join(', ')}")
 end
 
+settings_compendium_entry = (manifest["control_files"] || []).find { |entry| entry["id"] == "settings_compendium" }
+if settings_compendium_entry
+  compendium_path = settings_compendium_entry.fetch("path")
+  compendium_content = File.read(assert_file(compendium_path))
+  missing_from_compendium = setting_ids.reject { |setting_id| compendium_content.include?(setting_id) }
+  unless missing_from_compendium.empty?
+    fail_with("settings missing from settings compendium: #{missing_from_compendium.sort.join(', ')}")
+  end
+end
+
 portable_text_globs = [
   "README.md",
   ".github/agents/*.md",

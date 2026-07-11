@@ -13,6 +13,7 @@ This is the local table of contents for the GT40 mechanics knowledge base. Keep 
 | [04-coverage-matrix.md](04-coverage-matrix.md) | Tracks completeness by system against the final mechanics-assistant objective. |
 | [05-phase-handoff.md](05-phase-handoff.md) | Current phase wrap-up, completed foundation, blocked settings, and next evidence needed. |
 | [06-assistant-evaluation.md](06-assistant-evaluation.md) | Acceptance cases for testing the mechanics assistant against evidence and settings gates. |
+| [07-settings-compendium.md](07-settings-compendium.md) | Mechanic-facing system-by-system map of all tracked settings, status, evidence gates, and safe next actions. |
 | [manifest.yaml](manifest.yaml) | Machine-readable portable index of local knowledge files, tags, and assistant assets. |
 | [data/README.md](data/README.md) | Data dictionary for portable CSV registers, ID prefixes, labels, confidence, and cross-reference rules. |
 | [../sources/source-register.csv](../sources/source-register.csv) | Portable source index with source IDs, URLs, tier, and use status. |

@@ -44,6 +44,9 @@ control_files:
   - id: "assistant_evaluation"
     path: "knowledge/06-assistant-evaluation.md"
     tags: ["assistant", "evaluation", "acceptance", "settings-governance"]
+  - id: "settings_compendium"
+    path: "knowledge/07-settings-compendium.md"
+    tags: ["settings", "compendium", "systems", "mechanic-facing", "portable-index"]
   - id: "data_dictionary"
     path: "knowledge/data/README.md"
     tags: ["data", "registers", "dictionary", "portable-index"]

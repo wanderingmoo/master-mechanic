@@ -13,6 +13,7 @@ Repository name: `Master-Mechanic`
 - [Coverage Matrix](knowledge/04-coverage-matrix.md) - system-by-system completion and evidence-gap tracker.
 - [Phase Handoff](knowledge/05-phase-handoff.md) - current milestone, completed foundation, blocked settings, and next evidence needed.
 - [Assistant Evaluation Cases](knowledge/06-assistant-evaluation.md) - acceptance prompts for testing evidence-gated assistant behavior.
+- [Settings Compendium](knowledge/07-settings-compendium.md) - mechanic-facing map of all tracked setup values, evidence gates, and safe next actions.
 - [Source Archive](sources/archive) - local portable copies of captured source files when available.
 - [Configuration Register](knowledge/data/configuration-register.csv) - component-by-component parts/settings gate with evidence state and next actions.
 - [Parts Register](knowledge/data/parts-register.csv) - system-by-system part and assembly identification register.
