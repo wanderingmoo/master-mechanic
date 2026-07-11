@@ -35,6 +35,7 @@ The registers are CSV files so they can be searched, diffed, edited, and validat
 - `tools/print-evidence-request.rb` prints focused evidence requests from `evidence-gap-register.csv` by gap, system, priority, or status.
 - `tools/print-agent-evaluation-plan.rb` prints assistant regression prompts from `evaluation-register.csv`.
 - `tools/print-system-brief.rb` prints a combined assistant-routing brief for one system, including facts, configuration items, parts, settings gates, evidence gaps, and related evaluation cases.
+- `tools/run-quality-gate.rb` runs portable-index validation plus representative coverage, system-brief, evaluation, and evidence-request checks.
 
 ## Label meanings
 
