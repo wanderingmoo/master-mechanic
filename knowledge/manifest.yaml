@@ -18,6 +18,7 @@ indexes:
   settings_register: "knowledge/data/settings-register.csv"
   evidence_gap_register: "knowledge/data/evidence-gap-register.csv"
   evaluation_register: "knowledge/data/evaluation-register.csv"
+  system_taxonomy: "knowledge/data/system-taxonomy.yaml"
   source_policy: "knowledge/01-source-policy.md"
   source_notes_dir: "sources/notes"
 control_files:
@@ -51,6 +52,9 @@ control_files:
   - id: "data_dictionary"
     path: "knowledge/data/README.md"
     tags: ["data", "registers", "dictionary", "portable-index"]
+  - id: "system_taxonomy"
+    path: "knowledge/data/system-taxonomy.yaml"
+    tags: ["data", "systems", "taxonomy", "aliases", "portable-index"]
   - id: "settings_governance"
     path: "knowledge/procedures/settings-governance.md"
     tags: ["settings", "governance", "safety", "configuration"]

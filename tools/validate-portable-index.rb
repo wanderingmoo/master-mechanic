@@ -35,6 +35,7 @@ end
   manifest.dig("indexes", "settings_register"),
   manifest.dig("indexes", "evidence_gap_register"),
   manifest.dig("indexes", "evaluation_register"),
+  manifest.dig("indexes", "system_taxonomy"),
   manifest.dig("indexes", "source_policy")
 ].compact.each { |path| assert_file(path) }
 
@@ -219,6 +220,52 @@ if assistant_evaluation_entry
   fail_with("assistant evaluation case count is zero") if prose_case_count.zero?
   unless prose_case_count == evaluation_ids.length
     fail_with("evaluation-register row count #{evaluation_ids.length} does not match prose case count #{prose_case_count}")
+  end
+end
+
+system_taxonomy_path = manifest.dig("indexes", "system_taxonomy")
+if system_taxonomy_path
+  taxonomy = YAML.safe_load(File.read(assert_file(system_taxonomy_path)))
+  canonical_entries = taxonomy.fetch("canonical_systems")
+  fail_with("system taxonomy has no canonical systems") if canonical_entries.empty?
+
+  canonical_ids = canonical_entries.map { |entry| entry.fetch("id") }
+  duplicate_canonical_ids = canonical_ids.group_by(&:itself).select { |_id, values| values.length > 1 }.keys
+  unless duplicate_canonical_ids.empty?
+    fail_with("duplicate canonical system id(s): #{duplicate_canonical_ids.sort.join(', ')}")
+  end
+  canonical_id_set = canonical_ids.to_set
+  system_aliases = {}
+
+  canonical_entries.each do |entry|
+    id = entry.fetch("id")
+    assert_file(entry.fetch("page"))
+
+    if system_aliases.key?(id)
+      fail_with("system taxonomy alias collision for #{id}")
+    end
+    system_aliases[id] = id
+
+    (entry["aliases"] || []).each do |alias_id|
+      fail_with("system taxonomy alias #{alias_id} duplicates a canonical id") if canonical_id_set.include?(alias_id)
+      fail_with("system taxonomy alias collision for #{alias_id}") if system_aliases.key?(alias_id)
+      system_aliases[alias_id] = id
+    end
+  end
+
+  {
+    "knowledge/data/fact-register.csv" => "fact_id",
+    "knowledge/data/configuration-register.csv" => "item_id",
+    "knowledge/data/parts-register.csv" => "part_id",
+    "knowledge/data/settings-register.csv" => "setting_id",
+    "knowledge/data/evidence-gap-register.csv" => "gap_id"
+  }.each do |path, id_column|
+    CSV.foreach(assert_file(path), headers: true).with_index(2) do |row, line|
+      system = row["system"].to_s
+      next if system.empty? || system_aliases.key?(system)
+
+      fail_with("unknown system #{system.inspect} in #{path}:#{line} for #{row[id_column]}")
+    end
   end
 end
 

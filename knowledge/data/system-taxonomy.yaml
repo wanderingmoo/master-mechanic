@@ -1,0 +1,82 @@
+schema_version: "1.0"
+purpose: "Canonical system IDs and legacy aliases for Master-Mechanic register indexing, coverage audits, and assistant routing."
+canonical_systems:
+  - id: "identity"
+    label: "Identity and provenance"
+    page: "knowledge/00-vehicle-identity.md"
+    description: "Chassis identity, provenance, build assumptions, and vehicle-specific applicability gates."
+    aliases: []
+  - id: "rules"
+    label: "Regulatory and homologation rules"
+    page: "knowledge/02-regulatory-homologation.md"
+    description: "Period Appendix J, homologation, and rule context that constrains what can be inferred."
+    aliases: []
+  - id: "chassis_body"
+    label: "Chassis and body"
+    page: "knowledge/systems/chassis-body.md"
+    description: "Tub, chassis structure, body panels, doors, glazing, clips, materials, repair limits, and datum needs."
+    aliases: []
+  - id: "engine"
+    label: "Engine"
+    page: "knowledge/systems/engine-induction.md"
+    description: "Ford 302 short block, Gurney-Weslake heads, valvetrain, ignition dependencies, clearances, timing, rev limits, and engine-specific settings gates."
+    aliases: []
+  - id: "induction"
+    label: "Induction"
+    page: "knowledge/systems/engine-induction.md"
+    description: "Weber/IDA carburetors, intake hardware, linkage, jetting, fuel pressure dependencies, and induction-specific settings gates."
+    aliases: []
+  - id: "driveline"
+    label: "Driveline and transaxle"
+    page: "knowledge/systems/driveline-transaxle.md"
+    description: "Clutch, flywheel, transaxle, differential, gear ratios, final drive, halfshafts, linkage, lubrication, and service settings gates."
+    aliases: []
+  - id: "suspension_steering"
+    label: "Suspension and steering"
+    page: "knowledge/systems/suspension-steering.md"
+    description: "Arms, uprights, dampers, springs, anti-roll bars, rack, column, ride height, alignment, bump steer, and geometry settings gates."
+    aliases:
+      - "suspension"
+  - id: "brakes_wheels_tires"
+    label: "Brakes, wheels, hubs, and tires"
+    page: "knowledge/systems/brakes-wheels-tires.md"
+    description: "Brake hydraulics, discs, calipers, pads, bias, hubs, wheel attachment, center-locks, tires, pressures, bedding, and bearing settings gates."
+    aliases:
+      - "brakes"
+      - "wheels_tires"
+  - id: "electrical_instruments"
+    label: "Electrical and instruments"
+    page: "knowledge/systems/electrical-instruments.md"
+    description: "Harness, charging, starting, ignition wiring, fuses, switches, battery, master switch, gauges, senders, warning lights, and instruments."
+    aliases:
+      - "electrical"
+  - id: "fuel_oil_cooling"
+    label: "Fuel, oil, and cooling"
+    page: "knowledge/systems/fuel-oil-cooling.md"
+    description: "Fuel tanks/cells, pumps, regulators, lines, oil system, priming, reliefs, cooling hardware, coolant, pressure caps, and bleed settings gates."
+    aliases: []
+  - id: "safety"
+    label: "Safety systems"
+    page: "knowledge/systems/safety-systems.md"
+    description: "Current historic-event safety equipment, fuel/fire safety, belts, seats, ROPS, extinguishers, master switches, and event-readiness gates."
+    aliases: []
+  - id: "general"
+    label: "General workshop and fasteners"
+    page: "knowledge/systems/general-workshop.md"
+    description: "Workshop governance, generic safety checks, fastener torque control, fluid/consumable caution, and cross-system mechanic rules."
+    aliases: []
+  - id: "history"
+    label: "Race and development history"
+    page: "knowledge/04-coverage-matrix.md"
+    description: "Race-result, program, press, archive, and development-history context used for research orientation rather than direct service settings."
+    aliases: []
+  - id: "source_control"
+    label: "Source control"
+    page: "knowledge/01-source-policy.md"
+    description: "Evidence-tier, source-applicability, archive, and promotion/demotion controls."
+    aliases: []
+  - id: "sources"
+    label: "Source acquisition"
+    page: "knowledge/03-research-backlog.md"
+    description: "External archive, manual, official-source, and evidence-acquisition work queues."
+    aliases: []

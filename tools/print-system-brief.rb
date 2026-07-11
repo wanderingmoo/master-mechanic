@@ -3,6 +3,7 @@
 
 require "csv"
 require "optparse"
+require "yaml"
 
 ROOT = File.expand_path("..", __dir__)
 SOURCE_REGISTER = File.join(ROOT, "sources/source-register.csv")
@@ -12,13 +13,18 @@ PARTS_REGISTER = File.join(ROOT, "knowledge/data/parts-register.csv")
 SETTINGS_REGISTER = File.join(ROOT, "knowledge/data/settings-register.csv")
 EVIDENCE_GAP_REGISTER = File.join(ROOT, "knowledge/data/evidence-gap-register.csv")
 EVALUATION_REGISTER = File.join(ROOT, "knowledge/data/evaluation-register.csv")
+SYSTEM_TAXONOMY = File.join(ROOT, "knowledge/data/system-taxonomy.yaml")
 
-SYSTEM_ALIASES = {
-  "brakes" => "brakes_wheels_tires",
-  "wheels_tires" => "brakes_wheels_tires",
-  "electrical" => "electrical_instruments",
-  "suspension" => "suspension_steering"
-}.freeze
+def load_system_aliases(path)
+  taxonomy = YAML.safe_load(File.read(path))
+  (taxonomy["canonical_systems"] || []).each_with_object({}) do |entry, aliases|
+    canonical = entry.fetch("id")
+    aliases[canonical] = canonical
+    (entry["aliases"] || []).each { |alias_id| aliases[alias_id] = canonical }
+  end
+end
+
+SYSTEM_ALIASES = load_system_aliases(SYSTEM_TAXONOMY).freeze
 
 def canonical_system(system)
   SYSTEM_ALIASES.fetch(system, system)
@@ -60,7 +66,8 @@ options[:system] = canonical_system(options[:system])
   PARTS_REGISTER,
   SETTINGS_REGISTER,
   EVIDENCE_GAP_REGISTER,
-  EVALUATION_REGISTER
+  EVALUATION_REGISTER,
+  SYSTEM_TAXONOMY
 ].each do |path|
   unless File.file?(path)
     warn "ERROR: missing register: #{path}"

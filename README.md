@@ -24,6 +24,7 @@ Published GitHub remote: [wanderingmoo/master-mechanic](https://github.com/wande
 - [Settings Register](knowledge/data/settings-register.csv) - blocked/actionable settings index with required evidence.
 - [Evidence Gap Register](knowledge/data/evidence-gap-register.csv) - machine-readable queue of remaining evidence blockers by system; every settings-register item is covered.
 - [Data Dictionary](knowledge/data/README.md) - register schema, ID prefixes, labels, confidence meanings, and cross-reference rules.
+- [System Taxonomy](knowledge/data/system-taxonomy.yaml) - canonical system IDs, mechanic-facing labels, page mapping, and legacy aliases used by reports.
 - [Source Acquisition Procedure](knowledge/procedures/source-acquisition.md) - repeatable workflow for adding primary documents and extracted facts.
 - [PDF Source Extraction Procedure](knowledge/procedures/pdf-source-extraction.md) - repeatable `pdfinfo`/`pdftotext`/rendered-page workflow for archived PDFs.
 - [JSON / API Source Extraction Procedure](knowledge/procedures/json-api-source-extraction.md) - repeatable workflow for archived API payloads such as official race-result JSON.
