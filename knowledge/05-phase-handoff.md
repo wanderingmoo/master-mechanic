@@ -6,6 +6,8 @@ This phase establishes `Master-Mechanic` as a standalone, portable, source-backe
 
 The package is usable as an evidence-controlled assistant foundation. It is not yet a complete mechanic settings compendium because the installed car and several high-value primary service sources remain unverified.
 
+Planned publication target when final packaging is ready: `https://github.com/wanderingmoo/master-mechanic`.
+
 ## What is complete in this phase
 
 - Standalone project identity: `Master-Mechanic`.
