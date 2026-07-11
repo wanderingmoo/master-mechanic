@@ -43,6 +43,8 @@ The package is usable as an evidence-controlled assistant foundation. It is not 
   - safety/event readiness;
   - vintage racecar diagnostics.
 - Assistant acceptance/evaluation cases in `knowledge/06-assistant-evaluation.md`.
+- Machine-readable assistant regression register in `knowledge/data/evaluation-register.csv`.
+- Agent test protocol in `knowledge/procedures/agent-test-protocol.md`.
 - Portable validation tool: `tools/validate-portable-index.rb`.
 
 ## Strongest captured sources

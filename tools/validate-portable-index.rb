@@ -34,6 +34,7 @@ end
   manifest.dig("indexes", "parts_register"),
   manifest.dig("indexes", "settings_register"),
   manifest.dig("indexes", "evidence_gap_register"),
+  manifest.dig("indexes", "evaluation_register"),
   manifest.dig("indexes", "source_policy")
 ].compact.each { |path| assert_file(path) }
 
@@ -107,7 +108,8 @@ end
   "knowledge/data/configuration-register.csv",
   "knowledge/data/parts-register.csv",
   "knowledge/data/settings-register.csv",
-  "knowledge/data/evidence-gap-register.csv"
+  "knowledge/data/evidence-gap-register.csv",
+  "knowledge/data/evaluation-register.csv"
 ].each do |path|
   full = assert_file(path)
   CSV.foreach(full, headers: true).with_index(2) do |row, line|
@@ -132,6 +134,7 @@ assert_unique_ids("knowledge/data/configuration-register.csv", "item_id")
 assert_unique_ids("knowledge/data/parts-register.csv", "part_id")
 setting_ids = assert_unique_ids("knowledge/data/settings-register.csv", "setting_id")
 assert_unique_ids("knowledge/data/evidence-gap-register.csv", "gap_id")
+evaluation_ids = assert_unique_ids("knowledge/data/evaluation-register.csv", "case_id")
 
 (manifest["source_notes"] || []).each do |entry|
   id = entry.fetch("id")
@@ -166,6 +169,7 @@ assert_source_refs("knowledge/data/configuration-register.csv", "item_id", "sour
 assert_source_refs("knowledge/data/parts-register.csv", "part_id", "source_ids", source_ids)
 assert_source_refs("knowledge/data/settings-register.csv", "setting_id", "source_ids", source_ids)
 assert_source_refs("knowledge/data/evidence-gap-register.csv", "gap_id", "source_ids", source_ids)
+assert_source_refs("knowledge/data/evaluation-register.csv", "case_id", "required_source_ids", source_ids)
 
 gap_related_ids = CSV.read(assert_file("knowledge/data/evidence-gap-register.csv"), headers: true).flat_map do |row|
   row["related_register_ids"].to_s.split(";").map(&:strip).reject(&:empty?)
@@ -182,6 +186,16 @@ if settings_compendium_entry
   missing_from_compendium = setting_ids.reject { |setting_id| compendium_content.include?(setting_id) }
   unless missing_from_compendium.empty?
     fail_with("settings missing from settings compendium: #{missing_from_compendium.sort.join(', ')}")
+  end
+end
+
+assistant_evaluation_entry = (manifest["control_files"] || []).find { |entry| entry["id"] == "assistant_evaluation" }
+if assistant_evaluation_entry
+  assistant_evaluation_content = File.read(assert_file(assistant_evaluation_entry.fetch("path")))
+  prose_case_count = assistant_evaluation_content.scan(/^## Case \d+ - /).length
+  fail_with("assistant evaluation case count is zero") if prose_case_count.zero?
+  unless prose_case_count == evaluation_ids.length
+    fail_with("evaluation-register row count #{evaluation_ids.length} does not match prose case count #{prose_case_count}")
   end
 end
 

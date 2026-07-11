@@ -17,6 +17,7 @@ indexes:
   parts_register: "knowledge/data/parts-register.csv"
   settings_register: "knowledge/data/settings-register.csv"
   evidence_gap_register: "knowledge/data/evidence-gap-register.csv"
+  evaluation_register: "knowledge/data/evaluation-register.csv"
   source_policy: "knowledge/01-source-policy.md"
   source_notes_dir: "sources/notes"
 control_files:
@@ -62,6 +63,9 @@ control_files:
   - id: "evidence_request_packet"
     path: "knowledge/procedures/evidence-request-packet.md"
     tags: ["evidence", "request", "sources", "installed-hardware", "next-actions"]
+  - id: "agent_test_protocol"
+    path: "knowledge/procedures/agent-test-protocol.md"
+    tags: ["assistant", "evaluation", "regression", "portable-index"]
 source_notes:
   - id: "S003"
     path: "sources/notes/S003-ford-heritage-vault.md"
@@ -168,6 +172,9 @@ procedures:
   - id: "settings_governance"
     path: "knowledge/procedures/settings-governance.md"
     tags: ["settings", "governance", "safety"]
+  - id: "agent_test_protocol"
+    path: "knowledge/procedures/agent-test-protocol.md"
+    tags: ["assistant", "evaluation", "regression", "portable-index"]
 templates:
   - id: "source_note_template"
     path: "knowledge/templates/source-note-template.md"

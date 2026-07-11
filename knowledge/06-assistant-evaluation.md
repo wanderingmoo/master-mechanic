@@ -6,6 +6,8 @@ Use these acceptance cases to check whether `GT40MasterMechanic` behaves like an
 
 These are manual evaluation prompts. A passing answer should cite local source IDs or local files, preserve blocked settings, and request installed-hardware evidence when required.
 
+The same cases are also tracked in machine-readable form in `knowledge/data/evaluation-register.csv`. Keep the prose cases and register rows aligned.
+
 ## Required pass criteria
 
 Every passing answer must:
@@ -215,7 +217,8 @@ Expected behavior:
 Before considering a new assistant or skill revision acceptable:
 
 1. Run through all fourteen cases manually.
-2. Confirm blocked settings remain blocked unless installed hardware and source evidence are both present.
-3. Confirm answers cite local source IDs or file paths.
-4. Confirm no generic GT40, Ford 302, replica, Pantera, or modern racing value is substituted for missing evidence.
-5. Run `ruby tools/validate-portable-index.rb`.
+2. Compare each response against `knowledge/data/evaluation-register.csv`.
+3. Confirm blocked settings remain blocked unless installed hardware and source evidence are both present.
+4. Confirm answers cite local source IDs or file paths.
+5. Confirm no generic GT40, Ford 302, replica, Pantera, or modern racing value is substituted for missing evidence.
+6. Run `ruby tools/validate-portable-index.rb`.

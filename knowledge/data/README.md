@@ -16,6 +16,7 @@ The registers are CSV files so they can be searched, diffed, edited, and validat
 | `parts-register.csv` | `P` | System-by-system part and assembly identification records. |
 | `settings-register.csv` | `ST` | Blocked or actionable setting records and the evidence required to use them. |
 | `evidence-gap-register.csv` | `G` | Machine-readable queue of remaining evidence blockers by system, including every settings-register ID. |
+| `evaluation-register.csv` | `E` | Machine-readable assistant regression cases, expected skills, source IDs, register IDs, blocked settings, and fail conditions. |
 
 ## Cross-reference rules
 
@@ -26,7 +27,8 @@ The registers are CSV files so they can be searched, diffed, edited, and validat
   - `ST###` settings;
   - `F###` facts.
 - Every `ST###` setting must appear in at least one `related_register_ids` cell in `evidence-gap-register.csv`.
-- `tools/validate-portable-index.rb` enforces source references, duplicate IDs, and settings-to-gap coverage.
+- `required_source_ids` in `evaluation-register.csv` contains semicolon-separated source IDs from `../../sources/source-register.csv`.
+- `tools/validate-portable-index.rb` enforces source references, duplicate IDs, evaluation-case coverage, and settings-to-gap coverage.
 
 ## Label meanings
 
@@ -67,7 +69,8 @@ When new material arrives:
 4. Update `configuration-register.csv` and `parts-register.csv` if hardware identity changes.
 5. Update `settings-register.csv` only if a setting changes state.
 6. Update `evidence-gap-register.csv` to close, narrow, or replace the relevant gap.
-7. Run `ruby ../../tools/validate-portable-index.rb` from the repository root.
+7. Update `evaluation-register.csv` if the change affects assistant behavior, blocked-setting rules, source promotion, or a prior regression case.
+8. Run `ruby ../../tools/validate-portable-index.rb` from the repository root.
 
 ## Safety rule
 
@@ -77,4 +80,3 @@ A setting is not actionable until both conditions are true:
 2. The setting is supported by an applicable source.
 
 Until then, keep the setting blocked and represented in `evidence-gap-register.csv`.
-

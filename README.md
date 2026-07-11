@@ -13,6 +13,8 @@ Repository name: `Master-Mechanic`
 - [Coverage Matrix](knowledge/04-coverage-matrix.md) - system-by-system completion and evidence-gap tracker.
 - [Phase Handoff](knowledge/05-phase-handoff.md) - current milestone, completed foundation, blocked settings, and next evidence needed.
 - [Assistant Evaluation Cases](knowledge/06-assistant-evaluation.md) - acceptance prompts for testing evidence-gated assistant behavior.
+- [Agent Test Protocol](knowledge/procedures/agent-test-protocol.md) - repeatable manual regression protocol for testing the local agent.
+- [Evaluation Register](knowledge/data/evaluation-register.csv) - machine-readable assistant test cases and expected gates.
 - [Settings Compendium](knowledge/07-settings-compendium.md) - mechanic-facing map of all tracked setup values, evidence gates, and safe next actions.
 - [Source Archive](sources/archive) - local portable copies of captured source files when available.
 - [Configuration Register](knowledge/data/configuration-register.csv) - component-by-component parts/settings gate with evidence state and next actions.
@@ -51,6 +53,7 @@ ruby tools/validate-portable-index.rb
 ```
 
 The validator checks manifest coverage, CSV source references, duplicate register IDs, evidence-gap coverage for every setting, archived PDF checksums, assistant agent/skill metadata, indexed templates/procedures/system files, and accidental non-portable local URI or unfinished placeholder markers.
+It also checks the machine-readable evaluation register against the prose assistant evaluation cases.
 
 ## Current State
 

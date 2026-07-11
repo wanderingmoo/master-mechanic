@@ -22,6 +22,7 @@ This is the local table of contents for the GT40 mechanics knowledge base. Keep 
 | [data/parts-register.csv](data/parts-register.csv) | System-by-system part and assembly identification register with evidence gates. |
 | [data/settings-register.csv](data/settings-register.csv) | Structured register of blocked/actionable settings and required evidence. |
 | [data/evidence-gap-register.csv](data/evidence-gap-register.csv) | Machine-readable queue of missing evidence required to unblock systems and settings; every setting ID in the settings register must appear in this gap register. |
+| [data/evaluation-register.csv](data/evaluation-register.csv) | Machine-readable assistant regression cases with expected skills, source IDs, register IDs, blocked settings, and fail conditions. |
 
 ## Source Notes
 
@@ -75,6 +76,7 @@ This is the local table of contents for the GT40 mechanics knowledge base. Keep 
 | Evidence request packet | [procedures/evidence-request-packet.md](procedures/evidence-request-packet.md) | Ready-to-send request checklist for owner/shop evidence, archives, component specialists, and event authorities. |
 | Evidence-controlled commissioning | [procedures/inspection-commissioning.md](procedures/inspection-commissioning.md) | Starter workflow for first inspection and restart. |
 | Settings governance | [procedures/settings-governance.md](procedures/settings-governance.md) | Blocks unsafe settings until component identity and source evidence are present. |
+| Agent test protocol | [procedures/agent-test-protocol.md](procedures/agent-test-protocol.md) | Manual regression workflow for testing `GT40MasterMechanic` against the evaluation register. |
 
 ## Capture Templates
 
