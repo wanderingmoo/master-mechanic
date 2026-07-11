@@ -38,6 +38,12 @@ Apply [../procedures/component-identification.md](../procedures/component-identi
 
 Source S009 includes period safety provisions for tank isolation, fuel-tank venting, enclosed batteries, and oil catch arrangements in racing-car sections of Appendix J. Treat these as inspection prompts and historical safety context, not as final GT40 Group 4 specifications. Current event rules and modern safety practice may be stricter.
 
+S009's general fuel-tank capacity table listed 140 litres for cars over 3,000 cc and up to 5,000 cc, and it treated any container whose fuel could flow to the main tank or directly to the engine as a fuel tank. This is period regulation context only. It does not override the blank S015 GT40 item 7 fuel-capacity field, prove the installed tank/cell capacity, or authorize filling quantity.
+
+S009 also required fuel filling ports and vents to be outside the passenger compartment and entirely leak-proof. Use this as an inspection prompt for filler necks, caps, vents, bulkheads, and leak paths before adding fuel or pressure-testing the system.
+
+For closed-circuit speed races, S009 required oil-spill prevention equipment and stated 2 litres minimum oil-catching capacity for cars up to 2,000 cc and 3 litres for cars over 2,000 cc. Use this as period oil-containment context only; current Appendix K, event rules, and the installed breather/catch-tank layout still control event-readiness.
+
 Source S019 adds current FIA Appendix K gates for fuel-tank safety foam or safety tank context, maximum capacity limits tied to period rules/homologation, fuel-cap secondary retention, fuel-line fire/fuel resistance and pressure rating, line protection, fireproof bulkheads, extinguishers, and oil catch tanks. These gates require installed-system evidence before any event-readiness claim.
 
 Source S015 does not resolve fuel, oil, or cooling service settings. The blank fields are evidence boundaries, not permission to substitute generic Ford 302 or replica GT40 values.
