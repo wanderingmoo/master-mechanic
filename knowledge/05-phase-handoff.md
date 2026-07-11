@@ -6,7 +6,7 @@ This phase establishes `Master-Mechanic` as a standalone, portable, source-backe
 
 The package is usable as an evidence-controlled assistant foundation. It is not yet a complete mechanic settings compendium because the installed car and several high-value primary service sources remain unverified.
 
-Planned publication target when final packaging is ready: `https://github.com/wanderingmoo/master-mechanic`.
+Published GitHub remote: `https://github.com/wanderingmoo/master-mechanic`. Local `master` tracks `origin/master`.
 
 ## What is complete in this phase
 
@@ -155,4 +155,4 @@ Portable index validation passed
 
 ## Recommended wrap-up action
 
-Before pausing this phase, confirm validation passes and optionally commit the repository. The current package should remain open for future source and installed-hardware evidence rather than being marked complete against the full mechanic-settings objective.
+Before pausing this phase, confirm validation passes, commit local changes, and push to `origin/master`. The current package should remain open for future source and installed-hardware evidence rather than being marked complete against the full mechanic-settings objective.

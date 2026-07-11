@@ -4,7 +4,7 @@ Standalone project/repository for a portable local knowledge base and assistant 
 
 Repository name: `Master-Mechanic`
 
-Planned GitHub publication target when the knowledge base is ready to publish: [wanderingmoo/master-mechanic](https://github.com/wanderingmoo/master-mechanic).
+Published GitHub remote: [wanderingmoo/master-mechanic](https://github.com/wanderingmoo/master-mechanic). Local `master` tracks `origin/master`.
 
 ## Start Here
 
