@@ -46,8 +46,12 @@
 - Safety belts must not be anchored to seats or seat supports.
 - Shoulder straps must run rearward/downward; Appendix K recommends a 10 degree angle and prohibits more than 45 degrees to horizontal from the upper backrest edge.
 - FHR systems are compulsory in certain categories/periods and are strongly advised where physically possible for others.
+- Lap and crotch straps must pass through the seat rather than over its sides, must hold the pelvic region, must not be worn over the abdomen, and must be protected from chafing against sharp edges.
+- If shoulder or crotch straps cannot use series anchorage points, new anchorages must be installed on the shell or chassis; shoulder strap anchors should be as near as possible to the rear-wheel centreline.
+- Appendix K defines reinforcement-bar and anchorage details for harness installation, including transverse tube size/material, M12 8.8 or 7/16 UNF bolt options, anchorage load requirements, and minimum steel reinforcement plate dimensions.
 - Safety harnesses must be used in homologated configuration and according to manufacturer instructions.
 - Belts must be replaced after severe collision, when webbing is cut/frayed/chemically or sun weakened, when metal parts/buckles are bent/deformed/rusted, or when the harness does not function perfectly.
+- Appendix K Article 5.21 gives seat-replacement rules for listed GTS, CT, GT, and T categories from Period F onward; applicability to a GT40-style car must be checked against HTP/category/event classification before using those rules.
 - Appendix K black-dot procedure can make a car absolutely non-conforming for safety and prevent it from competing until verified correction.
 
 ## Mechanic-facing implications

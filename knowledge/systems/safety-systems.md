@@ -28,6 +28,18 @@ Source S019 establishes the following high-level safety gates:
 - Fuel tank/cell, safety foam, maximum capacity, filler cap retention, fuel-line material, and line pressure rating must be verified.
 - Fireproof bulkheads, extinguisher/fire-system compliance, oil catch tank or retained closed breathing, mirrors, rear warning light, harness standards, harness routing, and anchorages must be verified.
 
+## Current Appendix K Restraint Details
+
+Source S019 Article 5.15.2 gives restraint details that should be captured before any harness is accepted:
+
+- Shoulder straps must run rearward/downward, must not exceed 45 degrees to horizontal from the upper backrest edge, and should not exceed 10 degrees where possible.
+- Lap and crotch straps must pass through the seat rather than over its sides, must hold the pelvic region rather than the abdomen, and must be protected from chafing against sharp edges.
+- If shoulder or crotch straps cannot use series anchorage points, new anchors must be on the shell or chassis; shoulder anchors should be as near as possible to the rear-wheel centreline.
+- Harness reinforcement and anchorage details are source-controlled, including transverse tube material/size, bolt specification, anchorage load, and reinforcement plate dimensions.
+- A harness must be used in its homologated configuration without removed parts or modifications and in accordance with the manufacturer's instructions.
+
+Source S019 Article 5.21 also gives seat-replacement rules for listed GTS, CT, GT, and T categories from Period F onward. Do not apply those seat rules generically to this GT40-style project until HTP/category/event classification, seat identity, and original-seat status are verified.
+
 ## Linked Part Records
 
 Use [../data/parts-register.csv](../data/parts-register.csv) before event-readiness claims:
@@ -48,8 +60,8 @@ Capture:
 
 - Event target, date, sanctioning body, supplementary regulations, and whether FIA Appendix K/HTP applies.
 - HTP status, period/classification, homologation copy status, and any red-dot/black-dot history if applicable.
-- Belts: FIA standard, date, manufacturer, routing, shoulder angle, seat pass-throughs, anchor points, reinforcement plates, bolts, chafe points, and condition.
-- Seat/ROPS: seat mounting, back support, cage/roll-bar identity, weld/attachment condition, and any FIA Appendix K Appendix II relevance.
+- Belts: FIA standard, date, manufacturer, homologated configuration, manufacturer instructions, shoulder angle, lap/crotch routing through seat, pelvic fit, seat pass-throughs, anchor points, reinforcement plates, bolt specification, chafe points, and condition.
+- Seat/ROPS: seat identity, original-seat status, FIA/category applicability, seat mounting, back support, cage/roll-bar identity, weld/attachment condition, and any FIA Appendix K Appendix II relevance.
 - Fire: extinguisher or fire-system standard, date, capacity, agent, nozzles, pull handles, anti-torpedo mounting, and service record.
 - Fuel/fire: tank or cell maker/date/certification, foam condition, capacity, filler cap secondary device, vents, line material, line pressure rating, fittings, heat shielding, and bulkheads.
 - Oil containment: breather layout, catch tank capacity, or proof that retained closed-circuit breathing makes catch tanks unnecessary.
