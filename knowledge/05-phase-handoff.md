@@ -65,6 +65,7 @@ Planned publication target when final packaging is ready: `https://github.com/wa
 - S023 - Official 24H Le Mans / ACO track-record source path.
 - S024 - Gurney-Weslake official homepage.
 - S025 - Official 24H Le Mans palmarès API 1968 winner row.
+- S028 - The Henry Ford Dave Friedman Collection finding aid with Ford Motor Company Racing, GT Program, and Shelby Racing box/folder targets.
 
 ## Mechanic-ready guidance available now
 
@@ -128,7 +129,7 @@ Collect and index:
 
 Highest-value next sources:
 
-1. Period Ford/FAV/JWA GT40 service, race-preparation, engine-build, or parts documentation.
+1. Period Ford/FAV/JWA GT40 service, race-preparation, engine-build, or parts documentation; use S028 to request Dave Friedman Collection accession 2009.158 Box 116 Endurance 1968, Box 117 GT Program, and Box 160 Shelby Racing correspondence/report targets.
 2. Gurney-Weslake or Weslake cylinder-head drawings/specifications: valve sizes, chamber volume, plug spec, repair limits, rocker/valvetrain data.
 3. Engine build sheet for the installed 302.
 4. Official 1968 Le Mans race program, entry list, scrutineering record, Ford/JWA record, chassis record, or ACO-licensed source for engine, lap count, full entrant name, chassis, and preparation details beyond the S025 winner row.

@@ -53,6 +53,12 @@ Ask for:
 - documents referencing GT40P/1075, JW Automotive Engineering, Gulf-Wyer, 1968 Le Mans, 1968 World Championship of Makes, Gurney-Weslake heads, Ford 302 / 4942 cc engines, Hewland LG600, ZF 5DS-25, Weber IDA, brake hardware, or center-lock wheel hardware;
 - photographs only when they are tied to an identified chassis, event, date, component, or document folder.
 
+For The Henry Ford / Benson Ford Research Center, include these S028 targets:
+
+- Dave Friedman Collection accession 2009.158, Ford Motor Company Racing, Box 116, Endurance 1968: 24 Hours of Le Mans, 24 Hours of Daytona, 12 Hours of Sebring, BOAC 500, Watkins Glen 6-Hour, 1000 Km Monza, 1000 Km Nürburgring, and 1000 Km Spa.
+- Dave Friedman Collection accession 2009.158, Ford Motor Company Racing, Box 117, GT Program: GT 40, 1964 FAV Slough Factory, 1965-1966 General, J-Car, Daytona Track Tests, Riverside Track Tests, and Dearborn Testing.
+- Dave Friedman Collection accession 2009.158, Research Files / Shelby Racing, Box 160: correspondence and reports, 1962-1968.
+
 Do not ask the archive for generic "GT40 information" without the component/system list above.
 
 ## Archive request - ACO / Le Mans

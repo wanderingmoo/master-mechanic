@@ -40,6 +40,7 @@ This is the local table of contents for the GT40 mechanics knowledge base. Keep 
 | S019 | [../sources/notes/S019-fia-appendix-k-2025-updated-2026.md](../sources/notes/S019-fia-appendix-k-2025-updated-2026.md) | Tier 1 current FIA Appendix K source for historic-event safety and HTP/event-readiness gates. |
 | S020 | [../sources/notes/S020-the-henry-ford-ford-motorsports-records.md](../sources/notes/S020-the-henry-ford-ford-motorsports-records.md) | Tier 2 official archive collection path for Ford Motorsports Records; acquisition target for period Ford racing, Le Mans, and performance-testing materials. |
 | S021 | [../sources/notes/S021-the-henry-ford-dave-friedman-collection.md](../sources/notes/S021-the-henry-ford-dave-friedman-collection.md) | Tier 2 official archive collection path for Dave Friedman racing photographs, race files, car-detail files, programs, and press kits. |
+| S028 | [../sources/notes/S028-dave-friedman-collection-finding-aid.md](../sources/notes/S028-dave-friedman-collection-finding-aid.md) | Tier 2 official The Henry Ford finding aid for Dave Friedman Collection accession 2009.158; archived locally and used to target Ford Motor Company Racing, GT Program, and Shelby Racing folders. |
 | S022 | [../sources/notes/S022-the-henry-ford-remote-research-services.md](../sources/notes/S022-the-henry-ford-remote-research-services.md) | Tier 2 official archive research-services path for requesting The Henry Ford materials, duplication, production records, and part drawings. |
 | S023 | [../sources/notes/S023-aco-24h-lemans-track-record.md](../sources/notes/S023-aco-24h-lemans-track-record.md) | Tier 1 official 24H Le Mans / ACO race-history source path; page payload exposes the palmarès API used as S025 for the 1968 result row. |
 | S024 | [../sources/notes/S024-gurney-weslake-official-homepage.md](../sources/notes/S024-gurney-weslake-official-homepage.md) | Tier 2 official Gurney-Weslake head-development and GT40 race-head identification context; not a service-settings source. |
@@ -57,6 +58,7 @@ This is the local table of contents for the GT40 mechanics knowledge base. Keep 
 | S016 | [../sources/archive/S016-hewland-lg500-lg600-manual.pdf](../sources/archive/S016-hewland-lg500-lg600-manual.pdf) | SHA-256 recorded in [manifest.yaml](manifest.yaml). |
 | S019 | [../sources/archive/S019-fia-appendix-k-2025-updated-2026.pdf](../sources/archive/S019-fia-appendix-k-2025-updated-2026.pdf) | SHA-256 recorded in [manifest.yaml](manifest.yaml). |
 | S027 | [../sources/archive/S027-ford-heritage-vault-racing-heritage-gt40-concept.pdf](../sources/archive/S027-ford-heritage-vault-racing-heritage-gt40-concept.pdf) | SHA-256 recorded in [manifest.yaml](manifest.yaml); extracted with `pdftotext` and rendered page images visually inspected for extracted facts. |
+| S028 | [../sources/archive/S028-dave-friedman-collection-finding-aid.pdf](../sources/archive/S028-dave-friedman-collection-finding-aid.pdf) | SHA-256 recorded in [manifest.yaml](manifest.yaml); extracted with `pdftotext` for GT40/Ford GT archive-target facts. |
 
 ## Systems
 

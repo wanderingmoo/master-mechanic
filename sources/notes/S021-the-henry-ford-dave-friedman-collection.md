@@ -23,10 +23,12 @@
 - The collection details list 64.6 cubic feet, 93 negative binder boxes, 5 oversize boxes, and 100,000 digital images.
 - Keywords include 24 Hours of Le Mans, 24 Hours of Daytona, Shelby-American Inc., Dan Gurney, Ford GT40 automobile, and sports car racing.
 - A downloadable finding aid is linked from the collection page.
+- The linked finding aid has been archived and indexed separately as S028 for box/folder-level targeting.
 
 ## Mechanic-facing implications
 
 - This is a credible archive path for GT40 photographs, race files, entrant lists, car-detail files, programs, press kits, and manufacturer/team context.
+- Use S028 for specific remote-research targeting, especially Ford Motor Company Racing endurance folders, GT Program folders, and Shelby Racing research files.
 - It may be useful for visual comparison of period GT40 hardware and for locating race-context documentation that can guide deeper source requests.
 - Photographs and race files are identification aids only. They do not replace installed component markings, measurements, build sheets, homologation papers, or service manuals.
 - Any specific image or document obtained from this collection must become its own source record before it can support a local fact.

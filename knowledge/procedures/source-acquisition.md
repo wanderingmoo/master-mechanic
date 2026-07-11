@@ -22,7 +22,7 @@ The goal is to keep research portable, source-backed, and safe for mechanic use.
 |---|---|---|
 | GT40 FIA homologation / recognition form | FIA Historic Database, national ASN, FIA Historic Technical Passport process | Period identity, dimensions, recognized components, event eligibility. |
 | Event-valid homologation copy | ASN-certified copy as described by FIA HTP guidance | Historic-event compliance; research downloads are not event-valid by themselves. |
-| Ford / FAV / JWA period documents | Ford archives, Ford Heritage Vault S003, The Henry Ford paths S020-S022, reputable archive scans, period service bulletins | Chassis, body, race-prep, and service context. |
+| Ford / FAV / JWA period documents | Ford archives, Ford Heritage Vault S003, The Henry Ford paths S020-S022 and S028, reputable archive scans, period service bulletins | Chassis, body, race-prep, and service context. |
 | Gurney-Weslake engine records | Engine build sheet, Weslake/Gurney-Weslake documents, trusted specialist archive | Bore, stroke, heads, cam, lash, compression, plugs, ignition, oiling, rev limit. |
 | Transaxle records | Installed-unit tag plus manufacturer/service documentation | Oil, preload, backlash, ratios, shift adjustment, LSD service. |
 | Brake records | Installed caliper/master/disc IDs plus maker documentation | Seal service, bedding, fluid compatibility, bias, pressure checks. |
@@ -56,3 +56,13 @@ For archived PDFs, also record the extraction method: `text-extracted`, `rendere
 ## Specific caution for the GT40 project
 
 The Ford GT 40 FIA Recognition/Homologation No. 224 research copy is captured as S015. That source provides the GT40 Group 4 recognition baseline and 1968 Weslake/302/gearbox/LSD extensions, but it does not prove this vehicle’s chassis identity, installed hardware, current condition, or setup values. Event use still requires ASN-certified paperwork under S014.
+
+## The Henry Ford / Dave Friedman request targets
+
+Source S028 archives the Dave Friedman Collection finding aid. When requesting remote research from The Henry Ford, use its exact accession and folder paths:
+
+- Accession 2009.158, Ford Motor Company Racing, Box 116, Endurance 1968: 24 Hours of Le Mans; 24 Hours of Daytona; 12 Hours of Sebring; BOAC 500; Watkins Glen 6-Hour; 1000 Km Monza; 1000 Km Nürburgring; 1000 Km Spa.
+- Accession 2009.158, Ford Motor Company Racing, Box 117, GT Program: GT 40; 1964 FAV Slough Factory; 1965-1966 General; J-Car; Daytona Track Tests; Riverside Track Tests; Dearborn Testing.
+- Accession 2009.158, Research Files / Shelby Racing, Box 160: correspondence and reports, 1962-1968.
+
+Ask first for page counts, item lists, and reproduction availability. Any supplied scan or packet must become its own source record before it supports mechanic-facing facts.

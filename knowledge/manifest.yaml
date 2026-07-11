@@ -103,6 +103,9 @@ source_notes:
   - id: "S021"
     path: "sources/notes/S021-the-henry-ford-dave-friedman-collection.md"
     tags: ["archive", "photographs", "gt40", "lemans", "source-acquisition"]
+  - id: "S028"
+    path: "sources/notes/S028-dave-friedman-collection-finding-aid.md"
+    tags: ["archive", "finding-aid", "gt40", "ford-gt", "lemans", "source-acquisition"]
   - id: "S022"
     path: "sources/notes/S022-the-henry-ford-remote-research-services.md"
     tags: ["archive", "remote-research", "source-acquisition", "part-drawings"]
@@ -144,6 +147,10 @@ source_archives:
     path: "sources/archive/S027-ford-heritage-vault-racing-heritage-gt40-concept.pdf"
     sha256: "adc9ad5d300953633917e53ee913dae2a56472dde13bc6a94a1afbd40d279c0b"
     tags: ["ford", "heritage-vault", "gt40", "lemans", "press-release", "pdf"]
+  - id: "S028"
+    path: "sources/archive/S028-dave-friedman-collection-finding-aid.pdf"
+    sha256: "9e977345fa83d98cd2c2b7741d732a5e40c092fd3d611334b10674ef2d9512d7"
+    tags: ["the-henry-ford", "dave-friedman", "finding-aid", "gt40", "archive", "pdf"]
 systems:
   - id: "chassis_body"
     path: "knowledge/systems/chassis-body.md"
