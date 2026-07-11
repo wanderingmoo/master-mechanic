@@ -29,3 +29,12 @@ Use these labels in notes and the fact register:
 - Distinguish research copies from event-valid documents; FIA HTP use may require ASN-certified homologation-form copies even when a website consultation copy exists.
 - Prefer reversible diagnostics before component replacement.
 - Preserve as-found evidence before disassembly: photos, casting marks, jet stacks, shim packs, wiring labels, line routing, and fastener markings.
+
+## Local Archive and Publication Rules
+
+- Store local source archives only when doing so is appropriate for a portable, publishable repository.
+- Prefer archiving public official PDFs, public API payloads, user-provided documents, and files whose redistribution is permitted or operationally necessary for repeatable extraction.
+- For copyrighted manuals, museum scans, archive reproductions, commercial books, or controlled-access documents, store metadata, source notes, checksums, page/box identifiers, and extracted facts instead of committing the full file unless redistribution rights are clear.
+- Never use the presence of a local archive as proof that its contents are applicable to the installed vehicle.
+- Every committed archive must be listed in `knowledge/manifest.yaml` with a checksum.
+- If a source cannot be committed safely, keep the source-register entry and source note explicit about what was inspected, what was extracted, and where the controlled copy is held.

@@ -11,10 +11,12 @@ The goal is to keep research portable, source-backed, and safe for mechanic use.
 1. Search for a primary source before using a secondary source.
 2. Record the source in [../../sources/source-register.csv](../../sources/source-register.csv) before extracting facts.
 3. If the source contains multiple relevant claims, create a note in [../../sources/notes](../../sources/notes) using [../templates/source-note-template.md](../templates/source-note-template.md).
-4. For PDF sources, follow [pdf-source-extraction.md](pdf-source-extraction.md) before promoting body claims.
-5. Extract only supported claims into [../data/fact-register.csv](../data/fact-register.csv).
-6. If the source identifies installed hardware, update [../data/parts-register.csv](../data/parts-register.csv) and [../data/configuration-register.csv](../data/configuration-register.csv).
-7. If the source provides a numeric setting, route it through [settings-governance.md](settings-governance.md) before marking it actionable.
+4. Decide whether the raw source file can be safely committed to a publishable repository. If not, store metadata, page/box identifiers, checksums where available, and extracted facts rather than the full file.
+5. For PDF sources, follow [pdf-source-extraction.md](pdf-source-extraction.md) before promoting body claims.
+6. For JSON or API sources, follow [json-api-source-extraction.md](json-api-source-extraction.md) before promoting payload fields.
+7. Extract only supported claims into [../data/fact-register.csv](../data/fact-register.csv).
+8. If the source identifies installed hardware, update [../data/parts-register.csv](../data/parts-register.csv) and [../data/configuration-register.csv](../data/configuration-register.csv).
+9. If the source provides a numeric setting, route it through [settings-governance.md](settings-governance.md) before marking it actionable.
 
 ## Priority source paths
 
@@ -52,6 +54,12 @@ For a new multi-fact source, create `sources/notes/S###-short-title.md` with:
 - What the source does not prove
 
 For archived PDFs, also record the extraction method: `text-extracted`, `rendered-inspected`, `metadata-only`, or `archived-not-extracted`.
+
+For archived JSON/API payloads, record the extraction method: `json-archived-parsed`, `json-live-inspected-only`, or `json-metadata-only`.
+
+## Publication-safe archive rule
+
+The repository is intended to be portable and publishable. Do not commit a raw source file just because it is useful. Commit the raw file only when it is public and appropriate to redistribute, user-provided for this repo, or otherwise cleared for repository storage. For restricted archive reproductions, commercial manuals, copyrighted books, or controlled-access scans, create a source note with provenance, request path, page or folder identifiers, and extracted facts, then keep the controlled file outside the public repo unless rights are confirmed.
 
 ## Specific caution for the GT40 project
 

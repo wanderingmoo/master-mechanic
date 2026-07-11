@@ -11,6 +11,7 @@
 - Capture date: 2026-07-11
 - Local archive SHA-256: `3af507df196011a8a35933d03d09b5a4e0315c22c6f422a95f3b3727c6c8c1f4`
 - Payload status: JSON payload, 59,606 bytes, parses with top-level `results` and `pagination`; 41 result rows were present when archived
+- Extraction label: `json-archived-parsed`
 
 ## Why this matters
 

@@ -49,6 +49,7 @@ Planned publication target when final packaging is ready: `https://github.com/wa
 - Agent test protocol in `knowledge/procedures/agent-test-protocol.md`.
 - Portable validation tool: `tools/validate-portable-index.rb`.
 - PDF extraction procedure: `knowledge/procedures/pdf-source-extraction.md`, covering `pdfinfo`, `pdftotext`, rendered-page fallback, extraction labels, and setting-promotion limits.
+- JSON/API extraction procedure: `knowledge/procedures/json-api-source-extraction.md`, covering archived payload checksums, local parsing, field-boundary rules, and source-note labels.
 
 ## Strongest captured sources
 
