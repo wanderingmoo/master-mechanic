@@ -95,6 +95,9 @@ source_notes:
   - id: "S016"
     path: "sources/notes/S016-hewland-lg500-lg600-manual.md"
     tags: ["hewland", "lg500", "lg600", "transaxle", "manual"]
+  - id: "S017"
+    path: "sources/notes/S017-hewland-classic-support-pages.md"
+    tags: ["hewland", "hewland-classic", "lg500", "lg600", "support", "source-authority"]
   - id: "S018"
     path: "sources/notes/S018-webcon-weber-ida-support.md"
     tags: ["weber", "ida", "induction", "carburetor", "parts"]
