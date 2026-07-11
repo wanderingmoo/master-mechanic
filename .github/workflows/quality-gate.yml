@@ -1,0 +1,22 @@
+name: Master-Mechanic Quality Gate
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  quality-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Show Ruby version
+        run: ruby --version
+
+      - name: Run portable quality gate
+        run: ruby tools/run-quality-gate.rb
