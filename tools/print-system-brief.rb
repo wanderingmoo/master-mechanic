@@ -13,6 +13,17 @@ SETTINGS_REGISTER = File.join(ROOT, "knowledge/data/settings-register.csv")
 EVIDENCE_GAP_REGISTER = File.join(ROOT, "knowledge/data/evidence-gap-register.csv")
 EVALUATION_REGISTER = File.join(ROOT, "knowledge/data/evaluation-register.csv")
 
+SYSTEM_ALIASES = {
+  "brakes" => "brakes_wheels_tires",
+  "wheels_tires" => "brakes_wheels_tires",
+  "electrical" => "electrical_instruments",
+  "suspension" => "suspension_steering"
+}.freeze
+
+def canonical_system(system)
+  SYSTEM_ALIASES.fetch(system, system)
+end
+
 options = {
   system: nil,
   format: "markdown"
@@ -39,6 +50,9 @@ if options[:system].to_s.strip.empty?
   exit 1
 end
 
+requested_system = options[:system]
+options[:system] = canonical_system(options[:system])
+
 [
   SOURCE_REGISTER,
   FACT_REGISTER,
@@ -55,11 +69,11 @@ end
 end
 
 sources = CSV.read(SOURCE_REGISTER, headers: true)
-facts = CSV.read(FACT_REGISTER, headers: true).select { |row| row["system"] == options[:system] }
-configuration = CSV.read(CONFIGURATION_REGISTER, headers: true).select { |row| row["system"] == options[:system] }
-parts = CSV.read(PARTS_REGISTER, headers: true).select { |row| row["system"] == options[:system] }
-settings = CSV.read(SETTINGS_REGISTER, headers: true).select { |row| row["system"] == options[:system] }
-gaps = CSV.read(EVIDENCE_GAP_REGISTER, headers: true).select { |row| row["system"] == options[:system] }
+facts = CSV.read(FACT_REGISTER, headers: true).select { |row| canonical_system(row["system"]) == options[:system] }
+configuration = CSV.read(CONFIGURATION_REGISTER, headers: true).select { |row| canonical_system(row["system"]) == options[:system] }
+parts = CSV.read(PARTS_REGISTER, headers: true).select { |row| canonical_system(row["system"]) == options[:system] }
+settings = CSV.read(SETTINGS_REGISTER, headers: true).select { |row| canonical_system(row["system"]) == options[:system] }
+gaps = CSV.read(EVIDENCE_GAP_REGISTER, headers: true).select { |row| canonical_system(row["system"]) == options[:system] }
 evaluations = CSV.read(EVALUATION_REGISTER, headers: true)
 
 if [facts, configuration, parts, settings, gaps].all?(&:empty?)
@@ -104,6 +118,7 @@ if options[:format] == "markdown"
   puts "# GT40 System Brief - #{options[:system]}"
   puts
   puts "Source: local CSV registers. Use this as an assistant-routing brief, not as a service specification."
+  puts "Requested system: `#{requested_system}`; canonical system: `#{options[:system]}`." if requested_system != options[:system]
   puts
   if blocked?(settings, gaps)
     puts "**Safe interpretation:** Settings remain evidence-gated; provide inspection, identification, and source-acquisition guidance before values."
@@ -180,6 +195,7 @@ if options[:format] == "markdown"
   end
 else
   puts "GT40 System Brief - #{options[:system]}"
+  puts "Requested system: #{requested_system}; canonical system: #{options[:system]}" if requested_system != options[:system]
   puts "Safe interpretation: #{blocked?(settings, gaps) ? 'settings remain evidence-gated' : 'verify applicability before mechanic advice'}"
   puts
   facts.each { |row| puts "FACT #{row['fact_id']}: #{row['fact']}" }

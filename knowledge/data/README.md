@@ -21,6 +21,11 @@ The registers are CSV files so they can be searched, diffed, edited, and validat
 ## Cross-reference rules
 
 - `source_ids` columns contain semicolon-separated source IDs from `../../sources/source-register.csv`.
+- Use canonical mechanic-facing system IDs where possible:
+  - `brakes_wheels_tires` for brake, hub, wheel, and tire records;
+  - `electrical_instruments` for electrical, charging, starting, lighting, switch, and instrument records;
+  - `suspension_steering` for suspension, steering, geometry, damper, spring, bar, rack, and upright records.
+- The reporting tools normalize legacy labels `brakes`, `wheels_tires`, `electrical`, and `suspension` into the canonical IDs above so older source extractions remain traceable while mechanic-facing audits stay system-organized.
 - `related_register_ids` in `evidence-gap-register.csv` may reference:
   - `C###` configuration items;
   - `P###` part items;

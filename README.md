@@ -70,7 +70,10 @@ Print a register-driven coverage audit by system:
 ```bash
 ruby tools/print-coverage-audit.rb
 ruby tools/print-coverage-audit.rb --system engine
+ruby tools/print-coverage-audit.rb --system brakes
 ```
+
+Coverage and system-brief tools normalize legacy subsystem labels such as `brakes`, `wheels_tires`, `electrical`, and `suspension` into their canonical mechanic-facing systems so reports stay organized by the current system model.
 
 Print the current assistant regression prompts with:
 
