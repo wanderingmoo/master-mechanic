@@ -77,6 +77,14 @@ ruby tools/print-settings-gates.rb --system engine
 ruby tools/print-settings-gates.rb --setting ST033
 ```
 
+Print focused evidence requests for a gap, system, or priority:
+
+```bash
+ruby tools/print-evidence-request.rb --gap G019
+ruby tools/print-evidence-request.rb --system engine
+ruby tools/print-evidence-request.rb --priority P1 --format text
+```
+
 Print verified facts by system, source, label, or keyword:
 
 ```bash

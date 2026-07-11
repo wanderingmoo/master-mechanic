@@ -31,6 +31,7 @@ The registers are CSV files so they can be searched, diffed, edited, and validat
 - `tools/validate-portable-index.rb` enforces source references, duplicate IDs, evaluation-case coverage, settings-to-gap coverage, and manifest coverage for indexed helper scripts.
 - `tools/print-facts.rb` prints fact-register entries by system, source ID, label, or keyword and joins source titles for mechanic-facing context.
 - `tools/print-settings-gates.rb` prints mechanic-facing settings gates from `settings-register.csv` and links each setting to related evidence gaps.
+- `tools/print-evidence-request.rb` prints focused evidence requests from `evidence-gap-register.csv` by gap, system, priority, or status.
 - `tools/print-agent-evaluation-plan.rb` prints assistant regression prompts from `evaluation-register.csv`.
 
 ## Label meanings

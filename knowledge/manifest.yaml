@@ -249,3 +249,6 @@ tools:
   - id: "print_facts"
     path: "tools/print-facts.rb"
     tags: ["facts", "sources", "lookup", "mechanic-facing"]
+  - id: "print_evidence_request"
+    path: "tools/print-evidence-request.rb"
+    tags: ["evidence", "request", "gaps", "mechanic-facing"]
