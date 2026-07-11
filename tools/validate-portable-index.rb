@@ -91,6 +91,7 @@ unless manifest_skill_paths.sort == actual_skill_paths
   fail_with("assistant skill manifest mismatch; missing: #{missing.join(', ')} stale: #{stale.join(', ')}")
 end
 
+skill_names = Set.new
 manifest_skill_paths.each do |path|
   full = assert_file(path)
   content = File.read(full)
@@ -104,6 +105,8 @@ manifest_skill_paths.each do |path|
   end
   fail_with("skill missing name: #{path}") unless frontmatter["name"]
   fail_with("skill missing description: #{path}") unless frontmatter["description"]
+  fail_with("duplicate skill name #{frontmatter['name']}") if skill_names.include?(frontmatter["name"])
+  skill_names.add(frontmatter["name"])
 
   openai_yaml = path.sub(%r{/SKILL\.md\z}, "/agents/openai.yaml")
   openai_full = assert_file(openai_yaml)
@@ -225,6 +228,14 @@ assert_register_refs(
   "must_block_settings",
   setting_ids
 )
+
+CSV.foreach(assert_file("knowledge/data/evaluation-register.csv"), headers: true).with_index(2) do |row, line|
+  primary_skill = row["primary_skill"].to_s.strip
+  fail_with("missing primary_skill at knowledge/data/evaluation-register.csv:#{line}") if primary_skill.empty?
+  unless skill_names.include?(primary_skill)
+    fail_with("unknown primary_skill #{primary_skill} at knowledge/data/evaluation-register.csv:#{line} for #{row['case_id']}")
+  end
+end
 
 gap_related_ids = CSV.read(assert_file("knowledge/data/evidence-gap-register.csv"), headers: true).flat_map do |row|
   row["related_register_ids"].to_s.split(";").map(&:strip).reject(&:empty?)
