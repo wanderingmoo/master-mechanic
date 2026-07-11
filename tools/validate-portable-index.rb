@@ -259,6 +259,19 @@ unless missing_setting_gap_coverage.empty?
   fail_with("settings missing evidence-gap coverage: #{missing_setting_gap_coverage.sort.join(', ')}")
 end
 
+evaluation_related_ids = CSV.read(assert_file("knowledge/data/evaluation-register.csv"), headers: true).flat_map do |row|
+  [row["required_register_ids"], row["must_block_settings"]].join(";").split(";").map(&:strip).reject(&:empty?)
+end.to_set
+blocked_setting_ids = CSV.read(assert_file("knowledge/data/settings-register.csv"), headers: true).select do |row|
+  row["current_status"] == "blocked"
+end.map { |row| row["setting_id"] }
+missing_blocked_setting_evaluation_coverage = blocked_setting_ids.reject do |setting_id|
+  evaluation_related_ids.include?(setting_id)
+end
+unless missing_blocked_setting_evaluation_coverage.empty?
+  fail_with("blocked settings missing evaluation coverage: #{missing_blocked_setting_evaluation_coverage.sort.join(', ')}")
+end
+
 settings_compendium_entry = (manifest["control_files"] || []).find { |entry| entry["id"] == "settings_compendium" }
 if settings_compendium_entry
   compendium_path = settings_compendium_entry.fetch("path")
