@@ -23,6 +23,7 @@ Source S019 establishes the following high-level safety gates:
 - Historic cars must preserve period specification while meeting defined additional safety provisions.
 - Ageing and corrosion must be actively considered when judging component integrity.
 - Scrutineering presentation is treated as a declaration that the car is safe to compete.
+- A black-dot safety-control procedure can make a car absolutely non-conforming for safety and prevent it from competing until verified correction.
 - Battery terminal protection, battery chemistry/location, battery covering, and master-switch behavior must be verified.
 - Fuel, oil, and brake-line routing/protection must be verified for deterioration and fire risk.
 - Fuel tank/cell, safety foam, maximum capacity, filler cap retention, fuel-line material, and line pressure rating must be verified.
@@ -60,7 +61,7 @@ Use [../templates/safety-event-readiness-capture.md](../templates/safety-event-r
 Capture:
 
 - Event target, date, sanctioning body, supplementary regulations, and whether FIA Appendix K/HTP applies.
-- HTP status, period/classification, homologation copy status, and any red-dot/black-dot history if applicable.
+- HTP status, period/classification, homologation copy status, any red-dot/black-dot history, and correction/acceptance evidence if any dot history exists.
 - Belts: FIA standard, date, manufacturer, homologated configuration, manufacturer instructions, shoulder angle, lap/crotch routing through seat, pelvic fit, seat pass-throughs, anchor points, reinforcement plates, bolt specification, chafe points, and condition.
 - Seat/ROPS: seat identity, original-seat status, FIA/category applicability, seat mounting, back support, cage/roll-bar identity, weld/attachment condition, and any FIA Appendix K Appendix II relevance.
 - Fire: extinguisher or fire-system standard, date, capacity, agent, nozzles, pull handles, anti-torpedo mounting, and service record.
