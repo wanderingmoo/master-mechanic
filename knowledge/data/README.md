@@ -34,6 +34,7 @@ The registers are CSV files so they can be searched, diffed, edited, and validat
 - `tools/print-settings-gates.rb` prints mechanic-facing settings gates from `settings-register.csv` and links each setting to related evidence gaps.
 - `tools/print-evidence-request.rb` prints focused evidence requests from `evidence-gap-register.csv` by gap, system, priority, or status.
 - `tools/print-agent-evaluation-plan.rb` prints assistant regression prompts from `evaluation-register.csv`.
+- `tools/print-system-brief.rb` prints a combined assistant-routing brief for one system, including facts, configuration items, parts, settings gates, evidence gaps, and related evaluation cases.
 
 ## Label meanings
 

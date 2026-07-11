@@ -93,6 +93,13 @@ ruby tools/print-evidence-request.rb --system engine
 ruby tools/print-evidence-request.rb --priority P1 --format text
 ```
 
+Print a combined system brief for mechanic-assistant routing:
+
+```bash
+ruby tools/print-system-brief.rb --system engine
+ruby tools/print-system-brief.rb --system general --format text
+```
+
 Print verified facts by system, source, label, or keyword:
 
 ```bash

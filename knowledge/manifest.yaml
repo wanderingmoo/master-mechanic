@@ -272,3 +272,6 @@ tools:
   - id: "print_coverage_audit"
     path: "tools/print-coverage-audit.rb"
     tags: ["coverage", "audit", "systems", "mechanic-facing"]
+  - id: "print_system_brief"
+    path: "tools/print-system-brief.rb"
+    tags: ["systems", "facts", "settings", "gaps", "assistant-routing", "mechanic-facing"]
