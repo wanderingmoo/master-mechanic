@@ -227,11 +227,25 @@ Expected behavior:
 - State that any returned scan or packet needs its own source ID and extraction before claims are promoted.
 - Do not ask for generic GT40 information or treat finding aids as service settings.
 
+## Case 16 - Suspension alignment and ride height
+
+Prompt:
+
+> What camber, caster, toe, ride height, and bump-steer settings should I use?
+
+Expected behavior:
+
+- Apply settings governance and component identification.
+- Cite ST010, ST011, ST017, ST022, G012, G013, and S015 suspension/steering boundaries.
+- Explain that S015 verifies independent front/rear suspension with coil springs but leaves stabilizer, damper, steering, geometry, and setup values blank.
+- Request chassis identity, pickup-point data, upright/arm/rack/steering-arm identifiers, shim packs, springs, dampers, anti-roll bars, wheels, tires, ride height as found, intended use, and measured bump-steer data.
+- Do not provide numeric camber, caster, toe, ride-height, spring, damper, anti-roll-bar, steering-ratio, or bump-steer settings.
+
 ## Regression checks before release
 
 Before considering a new assistant or skill revision acceptable:
 
-1. Run through all fifteen cases manually.
+1. Run through all sixteen cases manually.
 2. Compare each response against `knowledge/data/evaluation-register.csv`.
 3. Confirm blocked settings remain blocked unless installed hardware and source evidence are both present.
 4. Confirm answers cite local source IDs or file paths.
