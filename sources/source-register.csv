@@ -1,7 +1,7 @@
 source_id,title,source_type,tier,url_or_location,status,notes
 S001,FIA Historic Database,official archive candidate,1,https://historicdb.fia.com/,verified_path,"Official archive path used to capture Ford GT 40 FIA Recognition/Homologation No. 224 as S015; remains a target for future related forms and updates."
 S002,Ford media / Ford heritage public materials,official manufacturer candidate,1,https://media.ford.com/,candidate,"Primary target for Ford GT40 historical statements and heritage releases."
-S003,Ford Heritage Vault,official manufacturer archive candidate,1,https://www.fordheritagevault.com/,candidate,"Primary target for period Ford brochures, press releases, and images."
+S003,Ford Heritage Vault,official manufacturer archive/search path,1,https://fordheritagevault.com/,verified_path,"Official Ford archive/search site inspected directly; GT40 keyword search returned 84 records with textual, image, and moving-image filters. Use as a Ford archive acquisition path, not as a service-settings source by itself."
 S004,Ford GT40 Wikipedia article,secondary lead,4,https://en.wikipedia.org/wiki/Ford_GT40,lead_only,"Used only to identify leads: GT40P/1075, 1968 rule context, component/source names."
 S005,Ford small block engine Wikipedia article,secondary lead,4,https://en.wikipedia.org/wiki/Ford_small_block_engine,lead_only,"Used only as a lead for 302/Gurney-Weslake claims; not used for action specs."
 S006,Weslake Wikipedia article,secondary lead,4,https://en.wikipedia.org/wiki/Weslake,lead_only,"Used only as a lead for Weslake/Gurney-Weslake claims; not used for action specs."

@@ -27,6 +27,7 @@ This is the local table of contents for the GT40 mechanics knowledge base. Keep 
 
 | Source | Local note | Status |
 |---|---|---|
+| S003 | [../sources/notes/S003-ford-heritage-vault.md](../sources/notes/S003-ford-heritage-vault.md) | Tier 1 official Ford archive/search path; direct GT40 search returned 84 records and useful media/year/model filters for future extraction. |
 | S009 | [../sources/notes/S009-fia-appendix-j-1968.md](../sources/notes/S009-fia-appendix-j-1968.md) | Tier 1 regulation source extracted into fact register. |
 | S014 | [../sources/notes/S014-fia-cars-list-htp-guidance.md](../sources/notes/S014-fia-cars-list-htp-guidance.md) | Tier 1 FIA source-control guidance for homologation forms and HTP use. |
 | S015 | [../sources/notes/S015-fia-ford-gt40-homologation-224.md](../sources/notes/S015-fia-ford-gt40-homologation-224.md) | Tier 1 Ford GT 40 FIA Recognition/Homologation No. 224 Group 4 form and 1968 extensions. |

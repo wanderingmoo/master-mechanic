@@ -63,6 +63,9 @@ control_files:
     path: "knowledge/procedures/evidence-request-packet.md"
     tags: ["evidence", "request", "sources", "installed-hardware", "next-actions"]
 source_notes:
+  - id: "S003"
+    path: "sources/notes/S003-ford-heritage-vault.md"
+    tags: ["ford", "heritage-vault", "archive", "gt40", "source-acquisition"]
   - id: "S009"
     path: "sources/notes/S009-fia-appendix-j-1968.md"
     tags: ["fia", "appendix-j", "1968", "group-4"]

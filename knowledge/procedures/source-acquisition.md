@@ -21,7 +21,7 @@ The goal is to keep research portable, source-backed, and safe for mechanic use.
 |---|---|---|
 | GT40 FIA homologation / recognition form | FIA Historic Database, national ASN, FIA Historic Technical Passport process | Period identity, dimensions, recognized components, event eligibility. |
 | Event-valid homologation copy | ASN-certified copy as described by FIA HTP guidance | Historic-event compliance; research downloads are not event-valid by themselves. |
-| Ford / FAV / JWA period documents | Ford archives, Ford Heritage Vault, reputable archive scans, period service bulletins | Chassis, body, race-prep, and service context. |
+| Ford / FAV / JWA period documents | Ford archives, Ford Heritage Vault S003, The Henry Ford paths S020-S022, reputable archive scans, period service bulletins | Chassis, body, race-prep, and service context. |
 | Gurney-Weslake engine records | Engine build sheet, Weslake/Gurney-Weslake documents, trusted specialist archive | Bore, stroke, heads, cam, lash, compression, plugs, ignition, oiling, rev limit. |
 | Transaxle records | Installed-unit tag plus manufacturer/service documentation | Oil, preload, backlash, ratios, shift adjustment, LSD service. |
 | Brake records | Installed caliper/master/disc IDs plus maker documentation | Seal service, bedding, fluid compatibility, bias, pressure checks. |
