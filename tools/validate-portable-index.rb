@@ -109,6 +109,22 @@ manifest_skill_paths.each do |path|
   YAML.safe_load(File.read(openai_full))
 end
 
+github_metadata_globs = [
+  ".github/workflows/*.yml",
+  ".github/workflows/*.yaml",
+  ".github/ISSUE_TEMPLATE/*.yml",
+  ".github/ISSUE_TEMPLATE/*.yaml"
+]
+
+github_metadata_globs.flat_map { |glob| Dir[File.join(ROOT, glob)] }.uniq.each do |full|
+  rel = full.delete_prefix("#{ROOT}/")
+  begin
+    YAML.safe_load(File.read(full))
+  rescue Psych::Exception => e
+    fail_with("invalid YAML in #{rel}: #{e.message}")
+  end
+end
+
 [
   "sources/source-register.csv",
   "knowledge/data/fact-register.csv",
@@ -209,6 +225,10 @@ end
 portable_text_globs = [
   "README.md",
   ".github/agents/*.md",
+  ".github/workflows/*.yml",
+  ".github/workflows/*.yaml",
+  ".github/ISSUE_TEMPLATE/*.yml",
+  ".github/ISSUE_TEMPLATE/*.yaml",
   ".github/skills/**/*.md",
   ".github/skills/**/*.yaml",
   "knowledge/**/*.md",

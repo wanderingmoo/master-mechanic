@@ -56,7 +56,7 @@ Validate the portable index with:
 ruby tools/validate-portable-index.rb
 ```
 
-The validator checks manifest coverage, CSV source references, duplicate register IDs, evidence-gap coverage for every setting, archived PDF checksums, assistant agent/skill metadata, indexed templates/procedures/system files, and accidental non-portable local URI or unfinished placeholder markers.
+The validator checks manifest coverage, CSV source references, duplicate register IDs, evidence-gap coverage for every setting, archived PDF checksums, assistant agent/skill metadata, GitHub workflow and issue-template YAML, indexed templates/procedures/system files, and accidental non-portable local URI or unfinished placeholder markers.
 It also checks the machine-readable evaluation register against the prose assistant evaluation cases.
 
 Run the broader local quality gate before committing or pushing:
