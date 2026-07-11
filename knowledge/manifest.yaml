@@ -279,6 +279,9 @@ tools:
   - id: "print_system_brief"
     path: "tools/print-system-brief.rb"
     tags: ["systems", "facts", "settings", "gaps", "assistant-routing", "mechanic-facing"]
+  - id: "print_completion_audit"
+    path: "tools/print-completion-audit.rb"
+    tags: ["completion-audit", "systems", "gates", "mechanic-facing"]
   - id: "run_quality_gate"
     path: "tools/run-quality-gate.rb"
     tags: ["validation", "quality-gate", "assistant", "regression", "portable-index"]

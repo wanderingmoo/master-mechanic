@@ -37,6 +37,7 @@ The registers are CSV files so they can be searched, diffed, edited, and validat
 - `tools/validate-portable-index.rb` enforces source references, duplicate IDs, evaluation-case coverage, settings-to-gap coverage, manifest coverage for indexed helper scripts, and YAML validity for assistant/GitHub metadata.
 - `tools/validate-portable-index.rb` also validates every register `system` value against `system-taxonomy.yaml`.
 - `tools/print-coverage-audit.rb` summarizes fact labels, settings states, evidence-gap priorities/statuses, P1 open gaps, and related evaluation cases by system.
+- `tools/print-completion-audit.rb` checks every taxonomy system against completion gates for verified facts, mechanic-system configuration/part/settings coverage, blocked settings, open P1 evidence gaps, open installed-hardware identity, and related evaluation cases.
 - `tools/print-facts.rb` prints fact-register entries by system, source ID, label, or keyword and joins source titles for mechanic-facing context.
 - `tools/print-settings-gates.rb` prints mechanic-facing settings gates from `settings-register.csv` and links each setting to related evidence gaps.
 - `tools/print-evidence-request.rb` prints focused evidence requests from `evidence-gap-register.csv` by gap, system, priority, or status.
