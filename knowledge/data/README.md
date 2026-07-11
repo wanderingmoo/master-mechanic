@@ -42,7 +42,7 @@ The registers are CSV files so they can be searched, diffed, edited, and validat
 - `tools/print-facts.rb` prints fact-register entries by system, source ID, label, or keyword and joins source titles for mechanic-facing context.
 - `tools/print-parts-config.rb` prints component/configuration and parts-identification gates from `configuration-register.csv` and `parts-register.csv`, including source context, required evidence, related gaps, and next actions.
 - `tools/print-settings-gates.rb` prints mechanic-facing settings gates from `settings-register.csv` and links each setting to related evidence gaps.
-- `tools/print-evidence-request.rb` prints focused evidence requests from `evidence-gap-register.csv` by gap, system, priority, or status.
+- `tools/print-evidence-request.rb` prints focused evidence requests from `evidence-gap-register.csv` by gap, system, priority, or status, normalizes legacy system aliases, and points each request to the relevant capture template or worksheet.
 - `tools/print-agent-evaluation-plan.rb` prints assistant regression prompts from `evaluation-register.csv`.
 - `tools/print-system-brief.rb` prints a combined assistant-routing brief for one system, including facts, configuration items, parts, settings gates, evidence gaps, and related evaluation cases.
 - `tools/run-quality-gate.rb` runs portable-index validation plus representative coverage, system-brief, evaluation, and evidence-request checks.

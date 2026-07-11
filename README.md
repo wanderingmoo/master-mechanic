@@ -116,6 +116,7 @@ Print focused evidence requests for a gap, system, or priority:
 ```bash
 ruby tools/print-evidence-request.rb --gap G019
 ruby tools/print-evidence-request.rb --system engine
+ruby tools/print-evidence-request.rb --system brakes
 ruby tools/print-evidence-request.rb --priority P1 --format text
 ```
 

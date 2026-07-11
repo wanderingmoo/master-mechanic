@@ -15,6 +15,7 @@ COMMANDS = [
   ["ruby", "tools/print-agent-evaluation-plan.rb", "--case", "E014", "--format", "text"],
   ["ruby", "tools/print-agent-evaluation-plan.rb", "--case", "E018", "--format", "text"],
   ["ruby", "tools/print-agent-evaluation-plan.rb", "--case", "E019", "--format", "text"],
+  ["ruby", "tools/print-evidence-request.rb", "--system", "brakes", "--format", "text"],
   ["ruby", "tools/print-evidence-request.rb", "--priority", "P1", "--status", "open", "--format", "text"]
 ].freeze
 
