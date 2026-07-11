@@ -71,6 +71,9 @@ control_files:
     path: "knowledge/procedures/agent-test-protocol.md"
     tags: ["assistant", "evaluation", "regression", "portable-index"]
 source_notes:
+  - id: "S001"
+    path: "sources/notes/S001-fia-historic-database.md"
+    tags: ["fia", "historic-database", "source-control", "archive", "homologation"]
   - id: "S003"
     path: "sources/notes/S003-ford-heritage-vault.md"
     tags: ["ford", "heritage-vault", "archive", "gt40", "source-acquisition"]

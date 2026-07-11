@@ -28,6 +28,7 @@ This is the local table of contents for the GT40 mechanics knowledge base. Keep 
 
 | Source | Local note | Status |
 |---|---|---|
+| S001 | [../sources/notes/S001-fia-historic-database.md](../sources/notes/S001-fia-historic-database.md) | Tier 1 official FIA Historic Database root path for cars, regulations, Period Appendix J, homologation-list, Appendix K, and HTP source control. |
 | S003 | [../sources/notes/S003-ford-heritage-vault.md](../sources/notes/S003-ford-heritage-vault.md) | Tier 1 official Ford archive/search path; direct GT40 search returned 84 records and useful media/year/model filters for future extraction. |
 | S026 | [../sources/notes/S026-ford-heritage-vault-1965-gt40-mark-i-image.md](../sources/notes/S026-ford-heritage-vault-1965-gt40-mark-i-image.md) | Tier 1 official Ford Heritage Vault detail record for a 1965 Ford GT40 Mark I image; useful as body/context and source-acquisition evidence, not as installed-car proof or service settings. |
 | S027 | [../sources/notes/S027-ford-heritage-vault-racing-heritage-gt40-concept.md](../sources/notes/S027-ford-heritage-vault-racing-heritage-gt40-concept.md) | Tier 1 official Ford Heritage Vault textual press-release record for GT40 racing heritage; attached PDF archived locally and extracted with `pdftotext` plus rendered page-image inspection for direct historical/design context. |
