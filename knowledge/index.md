@@ -29,6 +29,7 @@ This is the local table of contents for the GT40 mechanics knowledge base. Keep 
 | Source | Local note | Status |
 |---|---|---|
 | S003 | [../sources/notes/S003-ford-heritage-vault.md](../sources/notes/S003-ford-heritage-vault.md) | Tier 1 official Ford archive/search path; direct GT40 search returned 84 records and useful media/year/model filters for future extraction. |
+| S026 | [../sources/notes/S026-ford-heritage-vault-1965-gt40-mark-i-image.md](../sources/notes/S026-ford-heritage-vault-1965-gt40-mark-i-image.md) | Tier 1 official Ford Heritage Vault detail record for a 1965 Ford GT40 Mark I image; useful as body/context and source-acquisition evidence, not as installed-car proof or service settings. |
 | S008 | [../sources/notes/S008-zf-official-support-paths.md](../sources/notes/S008-zf-official-support-paths.md) | Tier 1 official ZF corporate/aftermarket support path for transmission technical information, lubricants, catalogs, partners, and service; no ZF 5DS-25 GT40 service data captured. |
 | S009 | [../sources/notes/S009-fia-appendix-j-1968.md](../sources/notes/S009-fia-appendix-j-1968.md) | Tier 1 regulation source extracted into fact register. |
 | S014 | [../sources/notes/S014-fia-cars-list-htp-guidance.md](../sources/notes/S014-fia-cars-list-htp-guidance.md) | Tier 1 FIA source-control guidance for homologation forms and HTP use. |
@@ -59,7 +60,7 @@ This is the local table of contents for the GT40 mechanics knowledge base. Keep 
 
 | System | Local file | Status |
 |---|---|---|
-| Chassis and body | [systems/chassis-body.md](systems/chassis-body.md) | S015 homologation baseline captured; actual chassis identity and repair state still required. |
+| Chassis and body | [systems/chassis-body.md](systems/chassis-body.md) | S015 homologation baseline and S026 official Ford Heritage Vault GT40 Mark I image metadata anchor captured; actual chassis identity and repair state still required. |
 | Engine and induction | [systems/engine-induction.md](systems/engine-induction.md) | S015 verifies 1968 Weslake-head and 302 evolution context; S018 adds an official Weber/IDA support path; installed engine and service settings still require evidence. |
 | Driveline and transaxle | [systems/driveline-transaxle.md](systems/driveline-transaxle.md) | S015 verifies base ZF and 1968 Hewland/LSD evolution context; S016 archives the Hewland LG500/LG600 manual; installed unit must be identified. |
 | Suspension and steering | [systems/suspension-steering.md](systems/suspension-steering.md) | S015 item-number boundaries and independent/coil-spring recognition context are indexed; installed geometry and settings still require evidence. |

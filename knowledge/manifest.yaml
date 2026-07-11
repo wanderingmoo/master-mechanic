@@ -70,6 +70,9 @@ source_notes:
   - id: "S003"
     path: "sources/notes/S003-ford-heritage-vault.md"
     tags: ["ford", "heritage-vault", "archive", "gt40", "source-acquisition"]
+  - id: "S026"
+    path: "sources/notes/S026-ford-heritage-vault-1965-gt40-mark-i-image.md"
+    tags: ["ford", "heritage-vault", "archive", "gt40", "chassis-body", "image"]
   - id: "S008"
     path: "sources/notes/S008-zf-official-support-paths.md"
     tags: ["zf", "transaxle", "transmission", "support", "source-acquisition"]

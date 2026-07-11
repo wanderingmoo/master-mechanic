@@ -38,6 +38,12 @@ Source S009 verifies that Group 4 sportscar status was tied to recognition rules
 
 Source S015 provides the Ford GT 40 No. 224 research-copy baseline: 95 in / 2413 mm wheelbase, 55 in / 1397 mm front and rear track, 905 kg / 1993 lb recognized weight, partly unitized steel chassis/body construction, steel unitary material, and fiberglass/steel coachwork. Use these as recognition data, not as proof that the current car is straight, original, unrepaired, or built to that exact specification.
 
+## Ford Heritage Vault Mark I Image Anchor
+
+Source S026 is an official Ford Heritage Vault detail record for a 1965 Ford GT40 Mark I image, record `AR-2000-213654.140.56.17`. The detail metadata exposes year 1965, make Ford, model GT40, media type Image, and subject links including Ford Division, Ford Motor Company (England) Ltd., GT40, and coupes.
+
+Use S026 as an official Ford archive anchor for chassis/body visual-context research and source acquisition. It does not prove the user's chassis identity, tub originality, body repair state, clip/door/glazing configuration, structural dimensions, welding/bonding procedure, or any mechanic setting.
+
 ## Open Evidence Needs
 
 - Original chassis number and current title/registry identity.
