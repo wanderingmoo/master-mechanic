@@ -28,9 +28,11 @@ This is not yet enough to treat any single specification as authoritative. GT40s
 
 ## Known Historical Baseline
 
-Secondary sources consistently describe the 1968 Le Mans-winning GT40 as a Mk I run by J.W. Automotive Engineering/Gulf, chassis GT40P/1075, using a 4.9 L or 302 cu in Ford Windsor-derived V8. They also describe 1968 rule changes that allowed homologated Group 4 sports cars up to 5.0 L while restricting Group 6 prototypes to 3.0 L.
+The official 24H Le Mans palmarès API now verifies the core 1968 winning-row fields: participant number 9, team JWA, car FORD GT 40, drivers Pedro Rodriguez and Lucien Bianchi, classified first overall and first in category S 3001 cm3 à 5000 cm3.
 
-These statements are stored as historical context, not shop settings. They require original homologation papers, Ford/JWA records, or period service documents before they become mechanic-facing specifications.
+Secondary sources further describe the 1968 Le Mans-winning GT40 as a Mk I run by J.W. Automotive Engineering/Gulf, chassis GT40P/1075, using a 4.9 L or 302 cu in Ford Windsor-derived V8. They also describe 1968 rule changes that allowed homologated Group 4 sports cars up to 5.0 L while restricting Group 6 prototypes to 3.0 L.
+
+These statements are stored as historical context, not shop settings. S025 verifies only the official race-result row fields listed above. Engine displacement, lap count, chassis identity, Gulf/JWA preparation, and any installed-engine implications require original homologation papers, Ford/JWA records, official entry/program/scrutineering records, ACO-licensed records, or period service documents before they become mechanic-facing specifications.
 
 ## Verified Regulatory Baseline
 

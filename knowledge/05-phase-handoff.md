@@ -58,6 +58,7 @@ The package is usable as an evidence-controlled assistant foundation. It is not 
 - S022 - The Henry Ford remote research-services path.
 - S023 - Official 24H Le Mans / ACO track-record source path.
 - S024 - Gurney-Weslake official homepage.
+- S025 - Official 24H Le Mans palmarès API 1968 winner row.
 
 ## Mechanic-ready guidance available now
 
@@ -124,7 +125,7 @@ Highest-value next sources:
 1. Period Ford/FAV/JWA GT40 service, race-preparation, engine-build, or parts documentation.
 2. Gurney-Weslake or Weslake cylinder-head drawings/specifications: valve sizes, chamber volume, plug spec, repair limits, rocker/valvetrain data.
 3. Engine build sheet for the installed 302.
-4. Official 1968 Le Mans result row, race program, entry list, scrutineering record, or ACO-licensed source.
+4. Official 1968 Le Mans race program, entry list, scrutineering record, Ford/JWA record, chassis record, or ACO-licensed source for engine, lap count, full entrant name, chassis, and preparation details beyond the S025 winner row.
 5. ZF 5DS-25 documentation if the installed unit is base ZF rather than Hewland.
 6. Brake, wheel, hub, center-lock, and tire documentation for installed hardware.
 

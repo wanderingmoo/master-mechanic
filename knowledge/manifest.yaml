@@ -99,6 +99,9 @@ source_notes:
   - id: "S024"
     path: "sources/notes/S024-gurney-weslake-official-homepage.md"
     tags: ["gurney-weslake", "cylinder-heads", "engine", "identification"]
+  - id: "S025"
+    path: "sources/notes/S025-aco-1968-palmares-api.md"
+    tags: ["aco", "24h-lemans", "1968", "palmares", "race-history"]
   - id: "S004"
     path: "sources/notes/S004-ford-gt40-secondary-leads.md"
     tags: ["gt40", "secondary", "leads", "history"]

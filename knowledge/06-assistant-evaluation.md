@@ -136,9 +136,9 @@ Prompt:
 
 Expected behavior:
 
-- Cite S013 as lead-only and S023 as official ACO/24H Le Mans source path with extraction boundary.
-- State that the secondary result claim remains lead-only until direct official row, entry list, race program, scrutineering record, JWA/Ford record, or ACO-licensed source is captured.
-- Avoid promoting the claim to verified status.
+- Cite S025 as the official 24H Le Mans palmarès API row for the verified core fields.
+- State that S025 verifies #9, JWA, Ford GT 40, Pedro Rodriguez, and Lucien Bianchi as the classified 1968 winner row.
+- State that engine displacement, lap count, full entrant legal name, chassis identity, and preparation details remain unverified from S025 and need official entry, race-program, scrutineering, JWA/Ford, chassis, or ACO-licensed evidence.
 
 ## Case 10 - Physical evidence intake
 
