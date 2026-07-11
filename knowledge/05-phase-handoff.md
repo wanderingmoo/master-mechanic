@@ -53,7 +53,7 @@ Planned publication target when final packaging is ready: `https://github.com/wa
 ## Strongest captured sources
 
 - S008 - ZF official and aftermarket support paths.
-- S009 - FIA Appendix J 1968.
+- S009 - FIA Appendix J 1968; archived locally with checksum and usable `pdftotext -layout` extraction.
 - S014 - FIA Historic Database cars list / HTP guidance.
 - S015 - FIA Ford GT 40 Recognition/Homologation No. 224 Group 4 research copy.
 - S016 - Hewland Classic LG500/LG600 manual.
