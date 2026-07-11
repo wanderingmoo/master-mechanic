@@ -131,6 +131,10 @@ source_notes:
     path: "sources/notes/S013-1968-le-mans-secondary-results.md"
     tags: ["lemans", "1968", "secondary", "results"]
 source_archives:
+  - id: "S009"
+    path: "sources/archive/S009-fia-appendix-j-1968.pdf"
+    sha256: "075a102b9b1c558efe0bc77bfff26ae40d25c55cf4284ec1f8b01ef3a96399a4"
+    tags: ["fia", "appendix-j", "1968", "regulation", "pdf"]
   - id: "S015"
     path: "sources/archive/S015-fia-ford-gt40-homologation-224.pdf"
     sha256: "3629b498169656344f0592f15dee103af9f4a7e31d50ff2fdaf267d91104379c"

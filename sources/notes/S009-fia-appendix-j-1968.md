@@ -8,7 +8,9 @@
 - Evidence tier: 1
 - URL: https://historicdb.fia.com/sites/default/files/regulations/1440577810/appendix_j_1968.pdf
 - Indexed from: FIA Historic Database Period Appendix J index
-- Local status: verified regulation source; GT40-specific homologation form captured separately as S015
+- Local status: verified regulation source; archived locally at `sources/archive/S009-fia-appendix-j-1968.pdf`; GT40-specific homologation form captured separately as S015
+- Local archive SHA-256: `075a102b9b1c558efe0bc77bfff26ae40d25c55cf4284ec1f8b01ef3a96399a4`
+- PDF extraction status: `pdftotext -layout` extracts usable body text; `pdfinfo` reports 24 pages, unencrypted, PDF 1.7, file size 4,128,198 bytes
 
 ## Why this matters
 

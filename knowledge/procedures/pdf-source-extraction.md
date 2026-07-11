@@ -56,5 +56,6 @@ Use these phrases in source notes so later work can evaluate reliability:
 ## Current project examples
 
 - S027 is `text-extracted` after Poppler installation and was also checked by rendered page inspection.
+- S009 is an archived FIA Appendix J PDF with usable `pdftotext -layout` output, 24 pages, no encryption, and a manifest checksum. Use text extraction first, then rendered pages for layout-sensitive tables or unclear OCR.
 - S015 is an archived FIA research-copy PDF with many fields already extracted from inspection, but `pdftotext` produces no usable body text. Continue to rely on inspected page content, rendered pages, and source-note boundaries for S015.
-- S016 and S019 are archived PDFs with manifest checksums; use this procedure before adding new claims beyond the already indexed facts.
+- S016, S019, S027, and S028 are archived PDFs with manifest checksums; use this procedure before adding new claims beyond the already indexed facts.
