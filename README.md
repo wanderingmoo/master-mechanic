@@ -58,6 +58,12 @@ ruby tools/validate-portable-index.rb
 The validator checks manifest coverage, CSV source references, duplicate register IDs, evidence-gap coverage for every setting, archived PDF checksums, assistant agent/skill metadata, indexed templates/procedures/system files, and accidental non-portable local URI or unfinished placeholder markers.
 It also checks the machine-readable evaluation register against the prose assistant evaluation cases.
 
+Print the current assistant regression prompts with:
+
+```bash
+ruby tools/print-agent-evaluation-plan.rb
+```
+
 ## Current State
 
 This is an evidence-controlled starter package. It establishes the index, source hierarchy, local archives, and assistant behavior before adding unsafe settings. The FIA Ford GT 40 homologation research copy and Hewland LG500/LG600 component manual are now archived locally with checksums. Chassis-specific service settings, torque values, carburetor jetting, alignment, and build clearances must still be tied to the exact installed hardware, original manuals, component maker data, engine build sheets, or measured as-found evidence before being treated as actionable. See [Phase Handoff](knowledge/05-phase-handoff.md) for the current milestone and remaining blockers.

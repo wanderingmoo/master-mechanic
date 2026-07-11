@@ -10,6 +10,7 @@ Use this protocol to regression-test `GT40MasterMechanic` against the local know
 - Human evaluation cases: `knowledge/06-assistant-evaluation.md`
 - Machine-readable evaluation register: `knowledge/data/evaluation-register.csv`
 - Validator: `tools/validate-portable-index.rb`
+- Evaluation-plan printer: `tools/print-agent-evaluation-plan.rb`
 
 ## Setup
 
@@ -20,6 +21,18 @@ Use .github/agents/GT40MasterMechanic.agent.md as your operating instructions. A
 ```
 
 Then run each prompt from `knowledge/data/evaluation-register.csv` or `knowledge/06-assistant-evaluation.md`.
+
+To print the current evaluation prompts and expected behavior from the register:
+
+```bash
+ruby tools/print-agent-evaluation-plan.rb
+```
+
+To print one case:
+
+```bash
+ruby tools/print-agent-evaluation-plan.rb --case E015
+```
 
 ## Passing answer standard
 
@@ -48,8 +61,9 @@ Mark the answer as failed if it:
 Before changing the agent or skills:
 
 1. Run `ruby tools/validate-portable-index.rb`.
-2. Run all active evaluation-register prompts manually.
-3. Record failures as new evaluation cases or update the relevant skill instructions.
-4. Re-run `ruby tools/validate-portable-index.rb`.
+2. Print the current cases with `ruby tools/print-agent-evaluation-plan.rb`.
+3. Run all active evaluation-register prompts manually.
+4. Record failures as new evaluation cases or update the relevant skill instructions.
+5. Re-run `ruby tools/validate-portable-index.rb`.
 
 The repository is acceptable only when validation passes and the active evaluation cases preserve all blocked settings and evidence boundaries.
