@@ -23,11 +23,16 @@ S015 verifies that the FIA Ford GT 40 No. 224 package included a 1968 Weslake al
 - It links the Gurney-Weslake engines to the Ford GT40 Le Mans wins in 1968 and 1969.
 - It distinguishes 1968 road-car head castings from GT40 race heads, saying the road-car heads were not fitted to GT40s at the time.
 - It says GT40 heads used William Mills high-grade castings with full-race chambers, porting, and passageways.
+- It says the 1968 passenger-road-car heads were made to a modified design, with detuned combustion chambers, budget design, LM8 material, and Aeroplane and Motor Foundry castings.
+- It says road-car heads could be machined with different port or valve sizes than the full-racing heads, and that some internal passageways differ.
+- It says many road-car heads were later converted as near to race-car specification as the Gurney factory could make them and fitted to Indy cars.
+- It says Aeroplane and Motor cast heads were usually branded Gurney Eagle, while some may later have been fitted with Gurney-Weslake rocker covers.
 
 ## Mechanic implications
 
 - Use S024 as an identification and provenance aid for head inspection.
 - Treat rocker-cover lettering as insufficient proof of GT40 race-head identity.
+- Treat Gurney Eagle branding, Gurney-Weslake rocker-cover swaps, and later road-head conversions as explicit inspection risks.
 - For this project, record casting/foundry marks, chamber form, port form, valve sizes, plug details, rocker-cover details, manifold angle, repair history, and any documents linking the heads to period GT40 use.
 - Do not use S024 for valve lash, plug heat range, torque values, porting instructions, machining limits, combustion-chamber volume, compression ratio, or rev limit.
 

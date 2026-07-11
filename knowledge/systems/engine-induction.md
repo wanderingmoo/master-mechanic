@@ -70,8 +70,10 @@ Source S024, the Gurney-Weslake official homepage, adds practical identification
 - The design cues described include 9-degree inclined inlet ports, round inlet ports, and Weslake-pattern heart-shaped chambers.
 - The page distinguishes Mark I test heads, Mark II English heads, Mark III assembly/maintenance development, and Mark IV lighter heads with narrower rocker covers and inclined carburetor mounting.
 - It draws a critical boundary between 1968 road-car cylinder-head castings and GT40 race heads: road-car heads were not fitted to GT40s at the time, while GT40 heads used William Mills high-grade full-race castings with full-race chambers, porting, and passageways.
+- The road-car casting branch is a specific inspection hazard: S024 describes modified-design passenger heads with detuned chambers, budget design, LM8 material, Aeroplane and Motor Foundry castings, possible different port or valve sizes, and differing internal passageways.
+- Later-converted road heads can be visually misleading. S024 says many were converted as near to race-car specification as the Gurney factory could make them for Indy-car use, and that Aeroplane and Motor cast heads were usually branded Gurney Eagle although some may have been retrofitted with Gurney-Weslake rocker covers.
 
-Use S024 to improve the inspection checklist for casting/foundry marks, chamber form, port form, rocker-cover details, manifold angle, and documentary provenance. Do not use it for valve lash, plug reach, plug heat range, chamber volume, valve size, machining limit, torque value, compression ratio, or rev limit.
+Use S024 to improve the inspection checklist for casting/foundry marks, material/foundry branch, chamber form, port form, passageway clues, rocker-cover details, manifold angle, and documentary provenance. Do not use it for valve lash, plug reach, plug heat range, chamber volume, valve size, machining limit, torque value, compression ratio, or rev limit.
 
 ## Weber IDA Support Evidence
 
