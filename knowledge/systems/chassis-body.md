@@ -44,6 +44,12 @@ Source S026 is an official Ford Heritage Vault detail record for a 1965 Ford GT4
 
 Use S026 as an official Ford archive anchor for chassis/body visual-context research and source acquisition. It does not prove the user's chassis identity, tub originality, body repair state, clip/door/glazing configuration, structural dimensions, welding/bonding procedure, or any mechanic setting.
 
+## Ford Press-Release Design Context
+
+Source S027 is a Ford Heritage Vault press-release PDF rendered and visually inspected locally. It says Ford formed the Britain-based Ford Advanced Vehicles division for the Le Mans effort after Ferrari negotiations failed, and it describes the Lola GT's monocoque center section, broad side sills doubling as fuel tanks, and aerodynamic profile as design elements that carried into GT40 development.
+
+S027 also describes the April 1964 Ford GT context as using a rigid steel center section with unstressed front and rear fiberglass body panels. Use this as Ford-authored design-history context only. It is not a chassis drawing, repair procedure, material specification, bonding/welding instruction, tank specification, or proof that the user's tub and body match the early Ford GT described in the article.
+
 ## Open Evidence Needs
 
 - Original chassis number and current title/registry identity.

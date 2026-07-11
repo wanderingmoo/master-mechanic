@@ -42,6 +42,8 @@ Source S009 verifies that suspension principle and component function were recog
 
 Source S015 confirms the recognized suspension principle as independent front and rear with coil springs. It does not provide alignment targets, ride height, corner weights, spring rates, damper specifications, anti-roll-bar settings, steering type, steering ratio, servo-assistance, or lock-to-lock turns.
 
+Source S027 adds Ford press-release historical context that the April 1964 Ford GT featured computer-designed double-wishbone suspension. This supports the design-history trail only. It does not identify the installed suspension, provide pickup-point dimensions, alignment settings, spring rates, damper data, steering-rack specifications, or bump-steer guidance.
+
 ## Do Not Guess
 
 No camber, caster, toe, ride height, spring rate, damper, anti-roll-bar, steering ratio, steering stop, or bump-steer recommendation is actionable until current use and component configuration are known.

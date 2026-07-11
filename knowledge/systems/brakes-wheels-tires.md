@@ -44,6 +44,8 @@ Source S015 verifies hydraulic brake operation in the GT40 No. 224 recognition f
 
 S015 should be used as a checklist for what must be identified on the car, not as a specification source for missing values.
 
+Source S027 adds Ford press-release historical context that the April 1964 Ford GT had 11.5-inch disc brakes at each wheel. This is early Ford GT design context only. It does not identify the user's brake hardware, verify GT40 No. 224 brake dimensions, or unblock brake bias, pad, disc, master-cylinder, bedding, fluid, tire-pressure, or center-lock settings.
+
 ## Brake and Wheel Evidence Gate
 
 Before any adjustment or service setting is issued, capture:

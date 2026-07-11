@@ -30,7 +30,7 @@ This is the local table of contents for the GT40 mechanics knowledge base. Keep 
 |---|---|---|
 | S003 | [../sources/notes/S003-ford-heritage-vault.md](../sources/notes/S003-ford-heritage-vault.md) | Tier 1 official Ford archive/search path; direct GT40 search returned 84 records and useful media/year/model filters for future extraction. |
 | S026 | [../sources/notes/S026-ford-heritage-vault-1965-gt40-mark-i-image.md](../sources/notes/S026-ford-heritage-vault-1965-gt40-mark-i-image.md) | Tier 1 official Ford Heritage Vault detail record for a 1965 Ford GT40 Mark I image; useful as body/context and source-acquisition evidence, not as installed-car proof or service settings. |
-| S027 | [../sources/notes/S027-ford-heritage-vault-racing-heritage-gt40-concept.md](../sources/notes/S027-ford-heritage-vault-racing-heritage-gt40-concept.md) | Tier 1 official Ford Heritage Vault textual press-release record for GT40 racing heritage; attached PDF archived locally but body text still needs OCR/manual extraction before content claims are promoted. |
+| S027 | [../sources/notes/S027-ford-heritage-vault-racing-heritage-gt40-concept.md](../sources/notes/S027-ford-heritage-vault-racing-heritage-gt40-concept.md) | Tier 1 official Ford Heritage Vault textual press-release record for GT40 racing heritage; attached PDF archived locally and extracted with `pdftotext` plus rendered page-image inspection for direct historical/design context. |
 | S008 | [../sources/notes/S008-zf-official-support-paths.md](../sources/notes/S008-zf-official-support-paths.md) | Tier 1 official ZF corporate/aftermarket support path for transmission technical information, lubricants, catalogs, partners, and service; no ZF 5DS-25 GT40 service data captured. |
 | S009 | [../sources/notes/S009-fia-appendix-j-1968.md](../sources/notes/S009-fia-appendix-j-1968.md) | Tier 1 regulation source extracted into fact register. |
 | S014 | [../sources/notes/S014-fia-cars-list-htp-guidance.md](../sources/notes/S014-fia-cars-list-htp-guidance.md) | Tier 1 FIA source-control guidance for homologation forms and HTP use. |
@@ -56,7 +56,7 @@ This is the local table of contents for the GT40 mechanics knowledge base. Keep 
 | S015 | [../sources/archive/S015-fia-ford-gt40-homologation-224.pdf](../sources/archive/S015-fia-ford-gt40-homologation-224.pdf) | SHA-256 recorded in [manifest.yaml](manifest.yaml). |
 | S016 | [../sources/archive/S016-hewland-lg500-lg600-manual.pdf](../sources/archive/S016-hewland-lg500-lg600-manual.pdf) | SHA-256 recorded in [manifest.yaml](manifest.yaml). |
 | S019 | [../sources/archive/S019-fia-appendix-k-2025-updated-2026.pdf](../sources/archive/S019-fia-appendix-k-2025-updated-2026.pdf) | SHA-256 recorded in [manifest.yaml](manifest.yaml). |
-| S027 | [../sources/archive/S027-ford-heritage-vault-racing-heritage-gt40-concept.pdf](../sources/archive/S027-ford-heritage-vault-racing-heritage-gt40-concept.pdf) | SHA-256 recorded in [manifest.yaml](manifest.yaml); body text still requires OCR/manual extraction. |
+| S027 | [../sources/archive/S027-ford-heritage-vault-racing-heritage-gt40-concept.pdf](../sources/archive/S027-ford-heritage-vault-racing-heritage-gt40-concept.pdf) | SHA-256 recorded in [manifest.yaml](manifest.yaml); extracted with `pdftotext` and rendered page images visually inspected for extracted facts. |
 
 ## Systems
 

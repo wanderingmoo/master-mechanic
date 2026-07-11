@@ -9,6 +9,7 @@ Primary local sources:
 - S009, FIA Appendix J 1968 English PDF.
 - S014, FIA Historic Database cars-list guidance for HTP and homologation-form document control.
 - S015, FIA Ford GT 40 Recognition/Homologation Form No. 224 Group 4 and linked PDF research copy.
+- S027, Ford Heritage Vault press-release PDF for Ford-authored GT40 racing-history context.
 
 ## Verified 1968 FIA Appendix J baseline
 
@@ -17,6 +18,8 @@ Primary local sources:
 - Sportscars required at least two seats.
 - Cylinder-capacity classes included over 3,000 cc to 5,000 cc, which is the relevant regulation class for a 302 cu in / about 4.9 L Ford small-block configuration.
 - Recognition forms were official control documents and could be required at scrutineering or at the start of an event.
+
+S027 independently gives Ford press-release context that the FIA capped engine displacement at 5 liters before the Gulf-sponsored Mark I GT40 Le Mans wins in 1968 and 1969. Treat S009/S015 as the controlling technical/regulatory sources; S027 is historical support, not a regulation text or homologation form.
 
 ## Verified Ford GT 40 homologation baseline
 

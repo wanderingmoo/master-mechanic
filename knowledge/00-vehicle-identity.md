@@ -30,9 +30,11 @@ This is not yet enough to treat any single specification as authoritative. GT40s
 
 The official 24H Le Mans palmarès API now verifies the core 1968 winning-row fields: participant number 9, team JWA, car FORD GT 40, drivers Pedro Rodriguez and Lucien Bianchi, classified first overall and first in category S 3001 cm3 à 5000 cm3.
 
+The Ford Heritage Vault S027 press-release PDF adds Ford-authored historical context that the FIA capped displacement at 5 liters and that, under Gulf Oil sponsorship, Mark I GT40s won Le Mans in 1968 and 1969. This supports Ford program context only; it does not identify the user's chassis, installed engine, lap count, or preparation details.
+
 Secondary sources further describe the 1968 Le Mans-winning GT40 as a Mk I run by J.W. Automotive Engineering/Gulf, chassis GT40P/1075, using a 4.9 L or 302 cu in Ford Windsor-derived V8. They also describe 1968 rule changes that allowed homologated Group 4 sports cars up to 5.0 L while restricting Group 6 prototypes to 3.0 L.
 
-These statements are stored as historical context, not shop settings. S025 verifies only the official race-result row fields listed above. Engine displacement, lap count, chassis identity, Gulf/JWA preparation, and any installed-engine implications require original homologation papers, Ford/JWA records, official entry/program/scrutineering records, ACO-licensed records, or period service documents before they become mechanic-facing specifications.
+These statements are stored as historical context, not shop settings. S025 verifies only the official race-result row fields listed above. S027 provides Ford press-release context, not event-entry proof or installed-car proof. Engine displacement, lap count, chassis identity, Gulf/JWA preparation, and any installed-engine implications require original homologation papers, Ford/JWA records, official entry/program/scrutineering records, ACO-licensed records, or period service documents before they become mechanic-facing specifications.
 
 ## Verified Regulatory Baseline
 
