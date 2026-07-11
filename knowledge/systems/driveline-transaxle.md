@@ -52,6 +52,7 @@ Source S016 is now archived as the component manual for Hewland LG500/LG600 unit
 
 Key S016 mechanics points:
 
+- The archived manual has been extracted with `pdftotext -layout`; extraction is usable for indexing but has OCR/layout gaps, so damaged numeric lines are not settings.
 - LG500/LG600 units are LG-series racing transaxles for 300 to 450 cu in competition engines; LG600 is the 5-speed variant.
 - The covered units use straight-cut, non-synchronized face-dog gears, with ratios changeable without removing the gearbox from the chassis.
 - Gear ratio changes require correctly matched gear pairs, checked against etched tooth numbers.
@@ -60,6 +61,11 @@ Key S016 mechanics points:
 - External oil cooling is provided for and strongly recommended to keep oil temperature below 110 C / 250 F.
 - Selector-fork setup accuracy is critical; the manual strongly recommends the Hewland setting jig.
 - The crown wheel and pinion are precision matched and should not be replaced separately.
+- General service discipline includes genuine spares, new nuts and gaskets, controlled warming of the case, and splitting refill oil between the two filler holes.
+- Gear-train inspection includes hubs, clutch rings, gears, selector forks, fork-to-clutch-ring play, renewed hub length, and pinion-assembly clearance.
+- Selector-fork setup requires centered clutch rings, full engagement, and clearance between gear and clutch-ring faces when engaged, followed by clearance and movement rechecks.
+- Main-case and lubrication service includes sludge removal, foreign-object checks, pump gear/body scoring inspection, filter washing, and careful filter-bung tightening.
+- Crown wheel and pinion setup is a matched-pair operation using setting gauges, dummy bearings, shims, backlash measurement, and preload checks.
 
 Do not use S016 as an installed-car service manual until the transaxle is identified as LG500, LG600, or directly compatible. Do not turn OCR-extracted torque, backlash, preload, or fill values into shop settings without direct manual inspection and installed-unit verification.
 

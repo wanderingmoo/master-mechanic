@@ -8,8 +8,15 @@
 - Related authority/source-control URL: https://hewlandclassic.com/
 - Local archive: `sources/archive/S016-hewland-lg500-lg600-manual.pdf`
 - SHA-256: `2f91072c884cf834b7ca132f03338d002fced18f99165c1b1a8100e0ec9a4b7e`
+- PDF metadata: 19 pages; PDF 1.4; created 2001-05-25; modified 2007-09-11; producer Acrobat Distiller 4.0 for Windows.
 - Source tier: Tier 1 under the local source policy because it is a component manual from Hewland Classic, with S017 recording the related Hewland Classic authority/support pages.
 - Status: Verified and archived locally.
+
+## Extraction method
+
+- `pdfinfo` verified a 19-page, non-encrypted PDF.
+- `pdftotext -layout sources/archive/S016-hewland-lg500-lg600-manual.pdf /private/tmp/master-mechanic-s016/s016.txt` produced usable text for indexing.
+- The extracted text has OCR/layout gaps in some page headings, part labels, and torque lines. Numeric torque, backlash, preload, and oil-fill values must therefore be checked against the rendered PDF/manual before they are promoted into settings.
 
 ## Why this source matters
 
@@ -32,10 +39,16 @@ This source does not prove that the project car currently has an LG600 installed
 - Selector-fork setup requires high accuracy; the manual strongly recommends the Hewland setting jig.
 - The crown wheel and pinion are precision matched and should not be replaced separately.
 - The manual contains maintenance cautions including use of genuine spares, new nuts and gaskets, and correct refill through the two filler holes.
+- During gear-train stripping, the manual instructs inspection of hubs, clutch rings, gears, selector forks, and fork-to-clutch-ring play; renewed hubs should match original length, and pinion-assembly clearance remains important to avoid overheating, seizure, or excessive wear.
+- The selector-fork setup section requires clutch rings to be centered on their hubs, fully engage either gear, and retain clearance between gear and clutch-ring faces when engaged. It also calls for rechecking clearances and movements before installation.
+- Main-case service instructions include washing out sludge and confirming no small metallic objects or particles remain in the case.
+- Oil-pump and filter instructions call for inspecting pump gears/body for scoring, washing the oil filter, and avoiding over-tightening the filter bung because the filter should still be just turnable with slight hand pressure.
+- Crown wheel and pinion setup is described as a matched-pair operation using setting gauges, dummy bearings, shims, backlash measurement, and preload checks; absence of backlash can give a false impression of preload.
 
 ## Mechanic-facing implications
 
 - If the installed unit is verified as Hewland LG600, S016 becomes the primary manual for transaxle inspection workflow, ratio-change procedure, lubrication architecture, differential handling, and rebuild cautions.
+- Treat S016 as a setup-method source before treating it as a settings source: it identifies the required fixtures, inspections, matched parts, and reassembly discipline even where numeric values remain blocked.
 - Do not extract torque, backlash, bearing preload, or oil-fill values from OCR alone. Use direct manual inspection and component condition before turning any value into a setting.
 - If the installed transaxle is ZF, Kar-Kraft, Colotti, replica, or a modified Hewland derivative, S016 is context only unless compatibility is proven.
 

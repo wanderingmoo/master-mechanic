@@ -76,7 +76,7 @@ The assistant can safely support:
 - regulatory and homologation context from FIA sources;
 - GT40 No. 224 recognition-form interpretation at a context level;
 - Gurney-Weslake head identification prompts;
-- Hewland LG500/LG600 manual routing when an installed unit is verified as applicable;
+- Hewland LG500/LG600 manual routing, inspection scope, and setup-method cautions when an installed unit is verified as applicable;
 - Weber/IDA documentation and parts-source routing when installed carburetors are verified as applicable;
 - safety/event-readiness evidence capture against current Appendix K gates.
 
