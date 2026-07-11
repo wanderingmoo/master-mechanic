@@ -86,6 +86,9 @@ source_notes:
   - id: "S009"
     path: "sources/notes/S009-fia-appendix-j-1968.md"
     tags: ["fia", "appendix-j", "1968", "group-4"]
+  - id: "S010"
+    path: "sources/notes/S010-fia-period-appendix-j-index.md"
+    tags: ["fia", "appendix-j", "regulation-index", "source-control"]
   - id: "S014"
     path: "sources/notes/S014-fia-cars-list-htp-guidance.md"
     tags: ["fia", "homologation", "htp", "source-control"]
