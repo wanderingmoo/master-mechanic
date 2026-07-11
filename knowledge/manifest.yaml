@@ -236,3 +236,13 @@ assistant_assets:
     - ".github/skills/gt40-settings-governance/SKILL.md"
     - ".github/skills/gt40-safety-event-readiness/SKILL.md"
     - ".github/skills/vintage-racecar-diagnostics/SKILL.md"
+tools:
+  - id: "validate_portable_index"
+    path: "tools/validate-portable-index.rb"
+    tags: ["validation", "portable-index", "quality-gate"]
+  - id: "print_agent_evaluation_plan"
+    path: "tools/print-agent-evaluation-plan.rb"
+    tags: ["assistant", "evaluation", "regression"]
+  - id: "print_settings_gates"
+    path: "tools/print-settings-gates.rb"
+    tags: ["settings", "evidence-gates", "mechanic-facing"]

@@ -64,6 +64,19 @@ Print the current assistant regression prompts with:
 ruby tools/print-agent-evaluation-plan.rb
 ```
 
+Print the current settings gates with:
+
+```bash
+ruby tools/print-settings-gates.rb
+```
+
+Filter by system or setting when needed:
+
+```bash
+ruby tools/print-settings-gates.rb --system engine
+ruby tools/print-settings-gates.rb --setting ST033
+```
+
 ## Current State
 
 This is an evidence-controlled starter package. It establishes the index, source hierarchy, local archives, and assistant behavior before adding unsafe settings. The FIA Ford GT 40 homologation research copy and Hewland LG500/LG600 component manual are now archived locally with checksums. Chassis-specific service settings, torque values, carburetor jetting, alignment, and build clearances must still be tied to the exact installed hardware, original manuals, component maker data, engine build sheets, or measured as-found evidence before being treated as actionable. See [Phase Handoff](knowledge/05-phase-handoff.md) for the current milestone and remaining blockers.

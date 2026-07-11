@@ -22,7 +22,7 @@ end
 manifest_path = assert_file("knowledge/manifest.yaml")
 manifest = YAML.safe_load(File.read(manifest_path))
 
-%w[indexes control_files source_notes source_archives systems procedures templates assistant_assets].each do |key|
+%w[indexes control_files source_notes source_archives systems procedures templates assistant_assets tools].each do |key|
   fail_with("manifest missing #{key}") unless manifest.key?(key)
 end
 
@@ -53,6 +53,7 @@ manifest_paths(manifest, "source_notes").each { |path| assert_file(path) }
 manifest_paths(manifest, "systems").each { |path| assert_file(path) }
 manifest_paths(manifest, "procedures").each { |path| assert_file(path) }
 manifest_paths(manifest, "templates").each { |path| assert_file(path) }
+manifest_paths(manifest, "tools").each { |path| assert_file(path) }
 
 def assert_manifest_covers_files(manifest, key, glob)
   expected = manifest_paths(manifest, key).to_set
@@ -67,6 +68,7 @@ assert_manifest_covers_files(manifest, "source_notes", "sources/notes/*.md")
 assert_manifest_covers_files(manifest, "systems", "knowledge/systems/*.md")
 assert_manifest_covers_files(manifest, "procedures", "knowledge/procedures/*.md")
 assert_manifest_covers_files(manifest, "templates", "knowledge/templates/*.md")
+assert_manifest_covers_files(manifest, "tools", "tools/*.rb")
 
 agent_path = manifest.dig("assistant_assets", "agent")
 if agent_path
