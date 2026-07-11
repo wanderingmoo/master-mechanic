@@ -66,6 +66,7 @@ This is the local table of contents for the GT40 mechanics knowledge base. Keep 
 |---|---|---|
 | Component identification | [procedures/component-identification.md](procedures/component-identification.md) | Evidence workflow for identifying parts before ordering, machining, or applying settings. |
 | Source acquisition | [procedures/source-acquisition.md](procedures/source-acquisition.md) | Procedure for adding primary documents, source notes, extracted facts, and setting gates. |
+| Evidence request packet | [procedures/evidence-request-packet.md](procedures/evidence-request-packet.md) | Ready-to-send request checklist for owner/shop evidence, archives, component specialists, and event authorities. |
 | Evidence-controlled commissioning | [procedures/inspection-commissioning.md](procedures/inspection-commissioning.md) | Starter workflow for first inspection and restart. |
 | Settings governance | [procedures/settings-governance.md](procedures/settings-governance.md) | Blocks unsafe settings until component identity and source evidence are present. |
 

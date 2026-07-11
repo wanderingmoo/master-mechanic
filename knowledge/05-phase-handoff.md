@@ -120,6 +120,8 @@ Highest-value next sources:
 5. ZF 5DS-25 documentation if the installed unit is base ZF rather than Hewland.
 6. Brake, wheel, hub, center-lock, and tire documentation for installed hardware.
 
+Use `knowledge/procedures/evidence-request-packet.md` to request these items from owners, shops, archives, component specialists, and event authorities in a structured way.
+
 ## Validation command
 
 Run:
@@ -137,4 +139,3 @@ Portable index validation passed
 ## Recommended wrap-up action
 
 Before pausing this phase, confirm validation passes and optionally commit the repository. The current package should remain open for future source and installed-hardware evidence rather than being marked complete against the full mechanic-settings objective.
-

@@ -17,6 +17,7 @@ Repository name: `Master-Mechanic`
 - [Parts Register](knowledge/data/parts-register.csv) - system-by-system part and assembly identification register.
 - [Settings Register](knowledge/data/settings-register.csv) - blocked/actionable settings index with required evidence.
 - [Source Acquisition Procedure](knowledge/procedures/source-acquisition.md) - repeatable workflow for adding primary documents and extracted facts.
+- [Evidence Request Packet](knowledge/procedures/evidence-request-packet.md) - ready-to-send evidence requests for the owner, archives, specialists, and event authorities.
 - [Capture Templates](knowledge/templates) - portable Markdown forms for source, chassis, engine, driveline, suspension/steering, fuel/oil/cooling, electrical/instruments, brake/wheel/tire, and safety evidence.
 - [Portable Manifest](knowledge/manifest.yaml) - machine-readable map of local files, tags, indexes, and assistant assets.
 - [Agent Operating Rules](AGENTS.md) - repository-level rules for evidence-controlled agent work.

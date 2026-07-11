@@ -49,6 +49,9 @@ control_files:
   - id: "source_acquisition"
     path: "knowledge/procedures/source-acquisition.md"
     tags: ["sources", "acquisition", "evidence", "portable-index"]
+  - id: "evidence_request_packet"
+    path: "knowledge/procedures/evidence-request-packet.md"
+    tags: ["evidence", "request", "sources", "installed-hardware", "next-actions"]
 source_notes:
   - id: "S009"
     path: "sources/notes/S009-fia-appendix-j-1968.md"
@@ -140,6 +143,9 @@ procedures:
   - id: "source_acquisition"
     path: "knowledge/procedures/source-acquisition.md"
     tags: ["sources", "evidence", "research"]
+  - id: "evidence_request_packet"
+    path: "knowledge/procedures/evidence-request-packet.md"
+    tags: ["evidence", "request", "installed-hardware", "sources"]
   - id: "inspection_commissioning"
     path: "knowledge/procedures/inspection-commissioning.md"
     tags: ["inspection", "commissioning", "first-start", "safety"]
