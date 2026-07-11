@@ -57,8 +57,10 @@ Key S016 mechanics points:
 - The covered units use straight-cut, non-synchronized face-dog gears, with ratios changeable without removing the gearbox from the chassis.
 - Gear ratio changes require correctly matched gear pairs, checked against etched tooth numbers.
 - Differential/crown-wheel assemblies use taper roller bearings with preload adjusted by shims.
+- The differential is a limited-slip design; the manual describes a normally supplied cam-and-pawl type and another flat clutch-plate type.
 - The gearbox is splash-lubricated; the final drive is pump-lubricated through a filter.
 - External oil cooling is provided for and strongly recommended to keep oil temperature below 110 C / 250 F.
+- The gear-change rod is mounted high on the right-hand side, and clutch actuation is by steel fork and push-rod from a slave cylinder on the side of the main case.
 - Selector-fork setup accuracy is critical; the manual strongly recommends the Hewland setting jig.
 - The crown wheel and pinion are precision matched and should not be replaced separately.
 - General service discipline includes genuine spares, new nuts and gaskets, controlled warming of the case, and splitting refill oil between the two filler holes.

@@ -32,9 +32,11 @@ This source does not prove that the project car currently has an LG600 installed
 - The gears are straight-cut, non-synchronized, use face dogs, and ratios are changeable without removing the transaxle from the chassis.
 - The manual states that all ratios except bottom gear are interchangeable.
 - The differential and crown-wheel assembly runs on taper roller bearings, with pre-load adjusted by shims.
+- The manual describes the differential as Limited Slip design and says two types were manufactured: a normally supplied cam-and-pawl type and a flat clutch-plate type.
 - The manual describes caged needle rollers, heat-treated nickel-chrome steel gears and shafts, aluminum-bronze selector forks, and magnesium-alloy casings.
 - The gearbox section is lubricated by splash, while the final drive is lubricated by pump through a filter.
 - The manual provides for an external oil cooler and strongly recommends oil cooling to keep oil temperature below 110 C / 250 F.
+- The gear-change rod is described as mounted high on the right-hand side of the unit, and the clutch is described as actuated by steel fork and push-rod from a slave cylinder mounted on the side of the main case.
 - Gear pairs must be exchanged as matched pairs and checked against etched tooth numbers.
 - Selector-fork setup requires high accuracy; the manual strongly recommends the Hewland setting jig.
 - The crown wheel and pinion are precision matched and should not be replaced separately.

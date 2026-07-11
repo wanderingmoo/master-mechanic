@@ -11,7 +11,10 @@
 - Gearbox type:
 - Final drive type:
 - LSD type/markings:
+- If Hewland LG500/LG600 candidate, cam-and-pawl or flat clutch-plate LSD evidence:
+- If Hewland LG500/LG600 candidate, gear-change rod side/location:
 - Clutch type:
+- Clutch slave cylinder and push-rod arrangement:
 - Halfshaft / CV / donut type:
 
 ## Evidence captured
