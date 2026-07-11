@@ -14,6 +14,7 @@ This is the local table of contents for the GT40 mechanics knowledge base. Keep 
 | [05-phase-handoff.md](05-phase-handoff.md) | Current phase wrap-up, completed foundation, blocked settings, and next evidence needed. |
 | [06-assistant-evaluation.md](06-assistant-evaluation.md) | Acceptance cases for testing the mechanics assistant against evidence and settings gates. |
 | [manifest.yaml](manifest.yaml) | Machine-readable portable index of local knowledge files, tags, and assistant assets. |
+| [data/README.md](data/README.md) | Data dictionary for portable CSV registers, ID prefixes, labels, confidence, and cross-reference rules. |
 | [../sources/source-register.csv](../sources/source-register.csv) | Portable source index with source IDs, URLs, tier, and use status. |
 | [data/fact-register.csv](data/fact-register.csv) | Structured fact index with source IDs, applicability, confidence, and system tags. |
 | [data/configuration-register.csv](data/configuration-register.csv) | Structured component/configuration register for parts, settings gates, and evidence needs. |

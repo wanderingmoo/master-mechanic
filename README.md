@@ -18,6 +18,7 @@ Repository name: `Master-Mechanic`
 - [Parts Register](knowledge/data/parts-register.csv) - system-by-system part and assembly identification register.
 - [Settings Register](knowledge/data/settings-register.csv) - blocked/actionable settings index with required evidence.
 - [Evidence Gap Register](knowledge/data/evidence-gap-register.csv) - machine-readable queue of remaining evidence blockers by system; every settings-register item is covered.
+- [Data Dictionary](knowledge/data/README.md) - register schema, ID prefixes, labels, confidence meanings, and cross-reference rules.
 - [Source Acquisition Procedure](knowledge/procedures/source-acquisition.md) - repeatable workflow for adding primary documents and extracted facts.
 - [Evidence Request Packet](knowledge/procedures/evidence-request-packet.md) - ready-to-send evidence requests for the owner, archives, specialists, and event authorities.
 - [Capture Templates](knowledge/templates) - portable Markdown forms for source, chassis, engine, driveline, suspension/steering, fuel/oil/cooling, electrical/instruments, brake/wheel/tire, and safety evidence.

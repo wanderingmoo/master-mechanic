@@ -15,6 +15,7 @@ The package is usable as an evidence-controlled assistant foundation. It is not 
 - Machine-readable manifest: `knowledge/manifest.yaml`.
 - Source register: `sources/source-register.csv`.
 - Fact register: `knowledge/data/fact-register.csv`.
+- Data dictionary: `knowledge/data/README.md`.
 - Configuration, parts, and settings registers:
   - `knowledge/data/configuration-register.csv`
   - `knowledge/data/parts-register.csv`
