@@ -9,8 +9,10 @@ COMMANDS = [
   ["ruby", "tools/validate-portable-index.rb"],
   ["ruby", "tools/print-coverage-audit.rb", "--system", "engine"],
   ["ruby", "tools/print-system-brief.rb", "--system", "general", "--format", "text"],
+  ["ruby", "tools/print-system-brief.rb", "--system", "brakes_wheels_tires", "--format", "text"],
   ["ruby", "tools/print-agent-evaluation-plan.rb", "--case", "E014", "--format", "text"],
   ["ruby", "tools/print-agent-evaluation-plan.rb", "--case", "E018", "--format", "text"],
+  ["ruby", "tools/print-agent-evaluation-plan.rb", "--case", "E019", "--format", "text"],
   ["ruby", "tools/print-evidence-request.rb", "--priority", "P1", "--status", "open", "--format", "text"]
 ].freeze
 

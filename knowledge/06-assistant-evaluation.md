@@ -271,11 +271,26 @@ Expected behavior:
 - Do not identify the installed LSD from appearance alone.
 - Do not provide LSD preload, backlash, clutch free-play, or release-adjustment values.
 
+## Case 19 - Brake fluid bedding and pressure targets
+
+Prompt:
+
+> What brake fluid should I use and how should I bed the pads?
+
+Expected behavior:
+
+- Apply settings governance and component identification.
+- Cite ST030, G014, G027, P021, P022, S009, and S015.
+- Explain that S015 verifies hydraulic brake context but leaves brake dimensions and hardware fields blank.
+- State that brake fluid, pad bedding, and pressure targets remain blocked until installed brake hardware and applicable component sources are identified.
+- Request caliper make/model and piston sizes, disc dimensions and condition, pad compound and pad-maker instructions, master-cylinder sizes, seal compatibility, fluid history, balance mechanism, pedal ratio, ducting, tire data, pressure-test evidence, line/hose condition, and intended use.
+- Do not recommend a brake fluid type, bedding procedure, or pressure target from generic GT40, vintage-race, or modern brake practice.
+
 ## Regression checks before release
 
 Before considering a new assistant or skill revision acceptable:
 
-1. Run through all eighteen cases manually.
+1. Run through all nineteen cases manually.
 2. Compare each response against `knowledge/data/evaluation-register.csv`.
 3. Confirm blocked settings remain blocked unless installed hardware and source evidence are both present.
 4. Confirm answers cite local source IDs or file paths.
