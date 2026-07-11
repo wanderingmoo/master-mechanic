@@ -22,6 +22,7 @@ For base GT40 engine identity context, S015 also records no cylinder sleeves fit
 - Cylinder head markings, port shape, valve sizes, chamber volume, and repair history.
 - Cam card, rocker ratio, pushrod length, lash target, spring pressures, and installed height.
 - Carburetor model, choke size, emulsion tubes, jets, air correctors, idle jets, pump jets, and float settings.
+- Throttle linkage, throttle stops, pedal stop, butterfly-spindle return springs, and proof that throttles return freely from all positions.
 - Ignition type, distributor curve, plug heat range, coil/box, and tach drive.
 - Oil system layout, pump type, tank, cooler, filters, thermostat, line sizes, and pressure relief setup.
 
@@ -95,6 +96,8 @@ Use S018 for:
 - Separating genuine Weber support data from generic web tuning tables.
 
 Do not use S018 to infer that this car has Weber IDA carburetors, to select kit part numbers without inspecting the installed carburetor bodies, or to set jetting, fuel pressure, float level, pump volume, idle mixture, or linkage synchronization. Those settings remain blocked until the installed carburetor model/series, choke sizes, jet stack, linkage, fuel system, cam, compression, exhaust, and build documentation are known.
+
+Source S019 adds a current historic safety gate for throttle return: each throttle butterfly spindle must have an external return spring, except double carburetors may alternatively use an internal spring. For the project car, record the installed carburetor family, spindle arrangement, linkage geometry, throttle stops, pedal stop, return-spring arrangement, and free-return behavior before carburetor adjustment, first start, or event-readiness claims.
 
 ## Remaining Lead-Only Research Package
 

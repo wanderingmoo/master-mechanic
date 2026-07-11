@@ -24,7 +24,7 @@ Please provide clear photos, scans, or measurements for:
 - engine block casting number, date code, main caps, builder marks, bore, stroke, crank markings, rods, pistons, and any build sheet;
 - Gurney-Weslake cylinder-head casting/foundry marks, serials, chamber photos, port photos, valve sizes, plug details, rocker gear, manifold angle, and repair history;
 - cam card, lifter type, rocker ratio, pushrod length, spring part numbers, spring installed height, valve-lash notes, and rev-limit notes if supplied by the builder;
-- carburetor model/series/serials, choke sizes, jet stacks, emulsion tubes, pump jets, float/needle/seat details, linkage, throttle stops, manifold markings, spacers, gaskets, filters, and fuel-pressure gauge location;
+- carburetor model/series/serials, choke sizes, jet stacks, emulsion tubes, pump jets, float/needle/seat details, linkage, throttle stops, return springs, pedal stop, manifold markings, spacers, gaskets, filters, and fuel-pressure gauge location;
 - distributor/trigger system, advance mechanism, coil, ignition box, plug wires, spark plugs, and tach drive;
 - fuel tank/cell manufacturer, capacity, date/certification, foam, filler cap, secondary cap retention, vents, pumps, regulator, filters, hose spec/date, and line routing;
 - oil-system layout: sump or tank, pump, cooler, filter, thermostat, pressure relief, priming notes, line sizes, breathers, and catch tank;
