@@ -64,7 +64,7 @@ Planned publication target when final packaging is ready: `https://github.com/wa
 - S022 - The Henry Ford remote research-services path.
 - S023 - Official 24H Le Mans / ACO track-record source path.
 - S024 - Gurney-Weslake official homepage.
-- S025 - Official 24H Le Mans palmarès API 1968 winner row.
+- S025 - Official 24H Le Mans palmarès API 1968 winner row; archived locally as JSON with checksum.
 - S028 - The Henry Ford Dave Friedman Collection finding aid with Ford Motor Company Racing, GT Program, and Shelby Racing box/folder targets.
 
 ## Mechanic-ready guidance available now

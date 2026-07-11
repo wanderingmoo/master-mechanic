@@ -7,8 +7,10 @@
 - Type: official 24H Le Mans / ACO race-history API
 - Evidence tier: 1
 - URL: https://api.lemans.org/api/palmares/year/1968?page=0&count=40
-- Local status: verified
+- Local status: verified; archived locally at `sources/archive/S025-aco-1968-palmares-api.json`
 - Capture date: 2026-07-11
+- Local archive SHA-256: `3af507df196011a8a35933d03d09b5a4e0315c22c6f422a95f3b3727c6c8c1f4`
+- Payload status: JSON payload, 59,606 bytes, parses with top-level `results` and `pagination`; 41 result rows were present when archived
 
 ## Why this matters
 

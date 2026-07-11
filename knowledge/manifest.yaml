@@ -147,6 +147,10 @@ source_archives:
     path: "sources/archive/S019-fia-appendix-k-2025-updated-2026.pdf"
     sha256: "b87e34c9dd299b90fa5a5d622163e0ca38f3099a276d3701a61cdd8141bce268"
     tags: ["fia", "appendix-k", "safety", "historic", "pdf"]
+  - id: "S025"
+    path: "sources/archive/S025-aco-1968-palmares-api.json"
+    sha256: "3af507df196011a8a35933d03d09b5a4e0315c22c6f422a95f3b3727c6c8c1f4"
+    tags: ["aco", "24h-lemans", "1968", "palmares", "race-history", "json"]
   - id: "S027"
     path: "sources/archive/S027-ford-heritage-vault-racing-heritage-gt40-concept.pdf"
     sha256: "adc9ad5d300953633917e53ee913dae2a56472dde13bc6a94a1afbd40d279c0b"
