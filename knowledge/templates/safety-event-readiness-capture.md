@@ -11,6 +11,8 @@ Use this template before any claim that the GT40 is safe, track-ready, race-read
 - Target event / sanctioning body:
 - Event date:
 - FIA Appendix K / HTP applicable?:
+- Article 5 compulsory or recommended for this event/use?:
+- Scrutineering presentation safety-declaration reviewed?:
 - Relevant sources checked:
   - S019 FIA Appendix K 2025 updated 2026:
   - Event supplementary regulations:

@@ -22,6 +22,7 @@ Source S019 establishes the following high-level safety gates:
 
 - Historic cars must preserve period specification while meeting defined additional safety provisions.
 - Ageing and corrosion must be actively considered when judging component integrity.
+- Article 5 safety prescriptions are compulsory except on Regularity Rallies, where they are recommended; confirm the event type before interpreting readiness.
 - Scrutineering presentation is treated as a declaration that the car is safe to compete.
 - A black-dot safety-control procedure can make a car absolutely non-conforming for safety and prevent it from competing until verified correction.
 - Battery terminal protection, battery chemistry/location, battery covering, and master-switch behavior must be verified.
