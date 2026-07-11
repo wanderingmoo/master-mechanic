@@ -35,6 +35,7 @@
 - 76.2 mm stroke evidence:
 - 4942.16 cc / 302 cu in evidence:
 - C8FE-6300-A crankshaft evidence:
+- S015 crankshaft/flywheel/damper photo comparison:
 
 ## Source/build sheet references
 

@@ -59,6 +59,8 @@ Source S015 promotes the 1968 Gurney-Weslake / 302 context above lead-only statu
 
 The Weslake-head amendment page also supplies visual identification anchors: engine-right and engine-left photographs showing Gurney-Weslake valve covers with clutch and accessories fitted but without air filter or gearbox, plus a combustion-chamber/valve photograph. Use these as comparison prompts only. Do not identify installed heads or issue settings from photographs alone.
 
+The 302 engine evolution amendment includes a crankshaft photograph with flywheel and damper attached. Use it only as a visual comparison prompt; installed crankshaft identity still requires markings, measurements, build records, and direct inspection.
+
 This is homologation evidence, not a build sheet. It does not provide compression ratio, cam timing, valve lash, spring pressures, torque values, carburetor jetting, ignition advance, oil specification, or rev limit.
 
 S015 also leaves valve diameter, valve lift, spring, tappet-clearance, valve-timing, air-filter, carburetor, and injection fields blank in the inspected copy. Do not infer lash, cam timing, carburetor model, or jetting from the homologation form.
