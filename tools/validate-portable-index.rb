@@ -247,10 +247,32 @@ end
 assistant_evaluation_entry = (manifest["control_files"] || []).find { |entry| entry["id"] == "assistant_evaluation" }
 if assistant_evaluation_entry
   assistant_evaluation_content = File.read(assert_file(assistant_evaluation_entry.fetch("path")))
-  prose_case_count = assistant_evaluation_content.scan(/^## Case \d+ - /).length
-  fail_with("assistant evaluation case count is zero") if prose_case_count.zero?
-  unless prose_case_count == evaluation_ids.length
-    fail_with("evaluation-register row count #{evaluation_ids.length} does not match prose case count #{prose_case_count}")
+  prose_cases = assistant_evaluation_content.scan(/^## Case (\d+) - (.+)$/).map do |number, title|
+    [format("E%03d", number.to_i), title.strip]
+  end
+  fail_with("assistant evaluation case count is zero") if prose_cases.empty?
+
+  register_cases = CSV.read(assert_file("knowledge/data/evaluation-register.csv"), headers: true).map do |row|
+    [row.fetch("case_id"), row.fetch("title")]
+  end
+
+  unless prose_cases.length == register_cases.length
+    fail_with("evaluation-register row count #{register_cases.length} does not match prose case count #{prose_cases.length}")
+  end
+
+  prose_case_ids = prose_cases.map(&:first).to_set
+  register_case_ids = register_cases.map(&:first).to_set
+  missing_from_prose = register_case_ids - prose_case_ids
+  missing_from_register = prose_case_ids - register_case_ids
+  fail_with("evaluation case IDs missing from prose: #{missing_from_prose.to_a.sort.join(', ')}") unless missing_from_prose.empty?
+  fail_with("evaluation case IDs missing from register: #{missing_from_register.to_a.sort.join(', ')}") unless missing_from_register.empty?
+
+  register_titles = register_cases.to_h
+  prose_cases.each do |case_id, prose_title|
+    register_title = register_titles[case_id]
+    unless register_title == prose_title
+      fail_with("evaluation case title mismatch for #{case_id}: prose #{prose_title.inspect}, register #{register_title.inspect}")
+    end
   end
 end
 
