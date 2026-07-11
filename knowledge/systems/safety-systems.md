@@ -27,6 +27,7 @@ Source S019 establishes the following high-level safety gates:
 - Fuel, oil, and brake-line routing/protection must be verified for deterioration and fire risk.
 - Fuel tank/cell, safety foam, maximum capacity, filler cap retention, fuel-line material, and line pressure rating must be verified.
 - Fireproof bulkheads, extinguisher/fire-system compliance, oil catch tank or retained closed breathing, mirrors, rear warning light, harness standards, harness routing, and anchorages must be verified.
+- For racing, two rear-view mirrors with at least 90 cm2 total glass area must be verified; front-lamp covering, rear brake-light operation, and rear red warning-light installation must be checked against event use.
 
 ## Current Appendix K Restraint Details
 
@@ -65,7 +66,7 @@ Capture:
 - Fire: extinguisher or fire-system standard, date, capacity, agent, nozzles, pull handles, anti-torpedo mounting, and service record.
 - Fuel/fire: tank or cell maker/date/certification, foam condition, capacity, filler cap secondary device, vents, line material, line pressure rating, fittings, heat shielding, and bulkheads.
 - Oil containment: breather layout, catch tank capacity, or proof that retained closed-circuit breathing makes catch tanks unnecessary.
-- Electrical safety: battery chemistry/location/cover, terminal protection, cable routing, master-switch type/location/marking, engine-stop behavior, charging shutdown, fire-system circuit exception, and rear warning light.
+- Electrical/visibility safety: battery chemistry/location/cover, terminal protection, cable routing, master-switch type/location/marking, engine-stop behavior, charging shutdown, fire-system circuit exception, mirror count/area, front-lamp covering for closed-circuit racing, brake-light operation, and rear warning-light location/area/output/switching.
 
 ## Do Not Guess
 

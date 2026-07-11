@@ -41,6 +41,8 @@ S009 Article 290 also provides a period two-seater racing-car lighting benchmark
 
 Source S019 adds current FIA Appendix K safety gates for battery terminal protection, dry/covered cockpit batteries, lithium-battery prohibition, spark-proof master-switch accessibility and marking, engine-stop behavior, fire-extinguisher circuit exceptions, and rear warning-light function. These are event-readiness checks, not proof that the installed wiring is safe or compliant.
 
+S019 also provides current event visibility gates: front-lamp glass must be taped or covered in closed-circuit races, cars originally equipped with rear brake lights must have them working at race start, and the rear red warning light has location, visible-area, mounting, driver-switching, and output requirements. Treat these as inspection requirements for the lighting harness, switches, lamps, brake-light actuation, and warning-light installation before event use.
+
 Source S015 does not resolve electrical or instrument settings. The blank fields are evidence boundaries, not permission to substitute generic GT40, Ford small-block, or replica wiring assumptions.
 
 ## Electrical Evidence Gate
@@ -51,7 +53,7 @@ Before energizing, repairing, or trusting an electrical subsystem, capture:
 - Charging/starting: alternator or generator make/model, regulator, starter, solenoid, drive method, cable routing, and expected output source.
 - Ignition: distributor/trigger type, coil/box, ballast/resistor if fitted, plug leads, tach drive, kill-switch behavior, and timing-source evidence.
 - Harness/protection: fuse/relay panel, unfused feeds, grounds, bulkhead penetrations, wire gauges, insulation condition, connector IDs, pump/fan circuits, and fire-system or master-switch interactions.
-- Instruments: gauge make/range, sender make/range, capillary lines, warning lamps, switch labels, and calibration evidence.
+- Instruments and lamps: gauge make/range, sender make/range, capillary lines, warning lamps, brake lights, headlamps/front-lamp covers, switch labels, rear red warning-light location/area/output, and calibration or function-test evidence.
 
 Use [../templates/electrical-instruments-capture.md](../templates/electrical-instruments-capture.md) to capture installed evidence before updating ignition, harness, charging, battery, master-switch, instrument, or warning-light records.
 

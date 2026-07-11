@@ -41,7 +41,10 @@
 - Oil catch tanks are required outside rallies: 2 litres minimum up to 2 litres engine capacity, 3 litres minimum above 2 litres, unless retained original closed-circuit breathing applies.
 - Each throttle butterfly spindle must have an external return spring, except double carburetors may alternatively use an internal spring.
 - For racing, two rear-view mirrors are required with at least 90 cm2 total glass area.
+- For closed-circuit races, the glass of all front lamps must be taped or covered.
+- Cars originally equipped with rear brake lights must have them working at the start of the race.
 - A red rear warning light is required at race start and must be rear-facing, visible, securely attached, driver-switchable, and either an incandescent 21 W minimum or equivalent LED output.
+- The red rear warning light must be less than 10 cm from the car centreline with a 20-40 cm2 area, or full-width bodywork may use two lights at equal distance from the centreline.
 - Two-seat racing cars from Period F onward must use FIA 8853/98 or FIA 8853-2016 harnesses.
 - Safety belts must not be anchored to seats or seat supports.
 - Shoulder straps must run rearward/downward; Appendix K recommends a 10 degree angle and prohibits more than 45 degrees to horizontal from the upper backrest edge.
