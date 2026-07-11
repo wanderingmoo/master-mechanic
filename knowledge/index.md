@@ -114,3 +114,18 @@ This is the local table of contents for the GT40 mechanics knowledge base. Keep 
 | [../.github/skills/gt40-settings-governance/SKILL.md](../.github/skills/gt40-settings-governance/SKILL.md) | Skill for blocking unsafe setup values until evidence gates are met. |
 | [../.github/skills/gt40-safety-event-readiness/SKILL.md](../.github/skills/gt40-safety-event-readiness/SKILL.md) | Skill for blocking safety, track-readiness, race-readiness, Appendix K, and HTP/event claims until installed evidence and event rules are captured. |
 | [../.github/skills/vintage-racecar-diagnostics/SKILL.md](../.github/skills/vintage-racecar-diagnostics/SKILL.md) | Skill for safe diagnostic reasoning on vintage racecars. |
+
+## Local Tools
+
+| Tool | Purpose |
+|---|---|
+| [../tools/print-system-brief.rb](../tools/print-system-brief.rb) | Prints one system's facts, configuration, parts, settings, evidence gaps, and related evaluation cases. |
+| [../tools/print-parts-config.rb](../tools/print-parts-config.rb) | Prints focused component/configuration and parts-identification gates with required evidence, related gaps, and next actions. |
+| [../tools/print-settings-gates.rb](../tools/print-settings-gates.rb) | Prints setting gates and safe next actions by system or setting ID. |
+| [../tools/print-evidence-request.rb](../tools/print-evidence-request.rb) | Prints evidence requests by gap, system, priority, or status. |
+| [../tools/print-facts.rb](../tools/print-facts.rb) | Prints source-backed facts by system, source, label, or query. |
+| [../tools/print-agent-evaluation-plan.rb](../tools/print-agent-evaluation-plan.rb) | Prints the assistant regression prompts from the evaluation register. |
+| [../tools/print-coverage-audit.rb](../tools/print-coverage-audit.rb) | Prints register-driven coverage by system. |
+| [../tools/print-completion-audit.rb](../tools/print-completion-audit.rb) | Prints the completion audit against the full mechanics-assistant objective. |
+| [../tools/validate-portable-index.rb](../tools/validate-portable-index.rb) | Validates portable indexes, cross-references, assistant metadata, and local archive checksums. |
+| [../tools/run-quality-gate.rb](../tools/run-quality-gate.rb) | Runs portable-index validation plus representative assistant/tool checks. |

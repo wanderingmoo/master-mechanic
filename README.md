@@ -102,6 +102,15 @@ ruby tools/print-settings-gates.rb --system engine
 ruby tools/print-settings-gates.rb --setting ST033
 ```
 
+Print the current parts and configuration evidence gates with:
+
+```bash
+ruby tools/print-parts-config.rb
+ruby tools/print-parts-config.rb --system engine
+ruby tools/print-parts-config.rb --item C004
+ruby tools/print-parts-config.rb --query "Weber"
+```
+
 Print focused evidence requests for a gap, system, or priority:
 
 ```bash

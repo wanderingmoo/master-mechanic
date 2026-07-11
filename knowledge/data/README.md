@@ -40,6 +40,7 @@ The registers are CSV files so they can be searched, diffed, edited, and validat
 - `tools/print-coverage-audit.rb` summarizes fact labels, settings states, evidence-gap priorities/statuses, P1 open gaps, and related evaluation cases by system.
 - `tools/print-completion-audit.rb` checks every taxonomy system against completion gates for verified facts, mechanic-system configuration/part/settings coverage, blocked settings, open P1 evidence gaps, open installed-hardware identity, and related evaluation cases.
 - `tools/print-facts.rb` prints fact-register entries by system, source ID, label, or keyword and joins source titles for mechanic-facing context.
+- `tools/print-parts-config.rb` prints component/configuration and parts-identification gates from `configuration-register.csv` and `parts-register.csv`, including source context, required evidence, related gaps, and next actions.
 - `tools/print-settings-gates.rb` prints mechanic-facing settings gates from `settings-register.csv` and links each setting to related evidence gaps.
 - `tools/print-evidence-request.rb` prints focused evidence requests from `evidence-gap-register.csv` by gap, system, priority, or status.
 - `tools/print-agent-evaluation-plan.rb` prints assistant regression prompts from `evaluation-register.csv`.

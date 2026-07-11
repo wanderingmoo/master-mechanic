@@ -9,6 +9,7 @@ COMMANDS = [
   ["ruby", "tools/validate-portable-index.rb"],
   ["ruby", "tools/print-completion-audit.rb", "--format", "text"],
   ["ruby", "tools/print-coverage-audit.rb", "--system", "engine"],
+  ["ruby", "tools/print-parts-config.rb", "--system", "engine", "--format", "text"],
   ["ruby", "tools/print-system-brief.rb", "--system", "general", "--format", "text"],
   ["ruby", "tools/print-system-brief.rb", "--system", "brakes_wheels_tires", "--format", "text"],
   ["ruby", "tools/print-agent-evaluation-plan.rb", "--case", "E014", "--format", "text"],

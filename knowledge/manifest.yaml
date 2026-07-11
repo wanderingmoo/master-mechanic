@@ -270,6 +270,9 @@ tools:
   - id: "print_facts"
     path: "tools/print-facts.rb"
     tags: ["facts", "sources", "lookup", "mechanic-facing"]
+  - id: "print_parts_config"
+    path: "tools/print-parts-config.rb"
+    tags: ["parts", "configuration", "evidence-gates", "mechanic-facing"]
   - id: "print_evidence_request"
     path: "tools/print-evidence-request.rb"
     tags: ["evidence", "request", "gaps", "mechanic-facing"]
