@@ -37,6 +37,8 @@ Apply [../procedures/component-identification.md](../procedures/component-identi
 
 Source S009 includes period provisions for a general electric circuit breaker and enclosed batteries in racing-car safety sections. Use this as a prompt to document the master switch, battery enclosure, alternator/generator isolation behavior, pump/fan shutdown behavior, and fire-system wiring. Do not infer a wiring diagram or fuse sizing from the regulation.
 
+S009 Article 290 also provides a period two-seater racing-car lighting benchmark: at least two braking lights; for night racing, at least two head-lights as effective as normal touring-car equipment and two rear direction indicators; supplementary regulations could require additional lighting. Treat this as an inspection prompt for brake-light, headlight, rear-indicator, switch, fuse, and wiring evidence, not as a final event-readiness or wiring specification.
+
 Source S019 adds current FIA Appendix K safety gates for battery terminal protection, dry/covered cockpit batteries, lithium-battery prohibition, spark-proof master-switch accessibility and marking, engine-stop behavior, fire-extinguisher circuit exceptions, and rear warning-light function. These are event-readiness checks, not proof that the installed wiring is safe or compliant.
 
 Source S015 does not resolve electrical or instrument settings. The blank fields are evidence boundaries, not permission to substitute generic GT40, Ford small-block, or replica wiring assumptions.

@@ -40,6 +40,8 @@ Source S009 verifies a regulation baseline for four-wheel braking with retained 
 
 For Group 4 recognition, Appendix J also tied the brake-system type to the recognized minimum series. This means caliper/disc/drum type and hydraulic layout should be documented before any restoration substitution is treated as correct.
 
+S009 Article 291 provides a period two-seater racing-car wheel/tyre symmetry benchmark: wheel and tyre size was not restricted in that section if the right and left front axle pair matched and the right and left rear axle pair matched; a spare wheel and tyre was not required. Use this as an inspection prompt only. It does not provide GT40 wheel dimensions, tire construction, center-lock torque, tire pressure, or current event eligibility.
+
 Source S015 verifies hydraulic brake operation in the GT40 No. 224 recognition form. It does not provide final brake-bias, pad, disc, master-cylinder, bedding, fluid, tire-pressure, or center-lock torque settings.
 
 S015 should be used as a checklist for what must be identified on the car, not as a specification source for missing values.

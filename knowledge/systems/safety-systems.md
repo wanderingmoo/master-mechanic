@@ -10,6 +10,12 @@ Source S009 provides a 1968 period safety benchmark. Source S019 adds current FI
 
 Appendix K should be treated as a current event-readiness and inspection source. It does not prove the installed car is compliant.
 
+## 1968 Appendix J Period Benchmark
+
+Source S009 Article 292 provides a period two-seater racing-car safety-equipment checklist: securely mounted dry-chemical fire extinguisher of at least 1 kg, scatter-shield protection where clutch or flywheel failure could endanger the driver, roll-over protection attached to the chassis structure, quick-release safety belt attached to the chassis structure, adequate firewall and floor protection, fuel/oil/water tank isolation from the cockpit, fuel-tank venting and bulkhead isolation, and fully enclosed batteries.
+
+Use this as historical safety context and an inspection prompt. It does not prove this GT40 is event-ready, does not replace current Appendix K or event-specific rules, and does not verify installed equipment condition, mounting, dates, or compliance.
+
 ## Current Appendix K Implications
 
 Source S019 establishes the following high-level safety gates:

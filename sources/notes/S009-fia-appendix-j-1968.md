@@ -29,7 +29,9 @@ This is a primary regulation source for the 1968 period. It does not replace For
 - Gearbox ratio selection was freer than basic gearbox identity; the regulation distinguished recognized gear series from ratio choice.
 - Brake-system and suspension principles were regulation-sensitive; these are not safe places to substitute generic later GT40 or replica assumptions.
 - Minimum-weight treatment was tied to recognition documents and minimum tables; the table includes 700 kg for the over-3,000 cc to 5,000 cc sportscar class.
-- Appendix J also contains safety-equipment provisions for two-seater racing cars, including fire extinguisher, scatter shield where clutch/flywheel failure can endanger the driver, roll bar, safety belt, firewall/floor, tank isolation, enclosed batteries, circuit breaker, and fuel-tank filling/venting requirements. These are indexed as period safety benchmarks, not automatically as Group 4 GT40 requirements.
+- Article 290 for two-seater racing cars listed minimum lighting equipment, including at least two braking lights; for night racing, two head-lights at least as effective as normal touring-car equipment and two rear direction indicators; event supplementary regulations could require additional lighting.
+- Article 291 for two-seater racing cars did not restrict wheel or tyre size, but required left/right identity on the front axle pair and left/right identity on the rear axle pair; a spare wheel and tyre was not required.
+- Article 292 contains safety-equipment provisions for two-seater racing cars, including fire extinguisher, scatter shield where clutch/flywheel failure can endanger the driver, roll bar, safety belt, firewall/floor, tank isolation, enclosed batteries, circuit breaker, and fuel-tank filling/venting requirements. These are indexed as period safety benchmarks, not automatically as Group 4 GT40 requirements.
 
 ## Mechanic-facing implications
 
