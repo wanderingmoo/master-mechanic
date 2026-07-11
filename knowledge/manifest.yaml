@@ -184,6 +184,9 @@ systems:
   - id: "safety_systems"
     path: "knowledge/systems/safety-systems.md"
     tags: ["safety", "appendix-k", "fire", "belts", "fuel-cell"]
+  - id: "general_workshop"
+    path: "knowledge/systems/general-workshop.md"
+    tags: ["general", "workshop", "fasteners", "torque", "settings"]
 procedures:
   - id: "component_identification"
     path: "knowledge/procedures/component-identification.md"
@@ -237,6 +240,9 @@ templates:
   - id: "safety_event_readiness_capture"
     path: "knowledge/templates/safety-event-readiness-capture.md"
     tags: ["safety", "appendix-k", "template", "event-readiness"]
+  - id: "fastener_torque_capture"
+    path: "knowledge/templates/fastener-torque-capture.md"
+    tags: ["general", "fasteners", "torque", "template", "settings"]
 assistant_assets:
   agent: ".github/agents/GT40MasterMechanic.agent.md"
   skills:

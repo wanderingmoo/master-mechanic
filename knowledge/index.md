@@ -72,6 +72,7 @@ This is the local table of contents for the GT40 mechanics knowledge base. Keep 
 | Electrical and instruments | [systems/electrical-instruments.md](systems/electrical-instruments.md) | S015 ignition/generator/battery boundaries and S019 safety gates captured; installed wiring variant still required. |
 | Fuel, oil, and cooling | [systems/fuel-oil-cooling.md](systems/fuel-oil-cooling.md) | S015 fuel/oil/cooling boundaries and S019 fuel/fire-safety gates captured; tank, pump, cooler, and plumbing variant still required. |
 | Safety systems | [systems/safety-systems.md](systems/safety-systems.md) | S019 current FIA Appendix K safety/event-readiness gates captured; installed safety equipment and event rules still required. |
+| General workshop and fastener control | [systems/general-workshop.md](systems/general-workshop.md) | Car-wide torque charts are blocked; exact joint, fastener, component source, condition, and reuse/locking evidence are required before any torque value. |
 
 ## Procedures
 
@@ -98,6 +99,7 @@ This is the local table of contents for the GT40 mechanics knowledge base. Keep 
 | Electrical and instruments | [templates/electrical-instruments-capture.md](templates/electrical-instruments-capture.md) | Capture ignition, generator/charging, battery, harness, instruments, master-switch, and warning-light evidence. |
 | Brakes, wheels, and tires | [templates/brakes-wheels-tires-capture.md](templates/brakes-wheels-tires-capture.md) | Capture brake hydraulic, wheel, center-lock, and tire evidence. |
 | Safety event-readiness | [templates/safety-event-readiness-capture.md](templates/safety-event-readiness-capture.md) | Capture Appendix K/event-readiness evidence for belts, fire systems, fuel safety, master switch, battery, warning light, mirrors, and ROPS. |
+| Fastener torque | [templates/fastener-torque-capture.md](templates/fastener-torque-capture.md) | Capture exact joint, fastener, source, lubrication/locking, tool, and reuse evidence before any torque value or sequence is accepted. |
 
 ## Local Assistant Assets
 
