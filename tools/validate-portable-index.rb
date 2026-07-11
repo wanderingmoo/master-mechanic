@@ -72,6 +72,7 @@ assert_manifest_covers_files(manifest, "templates", "knowledge/templates/*.md")
 assert_manifest_covers_files(manifest, "tools", "tools/*.rb")
 
 agent_path = manifest.dig("assistant_assets", "agent")
+agent_content = nil
 if agent_path
   agent_full = assert_file(agent_path)
   agent_content = File.read(agent_full)
@@ -110,7 +111,20 @@ manifest_skill_paths.each do |path|
 
   openai_yaml = path.sub(%r{/SKILL\.md\z}, "/agents/openai.yaml")
   openai_full = assert_file(openai_yaml)
-  YAML.safe_load(File.read(openai_full))
+  openai_metadata = YAML.safe_load(File.read(openai_full)) || {}
+  if openai_metadata["name"] && openai_metadata["name"] != frontmatter["name"]
+    fail_with("openai.yaml name mismatch for #{path}: #{openai_metadata['name']} != #{frontmatter['name']}")
+  end
+  default_prompt = openai_metadata.dig("interface", "default_prompt").to_s
+  if !default_prompt.empty? && !default_prompt.include?("$#{frontmatter['name']}")
+    fail_with("openai.yaml default_prompt does not reference $#{frontmatter['name']}: #{openai_yaml}")
+  end
+end
+
+if agent_content
+  skill_names.each do |skill_name|
+    fail_with("agent does not reference installed skill #{skill_name}") unless agent_content.include?(skill_name)
+  end
 end
 
 github_metadata_globs = [
