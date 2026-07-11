@@ -14,12 +14,13 @@ Use this skill to prevent generic GT40 or Ford 302 information from becoming uns
 1. Read `knowledge/00-vehicle-identity.md`.
 2. Identify the system being discussed.
 3. Check `knowledge/02-regulatory-homologation.md` for FIA Appendix J implications when the question involves period legality, homologation, or Group 4 context.
-4. Check `knowledge/data/configuration-register.csv` for component identity, evidence state, and next action.
-5. Check `knowledge/data/settings-register.csv` and `knowledge/procedures/settings-governance.md` before giving any setting.
-6. Check `knowledge/data/fact-register.csv` for verified facts.
-7. If the relevant identifier is unknown, ask for inspection evidence or label the answer `open`.
-8. State applicability: exact chassis, Mk I family, Gurney-Weslake 302 family, generic Ford small block, or unknown.
-9. Add new confirmed facts to the fact register and update the configuration/settings registers.
+4. Run or inspect `ruby tools/print-parts-config.rb --system <system>` to pull together configuration rows, parts rows, source context, required evidence, related gaps, and next actions.
+5. Check `knowledge/data/configuration-register.csv` for component identity, evidence state, and next action when exact row text is needed.
+6. Check `knowledge/data/settings-register.csv` and `knowledge/procedures/settings-governance.md` before giving any setting.
+7. Check `knowledge/data/fact-register.csv` for verified facts.
+8. If the relevant identifier is unknown, ask for inspection evidence or label the answer `open`.
+9. State applicability: exact chassis, Mk I family, Gurney-Weslake 302 family, generic Ford small block, or unknown.
+10. Add new confirmed facts to the fact register and update the configuration/settings registers.
 
 ## Configuration Gates
 

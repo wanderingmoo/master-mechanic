@@ -14,6 +14,7 @@ Before answering, read or query the relevant parts of:
 - `knowledge/index.md`
 - `knowledge/04-coverage-matrix.md`
 - `tools/print-system-brief.rb --system <system>` output for the affected system when a system-specific register brief is useful
+- `tools/print-parts-config.rb --system <system>` output when the question depends on component identity, compatibility, ordering, machining, or configuration evidence
 - `knowledge/manifest.yaml`
 - `sources/source-register.csv`
 - `knowledge/data/fact-register.csv`
@@ -39,8 +40,9 @@ Before answering, read or query the relevant parts of:
    - assistant assets and local workflow
 2. Check `knowledge/04-coverage-matrix.md` for the system status before giving an answer.
 3. For a system-specific question, run or inspect `ruby tools/print-system-brief.rb --system <system>` to collect facts, configuration items, parts, settings gates, evidence gaps, and related evaluation cases in one brief.
-4. Query the fact, configuration, parts, and settings registers for matching rows when the system brief is too broad or when exact row text is needed.
-5. Classify the answer as one of:
+4. For a part, component identity, compatibility, ordering, machining, or configuration question, run or inspect `ruby tools/print-parts-config.rb --system <system>` or `ruby tools/print-parts-config.rb --item <C###|P###>` before answering.
+5. Query the fact, configuration, parts, and settings registers for matching rows when the generated briefs are too broad or when exact row text is needed.
+6. Classify the answer as one of:
    - verified fact
    - cross-checked fact
    - evidence boundary
@@ -49,13 +51,13 @@ Before answering, read or query the relevant parts of:
    - inspection or commissioning workflow
    - diagnostic workflow
    - source-acquisition task
-6. If the question asks for a numeric setup value, adjustment, torque, clearance, jetting, timing, alignment, brake bias, tire pressure, fluid quantity, or material specification, apply `gt40-settings-governance` before answering.
-7. If the question depends on an installed part identity, serial number, casting number, stamp, measured dimension, or assembly variant, apply `gt40-component-identification` before answering.
-8. If the user supplies a source, document, manual, photo, build sheet, or seller claim, apply `gt40-source-triage` before accepting it into the knowledge base.
-9. If the question involves a fault, symptom, first start, recommissioning, brake issue, fuel leak, oil pressure issue, overheating, misfire, or unsafe drivability condition, apply `vintage-racecar-diagnostics`.
-10. If the question asks whether the car is safe, track-ready, race-ready, Appendix K compliant, HTP/event ready, or asks about belts, fire systems, fuel cells, master switches, batteries, bulkheads, warning lights, mirrors, ROPS/cage, oil catch tanks, or fuel/oil/brake-line safety, apply `gt40-safety-event-readiness`.
-11. If the user provides shop evidence or asks what to record next, choose the matching portable template from `knowledge/templates/` and tell the user which fields unblock the relevant register rows.
-12. Return a mechanic-facing answer with local source IDs and local file paths.
+7. If the question asks for a numeric setup value, adjustment, torque, clearance, jetting, timing, alignment, brake bias, tire pressure, fluid quantity, or material specification, apply `gt40-settings-governance` before answering.
+8. If the question depends on an installed part identity, serial number, casting number, stamp, measured dimension, or assembly variant, apply `gt40-component-identification` before answering.
+9. If the user supplies a source, document, manual, photo, build sheet, or seller claim, apply `gt40-source-triage` before accepting it into the knowledge base.
+10. If the question involves a fault, symptom, first start, recommissioning, brake issue, fuel leak, oil pressure issue, overheating, misfire, or unsafe drivability condition, apply `vintage-racecar-diagnostics`.
+11. If the question asks whether the car is safe, track-ready, race-ready, Appendix K compliant, HTP/event ready, or asks about belts, fire systems, fuel cells, master switches, batteries, bulkheads, warning lights, mirrors, ROPS/cage, oil catch tanks, or fuel/oil/brake-line safety, apply `gt40-safety-event-readiness`.
+12. If the user provides shop evidence or asks what to record next, choose the matching portable template from `knowledge/templates/` and tell the user which fields unblock the relevant register rows.
+13. Return a mechanic-facing answer with local source IDs and local file paths.
 
 ## Non-Negotiables
 

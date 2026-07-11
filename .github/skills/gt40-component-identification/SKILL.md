@@ -12,10 +12,11 @@ Use this skill to convert unknown or lead-only GT40 parts into evidence-backed c
 ## Workflow
 
 1. Read `knowledge/procedures/component-identification.md`.
-2. Locate the relevant row in `knowledge/data/parts-register.csv`.
-3. Check `knowledge/data/configuration-register.csv` for current identity state and required evidence.
-4. Check `knowledge/data/settings-register.csv` before any numeric setting, torque, clearance, pressure, jetting, alignment, fluid, or preload advice.
-5. Capture identifiers before cleaning or adjustment:
+2. Run or inspect `ruby tools/print-parts-config.rb --system <system>` for the affected system, or `ruby tools/print-parts-config.rb --item <C###|P###>` when the relevant register ID is known.
+3. Locate the relevant row in `knowledge/data/parts-register.csv`.
+4. Check `knowledge/data/configuration-register.csv` for current identity state and required evidence.
+5. Check `knowledge/data/settings-register.csv` before any numeric setting, torque, clearance, pressure, jetting, alignment, fluid, or preload advice.
+6. Capture identifiers before cleaning or adjustment:
    - casting numbers
    - serial numbers
    - date codes
@@ -24,9 +25,9 @@ Use this skill to convert unknown or lead-only GT40 parts into evidence-backed c
    - shim stack order
    - linkage positions
    - hose, tire, fuel-cell, belt, and extinguisher dates
-6. Record whether the part was disturbed.
-7. If a source supports the identification, add it to `sources/source-register.csv` and extract only supported claims into `knowledge/data/fact-register.csv`.
-8. Update `knowledge/data/parts-register.csv` and `knowledge/data/configuration-register.csv` only as far as the evidence allows.
+7. Record whether the part was disturbed.
+8. If a source supports the identification, add it to `sources/source-register.csv` and extract only supported claims into `knowledge/data/fact-register.csv`.
+9. Update `knowledge/data/parts-register.csv` and `knowledge/data/configuration-register.csv` only as far as the evidence allows.
 
 ## Decision gates
 

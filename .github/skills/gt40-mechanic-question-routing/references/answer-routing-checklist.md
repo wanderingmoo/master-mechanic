@@ -40,6 +40,7 @@ Read `knowledge/04-coverage-matrix.md`.
 ## 4. Check the registers
 
 - `ruby tools/print-system-brief.rb --system <system>` for a combined system brief
+- `ruby tools/print-parts-config.rb --system <system>` or `--item <C###|P###>` for component identity, compatibility, ordering, machining, or configuration evidence
 - `fact-register.csv` for verified or lead-only facts
 - `configuration-register.csv` for installed versus assumed configuration
 - `parts-register.csv` for component identity and evidence gates

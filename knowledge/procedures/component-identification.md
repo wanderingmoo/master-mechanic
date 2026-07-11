@@ -6,9 +6,10 @@ Use this procedure before ordering parts, applying settings, machining component
 
 ## Required sequence
 
-1. Start with [../data/parts-register.csv](../data/parts-register.csv) and find the relevant `part_id`.
-2. Photograph the part in place before cleaning, disassembly, or adjustment.
-3. Record every visible identifier:
+1. From the repository root, run `ruby tools/print-parts-config.rb --system <system>`, or run `ruby tools/print-parts-config.rb --item <C###|P###>` when the relevant register ID is known.
+2. Use the output to find the relevant `part_id`, configuration item, required evidence, related gaps, and next action.
+3. Photograph the part in place before cleaning, disassembly, or adjustment.
+4. Record every visible identifier:
    - casting numbers
    - serial numbers
    - date codes
@@ -17,10 +18,10 @@ Use this procedure before ordering parts, applying settings, machining component
    - safety-wire or locknut patterns
    - shim stack order
    - hose/fuel-cell/belt dates
-4. Record the component’s location, orientation, and connected systems.
-5. Add or update the row in [../data/configuration-register.csv](../data/configuration-register.csv).
-6. If a source supports the identification, add the source to [../../sources/source-register.csv](../../sources/source-register.csv) and any extracted claim to [../data/fact-register.csv](../data/fact-register.csv).
-7. Only after identity is proven, consult [settings-governance.md](settings-governance.md) for whether a numeric setting can be given.
+5. Record the component’s location, orientation, and connected systems.
+6. Add or update the row in [../data/configuration-register.csv](../data/configuration-register.csv).
+7. If a source supports the identification, add the source to [../../sources/source-register.csv](../../sources/source-register.csv) and any extracted claim to [../data/fact-register.csv](../data/fact-register.csv).
+8. Only after identity is proven, consult [settings-governance.md](settings-governance.md) for whether a numeric setting can be given.
 
 ## Evidence standard by task
 

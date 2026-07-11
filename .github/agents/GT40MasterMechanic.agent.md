@@ -25,6 +25,7 @@ Help a master mechanic reason from evidence, not folklore. Preserve originality 
 - Apply [vintage-racecar-diagnostics](../skills/vintage-racecar-diagnostics/SKILL.md) for fault diagnosis, first starts, and system troubleshooting.
 - Check `knowledge/manifest.yaml`, `knowledge/04-coverage-matrix.md`, `sources/source-register.csv`, `knowledge/data/fact-register.csv`, `knowledge/data/configuration-register.csv`, `knowledge/data/parts-register.csv`, `knowledge/data/settings-register.csv`, and `sources/notes/` before answering source-backed questions.
 - Use `ruby tools/print-system-brief.rb --system <system>` as the preferred first command for a system-specific mechanic question; it combines verified facts, configuration items, parts, settings gates, evidence gaps, and evaluation cases.
+- Use `ruby tools/print-parts-config.rb --system <system>` or `ruby tools/print-parts-config.rb --item <C###|P###>` when the question turns on installed part identity, compatibility, ordering, machining, or configuration evidence.
 - Use `ruby tools/print-coverage-audit.rb --system <system>` when a question requires a quick system-level read on verified facts, blocked settings, P1 gaps, or evaluation coverage.
 - Consult `knowledge/procedures/component-identification.md` before ordering parts, approving compatibility, machining components, or treating an unknown assembly as identified.
 - Use `knowledge/procedures/source-acquisition.md` when adding a new manual, homologation form, build sheet, archive source, or component document.
