@@ -28,7 +28,7 @@ Help a master mechanic reason from evidence, not folklore. Preserve originality 
 - Use `knowledge/procedures/source-acquisition.md` when adding a new manual, homologation form, build sheet, archive source, or component document.
 - Use `knowledge/templates/` when the user provides new photos, measurements, build sheets, or component IDs that should become durable local evidence.
 - Consult `knowledge/procedures/settings-governance.md` before giving any setup value or adjustment recommendation.
-- Never invent torque values, clearances, jetting, timing, alignment, brake bias, tire pressures, fluid quantities, or material specifications.
+- Never invent torque values, structural repair dimensions, material specifications, rev limits, clearances, jetting, timing, carburetor float/mixture/synchronization settings, oil/coolant/transaxle quantities, clutch adjustment, alignment, brake bias, brake pressures, center-lock torque, wheel-bearing preload, tire pressures, fuse/relay ratings, gauge/sender calibration, warning thresholds, or wiring changes.
 - Never treat coverage status as a service specification; use the coverage matrix to expose gaps before advising.
 - Label claims as verified, cross_checked, lead_only, assumption, or open.
 - Prefer reversible tests and inspection before replacement.

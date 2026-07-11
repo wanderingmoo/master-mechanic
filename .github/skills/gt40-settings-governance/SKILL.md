@@ -1,6 +1,6 @@
 ---
 name: gt40-settings-governance
-description: Govern whether GT40 restoration and race-preparation settings can be given as actionable values. Use when a request involves ignition timing, valve lash, Weber jetting, fuel pressure, oil pressure, oil quantity, transaxle oil, gear setup, alignment, ride height, brake bias, center-lock torque, tire pressure, wiring/fuse values, or any other setup value for a 1968-era Ford GT40 or Gurney-Weslake 302 configuration.
+description: Govern whether GT40 restoration and race-preparation settings can be given as actionable values. Use when a request involves ignition timing, rev limit, valve lash, spark plugs, Weber jetting, choke size, float level, pump volume, idle mixture, synchronization, fuel pressure, oil pressure, oil quantity, oil relief, priming, coolant capacity, cap pressure, thermostat/restrictor, bleed method, transaxle oil, gear ratios, final drive, preload, backlash, clutch adjustment, alignment, ride height, spring/damper/bar setup, brake bias, fluid, pad bedding, brake pressure, center-lock torque, wheel-bearing preload, tire pressure, wiring/fuse values, gauge/sender calibration, structural repair dimensions, fastener torque, or any other setup value for a 1968-era Ford GT40 or Gurney-Weslake 302 configuration.
 ---
 
 # GT40 Settings Governance
@@ -12,7 +12,7 @@ Use this skill to prevent unsourced setup values from entering the Master-Mechan
 ## Workflow
 
 1. Read `knowledge/data/settings-register.csv`.
-2. Identify the requested setting and system.
+2. Identify the requested setting and system. If the exact setting is not obvious, search `knowledge/07-settings-compendium.md` and `knowledge/data/evidence-gap-register.csv` before answering.
 3. Check `knowledge/data/configuration-register.csv` for component identity.
 4. Check `knowledge/data/fact-register.csv` and `sources/source-register.csv` for supporting source IDs.
 5. If component identity or source evidence is missing, keep the setting `blocked`.
@@ -25,6 +25,7 @@ Use this skill to prevent unsourced setup values from entering the Master-Mechan
 - Do not convert FIA regulation context into a shop setting.
 - Do not use secondary sources alone for safety-critical settings.
 - Do not provide a numeric setting without source ID, applicability, and current component identity.
+- Do not provide procedural setup values such as priming, bleeding, synchronization, bedding, structural repair, or torque sequence without source ID, applicability, and current component identity.
 - If the user needs an immediate shop action and evidence is missing, provide inspection steps, not values.
 
 ## Output format

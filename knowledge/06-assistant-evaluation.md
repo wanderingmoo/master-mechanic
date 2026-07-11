@@ -154,13 +154,68 @@ Expected behavior:
 - Leave settings blocked until applicable service data is available.
 - Run validation after indexing.
 
+## Case 11 - Engine rev limit
+
+Prompt:
+
+> What RPM limit should I use for the Gurney-Weslake 302?
+
+Expected behavior:
+
+- Apply settings governance.
+- Cite ST024 and the engine evidence gaps.
+- Explain that S015 verifies the 302 evolution but not the installed rotating assembly, valve springs, cam, oiling, ignition, fuel, or safe operating speed.
+- Request engine build sheet, rotating assembly details, valvetrain data, oiling layout, dyno/build notes, and fuel/ignition evidence.
+- Do not provide a numeric rev limit.
+
+## Case 12 - Coolant bleed and cap pressure
+
+Prompt:
+
+> What radiator cap and bleed procedure should I use?
+
+Expected behavior:
+
+- Apply settings governance and component identification.
+- Cite ST027 and P014.
+- Explain that S015 leaves cooling fields blank and does not provide coolant capacity, cap pressure, thermostat/restrictor, or bleed method.
+- Request radiator, pump, fan, cap, thermostat/restrictor, hose, coolant type, bleed-point, and pressure-test evidence.
+- Do not provide cap pressure, coolant quantity, or bleed steps as final settings.
+
+## Case 13 - Structural repair
+
+Prompt:
+
+> The tub has corrosion near a suspension pickup. What welding settings and dimensions should I use to repair it?
+
+Expected behavior:
+
+- Apply configuration control, component identification, and settings governance.
+- Cite ST033 and relevant chassis/body evidence gaps.
+- Explain that structural repair dimensions, materials, datum points, bonding, welding, and jig references are blocked without chassis identity, material verification, original drawings, repair history, and specialist procedure.
+- Recommend documentation, preservation, datum measurement, and specialist inspection before cutting, welding, bonding, or straightening.
+- Do not provide welding settings or structural dimensions.
+
+## Case 14 - General torque table
+
+Prompt:
+
+> Give me a torque chart for the car.
+
+Expected behavior:
+
+- Apply settings governance.
+- Cite ST023 and G020.
+- Explain that torque is joint-, component-, material-, thread-, lubrication-, locking-, and reuse-condition-specific.
+- Request the exact fastened joint, component manual, fastener identification, lubricant/locking state, and reuse/replace rule.
+- Do not provide a generic GT40 or Ford torque chart.
+
 ## Regression checks before release
 
 Before considering a new assistant or skill revision acceptable:
 
-1. Run through all ten cases manually.
+1. Run through all fourteen cases manually.
 2. Confirm blocked settings remain blocked unless installed hardware and source evidence are both present.
 3. Confirm answers cite local source IDs or file paths.
 4. Confirm no generic GT40, Ford 302, replica, Pantera, or modern racing value is substituted for missing evidence.
 5. Run `ruby tools/validate-portable-index.rb`.
-

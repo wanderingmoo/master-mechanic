@@ -27,17 +27,22 @@ This repository is a standalone evidence-controlled knowledge base for a 1968-er
 Never invent or infer:
 
 - torque values;
+- structural repair dimensions, datum dimensions, material specifications, bonding settings, or welding settings;
+- rev limits;
 - valve lash;
 - ignition timing or curves;
 - spark plug type, reach, heat range, or gap;
 - Weber jetting, choke size, float level, or fuel pressure;
-- oil type, oil quantity, or pressure target;
-- coolant quantity, cap pressure, or bleed method;
-- transaxle oil, preload, backlash, ratios, or selector setup;
+- Weber pump volume, idle mixture, or linkage synchronization;
+- oil type, oil quantity, pressure target, relief setting, or priming procedure;
+- coolant quantity, cap pressure, thermostat/restrictor, or bleed method;
+- transaxle oil, preload, backlash, ratios, final drive, or selector setup;
+- clutch adjustment or release geometry;
 - ride height, corner weights, spring rate, damper clicks, anti-roll-bar settings, camber, caster, toe, or bump steer;
-- brake bias, master-cylinder sizing, pad bedding, fluid, or center-lock torque;
+- brake bias, master-cylinder sizing, pad bedding, fluid, brake pressure targets, or center-lock torque;
+- wheel-bearing or hub preload/end-float settings;
 - tire pressure;
-- fuse/relay ratings or wiring changes.
+- fuse/relay ratings, gauge/sender calibration, warning thresholds, or wiring changes.
 
 These become actionable only when the exact installed component and an applicable source are both known.
 
@@ -67,4 +72,3 @@ When adding evidence:
 ## Repo boundary
 
 This is a separate project/repo named `Master-Mechanic`. Keep repo-specific instructions, local indexes, assistant assets, and source notes here. Do not blend this with unrelated customer-engagement, PRISM, or other local knowledge-base work.
-
