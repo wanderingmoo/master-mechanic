@@ -27,12 +27,14 @@ S015 verifies that the FIA Ford GT 40 No. 224 package included a 1968 Weslake al
 - It says road-car heads could be machined with different port or valve sizes than the full-racing heads, and that some internal passageways differ.
 - It says many road-car heads were later converted as near to race-car specification as the Gurney factory could make them and fitted to Indy cars.
 - It says Aeroplane and Motor cast heads were usually branded Gurney Eagle, while some may later have been fitted with Gurney-Weslake rocker covers.
+- The page includes comparison photo captions identifying race-car head versus road-car head views.
 
 ## Mechanic implications
 
 - Use S024 as an identification and provenance aid for head inspection.
 - Treat rocker-cover lettering as insufficient proof of GT40 race-head identity.
 - Treat Gurney Eagle branding, Gurney-Weslake rocker-cover swaps, and later road-head conversions as explicit inspection risks.
+- Use the S024 comparison photos only as orientation for what to photograph and compare; visual comparison alone is not installed-head proof.
 - For this project, record casting/foundry marks, chamber form, port form, valve sizes, plug details, rocker-cover details, manifold angle, repair history, and any documents linking the heads to period GT40 use.
 - Do not use S024 for valve lash, plug heat range, torque values, porting instructions, machining limits, combustion-chamber volume, compression ratio, or rev limit.
 
