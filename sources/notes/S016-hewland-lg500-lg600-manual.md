@@ -38,7 +38,8 @@ This source does not prove that the project car currently has an LG600 installed
 - Gear pairs must be exchanged as matched pairs and checked against etched tooth numbers.
 - Selector-fork setup requires high accuracy; the manual strongly recommends the Hewland setting jig.
 - The crown wheel and pinion are precision matched and should not be replaced separately.
-- The manual contains maintenance cautions including use of genuine spares, new nuts and gaskets, and correct refill through the two filler holes.
+- The manual contains maintenance cautions including use of genuine spares, new nuts and gaskets, and controlled case warming without overheating.
+- The general maintenance notes say that, when refilling with oil, half the quantity should be put into each filler hole and all oil should not be put into one oil sump.
 - During gear-train stripping, the manual instructs inspection of hubs, clutch rings, gears, selector forks, and fork-to-clutch-ring play; renewed hubs should match original length, and pinion-assembly clearance remains important to avoid overheating, seizure, or excessive wear.
 - The selector-fork setup section requires clutch rings to be centered on their hubs, fully engage either gear, and retain clearance between gear and clutch-ring faces when engaged. It also calls for rechecking clearances and movements before installation.
 - Main-case service instructions include washing out sludge and confirming no small metallic objects or particles remain in the case.
