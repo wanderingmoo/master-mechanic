@@ -38,6 +38,7 @@ The package is usable as an evidence-controlled assistant foundation. It is not 
   - settings governance;
   - safety/event readiness;
   - vintage racecar diagnostics.
+- Assistant acceptance/evaluation cases in `knowledge/06-assistant-evaluation.md`.
 - Portable validation tool: `tools/validate-portable-index.rb`.
 
 ## Strongest captured sources

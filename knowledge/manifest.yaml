@@ -40,6 +40,9 @@ control_files:
   - id: "phase_handoff"
     path: "knowledge/05-phase-handoff.md"
     tags: ["handoff", "milestone", "gaps", "wrap-up"]
+  - id: "assistant_evaluation"
+    path: "knowledge/06-assistant-evaluation.md"
+    tags: ["assistant", "evaluation", "acceptance", "settings-governance"]
   - id: "settings_governance"
     path: "knowledge/procedures/settings-governance.md"
     tags: ["settings", "governance", "safety", "configuration"]
