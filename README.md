@@ -17,6 +17,7 @@ Repository name: `Master-Mechanic`
 - [Configuration Register](knowledge/data/configuration-register.csv) - component-by-component parts/settings gate with evidence state and next actions.
 - [Parts Register](knowledge/data/parts-register.csv) - system-by-system part and assembly identification register.
 - [Settings Register](knowledge/data/settings-register.csv) - blocked/actionable settings index with required evidence.
+- [Evidence Gap Register](knowledge/data/evidence-gap-register.csv) - machine-readable queue of remaining evidence blockers by system; every settings-register item is covered.
 - [Source Acquisition Procedure](knowledge/procedures/source-acquisition.md) - repeatable workflow for adding primary documents and extracted facts.
 - [Evidence Request Packet](knowledge/procedures/evidence-request-packet.md) - ready-to-send evidence requests for the owner, archives, specialists, and event authorities.
 - [Capture Templates](knowledge/templates) - portable Markdown forms for source, chassis, engine, driveline, suspension/steering, fuel/oil/cooling, electrical/instruments, brake/wheel/tire, and safety evidence.
@@ -47,7 +48,7 @@ Validate the portable index with:
 ruby tools/validate-portable-index.rb
 ```
 
-The validator checks manifest coverage, CSV source references, duplicate register IDs, archived PDF checksums, assistant agent/skill metadata, indexed templates/procedures/system files, and accidental non-portable local URI or unfinished placeholder markers.
+The validator checks manifest coverage, CSV source references, duplicate register IDs, evidence-gap coverage for every setting, archived PDF checksums, assistant agent/skill metadata, indexed templates/procedures/system files, and accidental non-portable local URI or unfinished placeholder markers.
 
 ## Current State
 

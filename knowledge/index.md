@@ -19,6 +19,7 @@ This is the local table of contents for the GT40 mechanics knowledge base. Keep 
 | [data/configuration-register.csv](data/configuration-register.csv) | Structured component/configuration register for parts, settings gates, and evidence needs. |
 | [data/parts-register.csv](data/parts-register.csv) | System-by-system part and assembly identification register with evidence gates. |
 | [data/settings-register.csv](data/settings-register.csv) | Structured register of blocked/actionable settings and required evidence. |
+| [data/evidence-gap-register.csv](data/evidence-gap-register.csv) | Machine-readable queue of missing evidence required to unblock systems and settings; every setting ID in the settings register must appear in this gap register. |
 
 ## Source Notes
 

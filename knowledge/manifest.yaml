@@ -16,6 +16,7 @@ indexes:
   configuration_register: "knowledge/data/configuration-register.csv"
   parts_register: "knowledge/data/parts-register.csv"
   settings_register: "knowledge/data/settings-register.csv"
+  evidence_gap_register: "knowledge/data/evidence-gap-register.csv"
   source_policy: "knowledge/01-source-policy.md"
   source_notes_dir: "sources/notes"
 control_files:

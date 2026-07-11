@@ -19,6 +19,8 @@ The package is usable as an evidence-controlled assistant foundation. It is not 
   - `knowledge/data/configuration-register.csv`
   - `knowledge/data/parts-register.csv`
   - `knowledge/data/settings-register.csv`
+  - `knowledge/data/evidence-gap-register.csv`
+- Every setting in `knowledge/data/settings-register.csv` is mapped to at least one gap in `knowledge/data/evidence-gap-register.csv`, and `tools/validate-portable-index.rb` enforces that coverage.
 - System pages for:
   - chassis and body;
   - engine and induction;

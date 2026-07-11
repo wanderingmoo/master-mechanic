@@ -33,6 +33,7 @@ end
   manifest.dig("indexes", "configuration_register"),
   manifest.dig("indexes", "parts_register"),
   manifest.dig("indexes", "settings_register"),
+  manifest.dig("indexes", "evidence_gap_register"),
   manifest.dig("indexes", "source_policy")
 ].compact.each { |path| assert_file(path) }
 
@@ -105,7 +106,8 @@ end
   "knowledge/data/fact-register.csv",
   "knowledge/data/configuration-register.csv",
   "knowledge/data/parts-register.csv",
-  "knowledge/data/settings-register.csv"
+  "knowledge/data/settings-register.csv",
+  "knowledge/data/evidence-gap-register.csv"
 ].each do |path|
   full = assert_file(path)
   CSV.foreach(full, headers: true).with_index(2) do |row, line|
@@ -128,7 +130,8 @@ source_ids = assert_unique_ids("sources/source-register.csv", "source_id")
 assert_unique_ids("knowledge/data/fact-register.csv", "fact_id")
 assert_unique_ids("knowledge/data/configuration-register.csv", "item_id")
 assert_unique_ids("knowledge/data/parts-register.csv", "part_id")
-assert_unique_ids("knowledge/data/settings-register.csv", "setting_id")
+setting_ids = assert_unique_ids("knowledge/data/settings-register.csv", "setting_id")
+assert_unique_ids("knowledge/data/evidence-gap-register.csv", "gap_id")
 
 (manifest["source_notes"] || []).each do |entry|
   id = entry.fetch("id")
@@ -162,6 +165,15 @@ assert_source_refs("knowledge/data/fact-register.csv", "fact_id", "source_ids", 
 assert_source_refs("knowledge/data/configuration-register.csv", "item_id", "source_ids", source_ids)
 assert_source_refs("knowledge/data/parts-register.csv", "part_id", "source_ids", source_ids)
 assert_source_refs("knowledge/data/settings-register.csv", "setting_id", "source_ids", source_ids)
+assert_source_refs("knowledge/data/evidence-gap-register.csv", "gap_id", "source_ids", source_ids)
+
+gap_related_ids = CSV.read(assert_file("knowledge/data/evidence-gap-register.csv"), headers: true).flat_map do |row|
+  row["related_register_ids"].to_s.split(";").map(&:strip).reject(&:empty?)
+end.to_set
+missing_setting_gap_coverage = setting_ids.reject { |setting_id| gap_related_ids.include?(setting_id) }
+unless missing_setting_gap_coverage.empty?
+  fail_with("settings missing evidence-gap coverage: #{missing_setting_gap_coverage.sort.join(', ')}")
+end
 
 portable_text_globs = [
   "README.md",
