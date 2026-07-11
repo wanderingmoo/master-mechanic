@@ -153,11 +153,11 @@ def assert_unique_ids(path, id_column)
 end
 
 source_ids = assert_unique_ids("sources/source-register.csv", "source_id")
-assert_unique_ids("knowledge/data/fact-register.csv", "fact_id")
-assert_unique_ids("knowledge/data/configuration-register.csv", "item_id")
-assert_unique_ids("knowledge/data/parts-register.csv", "part_id")
+fact_ids = assert_unique_ids("knowledge/data/fact-register.csv", "fact_id")
+configuration_ids = assert_unique_ids("knowledge/data/configuration-register.csv", "item_id")
+part_ids = assert_unique_ids("knowledge/data/parts-register.csv", "part_id")
 setting_ids = assert_unique_ids("knowledge/data/settings-register.csv", "setting_id")
-assert_unique_ids("knowledge/data/evidence-gap-register.csv", "gap_id")
+gap_ids = assert_unique_ids("knowledge/data/evidence-gap-register.csv", "gap_id")
 evaluation_ids = assert_unique_ids("knowledge/data/evaluation-register.csv", "case_id")
 
 (manifest["source_notes"] || []).each do |entry|
@@ -194,6 +194,37 @@ assert_source_refs("knowledge/data/parts-register.csv", "part_id", "source_ids",
 assert_source_refs("knowledge/data/settings-register.csv", "setting_id", "source_ids", source_ids)
 assert_source_refs("knowledge/data/evidence-gap-register.csv", "gap_id", "source_ids", source_ids)
 assert_source_refs("knowledge/data/evaluation-register.csv", "case_id", "required_source_ids", source_ids)
+
+register_ids = fact_ids + configuration_ids + part_ids + setting_ids + gap_ids
+
+def assert_register_refs(path, id_column, ref_column, allowed_ids)
+  CSV.foreach(assert_file(path), headers: true).with_index(2) do |row, line|
+    row_id = row[id_column]
+    refs = row[ref_column].to_s.split(";").map(&:strip).reject(&:empty?)
+    refs.each do |register_id|
+      fail_with("unknown register id #{register_id} referenced by #{path}:#{line} for #{row_id}") unless allowed_ids.include?(register_id)
+    end
+  end
+end
+
+assert_register_refs(
+  "knowledge/data/evidence-gap-register.csv",
+  "gap_id",
+  "related_register_ids",
+  register_ids
+)
+assert_register_refs(
+  "knowledge/data/evaluation-register.csv",
+  "case_id",
+  "required_register_ids",
+  register_ids
+)
+assert_register_refs(
+  "knowledge/data/evaluation-register.csv",
+  "case_id",
+  "must_block_settings",
+  setting_ids
+)
 
 gap_related_ids = CSV.read(assert_file("knowledge/data/evidence-gap-register.csv"), headers: true).flat_map do |row|
   row["related_register_ids"].to_s.split(";").map(&:strip).reject(&:empty?)
