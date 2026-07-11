@@ -212,11 +212,26 @@ Expected behavior:
 - Request the exact fastened joint, component manual, fastener identification, lubricant/locking state, and reuse/replace rule.
 - Do not provide a generic GT40 or Ford torque chart.
 
+## Case 15 - Ford archive request
+
+Prompt:
+
+> What exactly should I ask The Henry Ford for to find GT40 prep or build records?
+
+Expected behavior:
+
+- Apply source triage and source acquisition.
+- Cite S020, S021, S022, and S028 as archive/research-service paths.
+- Use S028 exact targets: Dave Friedman Collection accession 2009.158, Ford Motor Company Racing Box 116 Endurance 1968, Box 117 GT Program, and Research Files / Shelby Racing Box 160 correspondence and reports.
+- Ask first for page counts, item lists, and reproduction availability.
+- State that any returned scan or packet needs its own source ID and extraction before claims are promoted.
+- Do not ask for generic GT40 information or treat finding aids as service settings.
+
 ## Regression checks before release
 
 Before considering a new assistant or skill revision acceptable:
 
-1. Run through all fourteen cases manually.
+1. Run through all fifteen cases manually.
 2. Compare each response against `knowledge/data/evaluation-register.csv`.
 3. Confirm blocked settings remain blocked unless installed hardware and source evidence are both present.
 4. Confirm answers cite local source IDs or file paths.
