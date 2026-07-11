@@ -49,6 +49,7 @@ The package is usable as an evidence-controlled assistant foundation. It is not 
 
 ## Strongest captured sources
 
+- S008 - ZF official and aftermarket support paths.
 - S009 - FIA Appendix J 1968.
 - S014 - FIA Historic Database cars list / HTP guidance.
 - S015 - FIA Ford GT 40 Recognition/Homologation No. 224 Group 4 research copy.
@@ -128,7 +129,7 @@ Highest-value next sources:
 2. Gurney-Weslake or Weslake cylinder-head drawings/specifications: valve sizes, chamber volume, plug spec, repair limits, rocker/valvetrain data.
 3. Engine build sheet for the installed 302.
 4. Official 1968 Le Mans race program, entry list, scrutineering record, Ford/JWA record, chassis record, or ACO-licensed source for engine, lap count, full entrant name, chassis, and preparation details beyond the S025 winner row.
-5. ZF 5DS-25 documentation if the installed unit is base ZF rather than Hewland.
+5. ZF 5DS-25 documentation through S008 or another primary source if the installed unit is base ZF rather than Hewland.
 6. Brake, wheel, hub, center-lock, and tire documentation for installed hardware.
 
 Use `knowledge/procedures/evidence-request-packet.md` to request these items from owners, shops, archives, component specialists, and event authorities in a structured way.

@@ -40,6 +40,12 @@ Source S009 verifies that 1968 Group 4 rules distinguished recognized gearbox id
 
 Source S015 is now the primary GT40-specific research baseline for transaxle identity. Use it to guide inspection, not to assume oil, preload, backlash, ratios, shift linkage, or limited-slip service settings.
 
+## ZF Support Path
+
+Source S008 now verifies the official ZF corporate and ZF Aftermarket paths for transmission technical information, lubricant lists, catalog/partner lookup, service centers, and support. This is an acquisition path only. No public ZF 5DS-25 GT40 service manual, lubricant specification, ratio table, backlash/preload value, or shift-linkage procedure has been captured locally.
+
+If the installed transaxle is identified as ZF, capture model/type plate, serial, casting marks, side-plate details, gear stack, final drive, LSD identity, and oil-history evidence before requesting or applying ZF documentation.
+
 ## Hewland LG500/LG600 Manual Evidence
 
 Source S016 is now archived as the component manual for Hewland LG500/LG600 units. It is relevant because S015 records a 1968 Ford GT 40 evolution for a Hewland LG600 5-speed gearbox and Ford heavy-duty limited-slip differential part number CDH4204A.

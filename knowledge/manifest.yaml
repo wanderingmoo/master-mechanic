@@ -70,6 +70,9 @@ source_notes:
   - id: "S003"
     path: "sources/notes/S003-ford-heritage-vault.md"
     tags: ["ford", "heritage-vault", "archive", "gt40", "source-acquisition"]
+  - id: "S008"
+    path: "sources/notes/S008-zf-official-support-paths.md"
+    tags: ["zf", "transaxle", "transmission", "support", "source-acquisition"]
   - id: "S009"
     path: "sources/notes/S009-fia-appendix-j-1968.md"
     tags: ["fia", "appendix-j", "1968", "group-4"]
