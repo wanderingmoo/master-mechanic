@@ -246,3 +246,6 @@ tools:
   - id: "print_settings_gates"
     path: "tools/print-settings-gates.rb"
     tags: ["settings", "evidence-gates", "mechanic-facing"]
+  - id: "print_facts"
+    path: "tools/print-facts.rb"
+    tags: ["facts", "sources", "lookup", "mechanic-facing"]

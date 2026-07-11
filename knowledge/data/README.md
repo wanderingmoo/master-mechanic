@@ -29,6 +29,7 @@ The registers are CSV files so they can be searched, diffed, edited, and validat
 - Every `ST###` setting must appear in at least one `related_register_ids` cell in `evidence-gap-register.csv`.
 - `required_source_ids` in `evaluation-register.csv` contains semicolon-separated source IDs from `../../sources/source-register.csv`.
 - `tools/validate-portable-index.rb` enforces source references, duplicate IDs, evaluation-case coverage, settings-to-gap coverage, and manifest coverage for indexed helper scripts.
+- `tools/print-facts.rb` prints fact-register entries by system, source ID, label, or keyword and joins source titles for mechanic-facing context.
 - `tools/print-settings-gates.rb` prints mechanic-facing settings gates from `settings-register.csv` and links each setting to related evidence gaps.
 - `tools/print-agent-evaluation-plan.rb` prints assistant regression prompts from `evaluation-register.csv`.
 
