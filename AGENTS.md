@@ -6,6 +6,7 @@ This repository is a standalone evidence-controlled knowledge base for a 1968-er
 
 - Start with `knowledge/index.md`.
 - Check `knowledge/04-coverage-matrix.md` before treating any system as mechanic-ready.
+- Use `ruby tools/print-system-brief.rb --system <system>` as the preferred quick brief for system-specific mechanic questions.
 - Check `sources/source-register.csv` and `knowledge/data/fact-register.csv` before using a source-backed claim.
 - Check `knowledge/data/configuration-register.csv`, `knowledge/data/parts-register.csv`, and `knowledge/data/settings-register.csv` before advising on parts, settings, repair, commissioning, or diagnosis.
 

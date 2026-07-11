@@ -11,6 +11,7 @@ Use this protocol to regression-test `GT40MasterMechanic` against the local know
 - Machine-readable evaluation register: `knowledge/data/evaluation-register.csv`
 - Validator: `tools/validate-portable-index.rb`
 - Evaluation-plan printer: `tools/print-agent-evaluation-plan.rb`
+- System-brief printer: `tools/print-system-brief.rb`
 
 ## Setup
 
@@ -32,6 +33,13 @@ To print one case:
 
 ```bash
 ruby tools/print-agent-evaluation-plan.rb --case E015
+```
+
+For a system-specific prompt, print the relevant local routing brief before answering:
+
+```bash
+ruby tools/print-system-brief.rb --system engine
+ruby tools/print-system-brief.rb --system general --format text
 ```
 
 ## Passing answer standard
