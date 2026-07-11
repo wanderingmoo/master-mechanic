@@ -176,6 +176,9 @@ procedures:
   - id: "source_acquisition"
     path: "knowledge/procedures/source-acquisition.md"
     tags: ["sources", "evidence", "research"]
+  - id: "pdf_source_extraction"
+    path: "knowledge/procedures/pdf-source-extraction.md"
+    tags: ["sources", "pdf", "extraction", "pdftotext", "archive"]
   - id: "evidence_request_packet"
     path: "knowledge/procedures/evidence-request-packet.md"
     tags: ["evidence", "request", "installed-hardware", "sources"]

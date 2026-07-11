@@ -11,9 +11,10 @@ The goal is to keep research portable, source-backed, and safe for mechanic use.
 1. Search for a primary source before using a secondary source.
 2. Record the source in [../../sources/source-register.csv](../../sources/source-register.csv) before extracting facts.
 3. If the source contains multiple relevant claims, create a note in [../../sources/notes](../../sources/notes) using [../templates/source-note-template.md](../templates/source-note-template.md).
-4. Extract only supported claims into [../data/fact-register.csv](../data/fact-register.csv).
-5. If the source identifies installed hardware, update [../data/parts-register.csv](../data/parts-register.csv) and [../data/configuration-register.csv](../data/configuration-register.csv).
-6. If the source provides a numeric setting, route it through [settings-governance.md](settings-governance.md) before marking it actionable.
+4. For PDF sources, follow [pdf-source-extraction.md](pdf-source-extraction.md) before promoting body claims.
+5. Extract only supported claims into [../data/fact-register.csv](../data/fact-register.csv).
+6. If the source identifies installed hardware, update [../data/parts-register.csv](../data/parts-register.csv) and [../data/configuration-register.csv](../data/configuration-register.csv).
+7. If the source provides a numeric setting, route it through [settings-governance.md](settings-governance.md) before marking it actionable.
 
 ## Priority source paths
 
@@ -49,6 +50,8 @@ For a new multi-fact source, create `sources/notes/S###-short-title.md` with:
 - Extracted facts
 - Mechanic-facing implications
 - What the source does not prove
+
+For archived PDFs, also record the extraction method: `text-extracted`, `rendered-inspected`, `metadata-only`, or `archived-not-extracted`.
 
 ## Specific caution for the GT40 project
 

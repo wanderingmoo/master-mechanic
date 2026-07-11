@@ -48,6 +48,7 @@ Planned publication target when final packaging is ready: `https://github.com/wa
 - Machine-readable assistant regression register in `knowledge/data/evaluation-register.csv`.
 - Agent test protocol in `knowledge/procedures/agent-test-protocol.md`.
 - Portable validation tool: `tools/validate-portable-index.rb`.
+- PDF extraction procedure: `knowledge/procedures/pdf-source-extraction.md`, covering `pdfinfo`, `pdftotext`, rendered-page fallback, extraction labels, and setting-promotion limits.
 
 ## Strongest captured sources
 
