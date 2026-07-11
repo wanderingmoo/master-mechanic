@@ -1,0 +1,190 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "csv"
+require "yaml"
+require "set"
+require "shellwords"
+
+ROOT = File.expand_path("..", __dir__)
+
+def fail_with(message)
+  warn "ERROR: #{message}"
+  exit 1
+end
+
+def assert_file(path)
+  full = File.join(ROOT, path)
+  fail_with("missing file: #{path}") unless File.file?(full)
+  full
+end
+
+manifest_path = assert_file("knowledge/manifest.yaml")
+manifest = YAML.safe_load(File.read(manifest_path))
+
+%w[indexes control_files source_notes source_archives systems procedures templates assistant_assets].each do |key|
+  fail_with("manifest missing #{key}") unless manifest.key?(key)
+end
+
+[
+  manifest.dig("indexes", "human_index"),
+  manifest.dig("indexes", "source_register"),
+  manifest.dig("indexes", "fact_register"),
+  manifest.dig("indexes", "configuration_register"),
+  manifest.dig("indexes", "parts_register"),
+  manifest.dig("indexes", "settings_register"),
+  manifest.dig("indexes", "source_policy")
+].compact.each { |path| assert_file(path) }
+
+source_notes_dir = manifest.dig("indexes", "source_notes_dir")
+if source_notes_dir
+  full = File.join(ROOT, source_notes_dir)
+  fail_with("missing source notes directory: #{source_notes_dir}") unless Dir.exist?(full)
+end
+
+def manifest_paths(manifest, key)
+  (manifest[key] || []).map { |entry| entry.fetch("path") }
+end
+
+manifest_paths(manifest, "control_files").each { |path| assert_file(path) }
+manifest_paths(manifest, "source_notes").each { |path| assert_file(path) }
+manifest_paths(manifest, "systems").each { |path| assert_file(path) }
+manifest_paths(manifest, "procedures").each { |path| assert_file(path) }
+manifest_paths(manifest, "templates").each { |path| assert_file(path) }
+
+def assert_manifest_covers_files(manifest, key, glob)
+  expected = manifest_paths(manifest, key).to_set
+  actual = Dir[File.join(ROOT, glob)].map { |path| path.delete_prefix("#{ROOT}/") }.to_set
+  missing_from_manifest = actual - expected
+  stale_manifest_entries = expected - actual
+  fail_with("#{key} files missing from manifest: #{missing_from_manifest.to_a.sort.join(', ')}") unless missing_from_manifest.empty?
+  fail_with("#{key} manifest entries missing files: #{stale_manifest_entries.to_a.sort.join(', ')}") unless stale_manifest_entries.empty?
+end
+
+assert_manifest_covers_files(manifest, "source_notes", "sources/notes/*.md")
+assert_manifest_covers_files(manifest, "systems", "knowledge/systems/*.md")
+assert_manifest_covers_files(manifest, "procedures", "knowledge/procedures/*.md")
+assert_manifest_covers_files(manifest, "templates", "knowledge/templates/*.md")
+
+agent_path = manifest.dig("assistant_assets", "agent")
+if agent_path
+  agent_full = assert_file(agent_path)
+  agent_content = File.read(agent_full)
+  agent_match = agent_content.match(/\A---\n(.*?)\n---/m)
+  fail_with("missing YAML frontmatter: #{agent_path}") unless agent_match
+  agent_frontmatter = YAML.safe_load(agent_match[1])
+  %w[name description model tools].each do |field|
+    fail_with("agent missing #{field}: #{agent_path}") unless agent_frontmatter[field]
+  end
+end
+
+manifest_skill_paths = (manifest.dig("assistant_assets", "skills") || [])
+actual_skill_paths = Dir[File.join(ROOT, ".github/skills/*/SKILL.md")].map { |path| path.delete_prefix("#{ROOT}/") }.sort
+unless manifest_skill_paths.sort == actual_skill_paths
+  missing = actual_skill_paths - manifest_skill_paths
+  stale = manifest_skill_paths - actual_skill_paths
+  fail_with("assistant skill manifest mismatch; missing: #{missing.join(', ')} stale: #{stale.join(', ')}")
+end
+
+manifest_skill_paths.each do |path|
+  full = assert_file(path)
+  content = File.read(full)
+  match = content.match(/\A---\n(.*?)\n---/m)
+  fail_with("missing YAML frontmatter: #{path}") unless match
+  frontmatter = YAML.safe_load(match[1])
+  fail_with("skill missing name: #{path}") unless frontmatter["name"]
+  fail_with("skill missing description: #{path}") unless frontmatter["description"]
+
+  openai_yaml = path.sub(%r{/SKILL\.md\z}, "/agents/openai.yaml")
+  openai_full = assert_file(openai_yaml)
+  YAML.safe_load(File.read(openai_full))
+end
+
+[
+  "sources/source-register.csv",
+  "knowledge/data/fact-register.csv",
+  "knowledge/data/configuration-register.csv",
+  "knowledge/data/parts-register.csv",
+  "knowledge/data/settings-register.csv"
+].each do |path|
+  full = assert_file(path)
+  CSV.foreach(full, headers: true).with_index(2) do |row, line|
+    fail_with("blank CSV row at #{path}:#{line}") if row.fields.compact.empty?
+  end
+end
+
+def assert_unique_ids(path, id_column)
+  ids = Set.new
+  CSV.foreach(assert_file(path), headers: true).with_index(2) do |row, line|
+    id = row[id_column]
+    fail_with("missing #{id_column} at #{path}:#{line}") if id.to_s.empty?
+    fail_with("duplicate #{id_column} #{id} in #{path}") if ids.include?(id)
+    ids.add(id)
+  end
+  ids
+end
+
+source_ids = assert_unique_ids("sources/source-register.csv", "source_id")
+assert_unique_ids("knowledge/data/fact-register.csv", "fact_id")
+assert_unique_ids("knowledge/data/configuration-register.csv", "item_id")
+assert_unique_ids("knowledge/data/parts-register.csv", "part_id")
+assert_unique_ids("knowledge/data/settings-register.csv", "setting_id")
+
+(manifest["source_notes"] || []).each do |entry|
+  id = entry.fetch("id")
+  fail_with("manifest source_note id #{id} is not in source register") unless source_ids.include?(id)
+end
+
+(manifest["source_archives"] || []).each do |entry|
+  id = entry.fetch("id")
+  fail_with("manifest source_archive id #{id} is not in source register") unless source_ids.include?(id)
+  path = entry.fetch("path")
+  full = assert_file(path)
+  expected_sha = entry["sha256"]
+  if expected_sha
+    actual_sha = `shasum -a 256 #{full.shellescape}`.split.first
+    fail_with("sha256 mismatch for #{path}") unless actual_sha == expected_sha
+  end
+end
+
+def assert_source_refs(path, id_column, source_column, source_ids)
+  CSV.foreach(assert_file(path), headers: true).with_index(2) do |row, line|
+    row_id = row[id_column]
+    fail_with("missing #{id_column} at #{path}:#{line}") if row_id.to_s.empty?
+    refs = row[source_column].to_s.split(";").map(&:strip).reject(&:empty?)
+    refs.each do |source_id|
+      fail_with("unknown source #{source_id} referenced by #{path}:#{line}") unless source_ids.include?(source_id)
+    end
+  end
+end
+
+assert_source_refs("knowledge/data/fact-register.csv", "fact_id", "source_ids", source_ids)
+assert_source_refs("knowledge/data/configuration-register.csv", "item_id", "source_ids", source_ids)
+assert_source_refs("knowledge/data/parts-register.csv", "part_id", "source_ids", source_ids)
+assert_source_refs("knowledge/data/settings-register.csv", "setting_id", "source_ids", source_ids)
+
+portable_text_globs = [
+  "README.md",
+  ".github/agents/*.md",
+  ".github/skills/**/*.md",
+  ".github/skills/**/*.yaml",
+  "knowledge/**/*.md",
+  "knowledge/**/*.csv",
+  "knowledge/**/*.yaml",
+  "sources/**/*.md",
+  "sources/**/*.csv",
+  "tools/**/*.rb"
+]
+
+non_portable_uri_marker = "file:" + "//"
+todo_marker = "TO" + "DO"
+bracketed_todo_marker = "[TO" + "DO"
+
+portable_text_globs.flat_map { |glob| Dir[File.join(ROOT, glob)] }.uniq.each do |full|
+  rel = full.delete_prefix("#{ROOT}/")
+  content = File.read(full)
+  fail_with("non-portable file URI in #{rel}") if content.include?(non_portable_uri_marker)
+  fail_with("unfinished placeholder marker in #{rel}") if content.include?(todo_marker) || content.include?(bracketed_todo_marker)
+end
+
+puts "Portable index validation passed"

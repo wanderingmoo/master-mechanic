@@ -1,0 +1,4 @@
+interface:
+  display_name: "GT40 Settings Governance"
+  short_description: "Block unsafe GT40 setup values"
+  default_prompt: "Use $gt40-settings-governance to decide whether a GT40 setting can be given or must remain blocked pending evidence."

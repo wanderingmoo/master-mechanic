@@ -1,0 +1,32 @@
+name: gt40-mechanic-question-routing
+version: 0.1.0
+description: Routes GT40 mechanic questions through local indexes, coverage status, evidence gates, and specialist skills.
+entrypoint: ../SKILL.md
+local_context:
+  required:
+    - knowledge/index.md
+    - knowledge/04-coverage-matrix.md
+    - knowledge/manifest.yaml
+    - sources/source-register.csv
+    - knowledge/data/fact-register.csv
+    - knowledge/data/configuration-register.csv
+    - knowledge/data/parts-register.csv
+    - knowledge/data/settings-register.csv
+  optional:
+    - knowledge/systems/
+    - sources/notes/
+    - knowledge/procedures/
+routes_to:
+  - gt40-source-triage
+  - gt40-configuration-control
+  - gt40-component-identification
+  - gt40-settings-governance
+  - gt40-safety-event-readiness
+  - vintage-racecar-diagnostics
+output_contract:
+  answer_type: required
+  verified_from_local_kb: required
+  blocked_or_not_yet_known: required
+  safe_next_action: required
+  sources_or_local_indexes: required
+portable: true

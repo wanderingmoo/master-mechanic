@@ -1,0 +1,186 @@
+schema_version: "1.0"
+project: "Master-Mechanic"
+repository: "Master-Mechanic"
+subject: "1968-era Ford GT40 Mk I with Gurney-Weslake Ford 302 configuration"
+format_policy:
+  primary_formats:
+    - "Markdown"
+    - "CSV"
+    - "YAML"
+  portability: "No database, binary index, or proprietary application required."
+  search_command: "rg \"GT40|Gurney|Weslake|302|ZF\" ."
+indexes:
+  human_index: "knowledge/index.md"
+  source_register: "sources/source-register.csv"
+  fact_register: "knowledge/data/fact-register.csv"
+  configuration_register: "knowledge/data/configuration-register.csv"
+  parts_register: "knowledge/data/parts-register.csv"
+  settings_register: "knowledge/data/settings-register.csv"
+  source_policy: "knowledge/01-source-policy.md"
+  source_notes_dir: "sources/notes"
+control_files:
+  - id: "agent_operating_rules"
+    path: "AGENTS.md"
+    tags: ["repo", "agent", "operating-rules", "portable-index"]
+  - id: "vehicle_identity"
+    path: "knowledge/00-vehicle-identity.md"
+    tags: ["identity", "configuration", "chassis", "engine"]
+  - id: "source_policy"
+    path: "knowledge/01-source-policy.md"
+    tags: ["sources", "evidence", "governance"]
+  - id: "regulatory_homologation"
+    path: "knowledge/02-regulatory-homologation.md"
+    tags: ["fia", "homologation", "group-4", "regulations"]
+  - id: "research_backlog"
+    path: "knowledge/03-research-backlog.md"
+    tags: ["research", "backlog", "sources", "open-items"]
+  - id: "coverage_matrix"
+    path: "knowledge/04-coverage-matrix.md"
+    tags: ["coverage", "systems", "completion-audit", "gaps"]
+  - id: "phase_handoff"
+    path: "knowledge/05-phase-handoff.md"
+    tags: ["handoff", "milestone", "gaps", "wrap-up"]
+  - id: "settings_governance"
+    path: "knowledge/procedures/settings-governance.md"
+    tags: ["settings", "governance", "safety", "configuration"]
+  - id: "component_identification"
+    path: "knowledge/procedures/component-identification.md"
+    tags: ["parts", "component-identification", "inspection", "configuration"]
+  - id: "source_acquisition"
+    path: "knowledge/procedures/source-acquisition.md"
+    tags: ["sources", "acquisition", "evidence", "portable-index"]
+source_notes:
+  - id: "S009"
+    path: "sources/notes/S009-fia-appendix-j-1968.md"
+    tags: ["fia", "appendix-j", "1968", "group-4"]
+  - id: "S014"
+    path: "sources/notes/S014-fia-cars-list-htp-guidance.md"
+    tags: ["fia", "homologation", "htp", "source-control"]
+  - id: "S015"
+    path: "sources/notes/S015-fia-ford-gt40-homologation-224.md"
+    tags: ["fia", "homologation", "gt40", "group-4", "1968"]
+  - id: "S016"
+    path: "sources/notes/S016-hewland-lg500-lg600-manual.md"
+    tags: ["hewland", "lg500", "lg600", "transaxle", "manual"]
+  - id: "S018"
+    path: "sources/notes/S018-webcon-weber-ida-support.md"
+    tags: ["weber", "ida", "induction", "carburetor", "parts"]
+  - id: "S019"
+    path: "sources/notes/S019-fia-appendix-k-2025-updated-2026.md"
+    tags: ["fia", "appendix-k", "safety", "historic", "2026"]
+  - id: "S020"
+    path: "sources/notes/S020-the-henry-ford-ford-motorsports-records.md"
+    tags: ["ford", "archive", "motorsports", "lemans", "source-acquisition"]
+  - id: "S021"
+    path: "sources/notes/S021-the-henry-ford-dave-friedman-collection.md"
+    tags: ["archive", "photographs", "gt40", "lemans", "source-acquisition"]
+  - id: "S022"
+    path: "sources/notes/S022-the-henry-ford-remote-research-services.md"
+    tags: ["archive", "remote-research", "source-acquisition", "part-drawings"]
+  - id: "S023"
+    path: "sources/notes/S023-aco-24h-lemans-track-record.md"
+    tags: ["aco", "24h-lemans", "race-history", "source-acquisition"]
+  - id: "S024"
+    path: "sources/notes/S024-gurney-weslake-official-homepage.md"
+    tags: ["gurney-weslake", "cylinder-heads", "engine", "identification"]
+  - id: "S004"
+    path: "sources/notes/S004-ford-gt40-secondary-leads.md"
+    tags: ["gt40", "secondary", "leads", "history"]
+  - id: "S005"
+    path: "sources/notes/S005-ford-small-block-secondary-leads.md"
+    tags: ["ford-302", "secondary", "leads", "engine"]
+  - id: "S006"
+    path: "sources/notes/S006-weslake-secondary-leads.md"
+    tags: ["weslake", "gurney-weslake", "secondary", "leads"]
+  - id: "S013"
+    path: "sources/notes/S013-1968-le-mans-secondary-results.md"
+    tags: ["lemans", "1968", "secondary", "results"]
+source_archives:
+  - id: "S015"
+    path: "sources/archive/S015-fia-ford-gt40-homologation-224.pdf"
+    sha256: "3629b498169656344f0592f15dee103af9f4a7e31d50ff2fdaf267d91104379c"
+    tags: ["fia", "homologation", "gt40", "group-4", "pdf"]
+  - id: "S016"
+    path: "sources/archive/S016-hewland-lg500-lg600-manual.pdf"
+    sha256: "2f91072c884cf834b7ca132f03338d002fced18f99165c1b1a8100e0ec9a4b7e"
+    tags: ["hewland", "lg500", "lg600", "transaxle", "pdf"]
+  - id: "S019"
+    path: "sources/archive/S019-fia-appendix-k-2025-updated-2026.pdf"
+    sha256: "b87e34c9dd299b90fa5a5d622163e0ca38f3099a276d3701a61cdd8141bce268"
+    tags: ["fia", "appendix-k", "safety", "historic", "pdf"]
+systems:
+  - id: "chassis_body"
+    path: "knowledge/systems/chassis-body.md"
+    tags: ["chassis", "body", "tub", "fiberglass"]
+  - id: "engine_induction"
+    path: "knowledge/systems/engine-induction.md"
+    tags: ["engine", "302", "gurney-weslake", "weber", "ignition"]
+  - id: "driveline_transaxle"
+    path: "knowledge/systems/driveline-transaxle.md"
+    tags: ["transaxle", "clutch", "differential", "halfshafts"]
+  - id: "suspension_steering"
+    path: "knowledge/systems/suspension-steering.md"
+    tags: ["suspension", "steering", "alignment", "geometry"]
+  - id: "brakes_wheels_tires"
+    path: "knowledge/systems/brakes-wheels-tires.md"
+    tags: ["brakes", "wheels", "tires", "center-lock"]
+  - id: "electrical_instruments"
+    path: "knowledge/systems/electrical-instruments.md"
+    tags: ["electrical", "wiring", "instruments"]
+  - id: "fuel_oil_cooling"
+    path: "knowledge/systems/fuel-oil-cooling.md"
+    tags: ["fuel", "oil", "cooling", "fire-safety"]
+  - id: "safety_systems"
+    path: "knowledge/systems/safety-systems.md"
+    tags: ["safety", "appendix-k", "fire", "belts", "fuel-cell"]
+procedures:
+  - id: "component_identification"
+    path: "knowledge/procedures/component-identification.md"
+    tags: ["parts", "evidence", "component-identification"]
+  - id: "source_acquisition"
+    path: "knowledge/procedures/source-acquisition.md"
+    tags: ["sources", "evidence", "research"]
+  - id: "inspection_commissioning"
+    path: "knowledge/procedures/inspection-commissioning.md"
+    tags: ["inspection", "commissioning", "first-start", "safety"]
+  - id: "settings_governance"
+    path: "knowledge/procedures/settings-governance.md"
+    tags: ["settings", "governance", "safety"]
+templates:
+  - id: "source_note_template"
+    path: "knowledge/templates/source-note-template.md"
+    tags: ["sources", "template", "evidence"]
+  - id: "chassis_body_capture"
+    path: "knowledge/templates/chassis-body-capture.md"
+    tags: ["chassis", "body", "template", "inspection"]
+  - id: "engine_induction_capture"
+    path: "knowledge/templates/engine-induction-capture.md"
+    tags: ["engine", "induction", "template", "inspection"]
+  - id: "driveline_transaxle_capture"
+    path: "knowledge/templates/driveline-transaxle-capture.md"
+    tags: ["driveline", "transaxle", "template", "inspection"]
+  - id: "suspension_steering_capture"
+    path: "knowledge/templates/suspension-steering-capture.md"
+    tags: ["suspension", "steering", "alignment", "template", "inspection"]
+  - id: "brakes_wheels_tires_capture"
+    path: "knowledge/templates/brakes-wheels-tires-capture.md"
+    tags: ["brakes", "wheels", "tires", "template", "inspection"]
+  - id: "fuel_oil_cooling_capture"
+    path: "knowledge/templates/fuel-oil-cooling-capture.md"
+    tags: ["fuel", "oil", "cooling", "template", "inspection", "fire-safety"]
+  - id: "electrical_instruments_capture"
+    path: "knowledge/templates/electrical-instruments-capture.md"
+    tags: ["electrical", "instruments", "battery", "ignition", "template", "inspection"]
+  - id: "safety_event_readiness_capture"
+    path: "knowledge/templates/safety-event-readiness-capture.md"
+    tags: ["safety", "appendix-k", "template", "event-readiness"]
+assistant_assets:
+  agent: ".github/agents/GT40MasterMechanic.agent.md"
+  skills:
+    - ".github/skills/gt40-mechanic-question-routing/SKILL.md"
+    - ".github/skills/gt40-source-triage/SKILL.md"
+    - ".github/skills/gt40-configuration-control/SKILL.md"
+    - ".github/skills/gt40-component-identification/SKILL.md"
+    - ".github/skills/gt40-settings-governance/SKILL.md"
+    - ".github/skills/gt40-safety-event-readiness/SKILL.md"
+    - ".github/skills/vintage-racecar-diagnostics/SKILL.md"

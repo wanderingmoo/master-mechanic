@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vintage Racecar Diagnostics"
+  short_description: "Diagnose period racecar faults safely"
+  default_prompt: "Use $vintage-racecar-diagnostics to reason through a vintage racecar fault with evidence, safety checks, and reversible tests."

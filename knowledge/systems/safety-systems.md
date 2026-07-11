@@ -1,0 +1,54 @@
+# Safety Systems
+
+## Scope
+
+Driver restraints, seat and anchorage interaction, ROPS/cage/rollover protection, fire extinguisher or fire system, fireproof bulkheads, fuel tank/cell/foam/fillers/vents, oil catch tanks, battery containment, master switch, rear warning light, mirrors, and event-readiness documentation.
+
+## Current Verified State
+
+Source S009 provides a 1968 period safety benchmark. Source S019 adds current FIA Appendix K safety and event-readiness context for International Historic Competitions. No installed safety equipment, HTP, event entry, or sanctioning-body compliance state has been captured for the project car.
+
+Appendix K should be treated as a current event-readiness and inspection source. It does not prove the installed car is compliant.
+
+## Current Appendix K Implications
+
+Source S019 establishes the following high-level safety gates:
+
+- Historic cars must preserve period specification while meeting defined additional safety provisions.
+- Ageing and corrosion must be actively considered when judging component integrity.
+- Scrutineering presentation is treated as a declaration that the car is safe to compete.
+- Battery terminal protection, battery chemistry/location, battery covering, and master-switch behavior must be verified.
+- Fuel, oil, and brake-line routing/protection must be verified for deterioration and fire risk.
+- Fuel tank/cell, safety foam, maximum capacity, filler cap retention, fuel-line material, and line pressure rating must be verified.
+- Fireproof bulkheads, extinguisher/fire-system compliance, oil catch tank or retained closed breathing, mirrors, rear warning light, harness standards, harness routing, and anchorages must be verified.
+
+## Linked Part Records
+
+Use [../data/parts-register.csv](../data/parts-register.csv) before event-readiness claims:
+
+- P028 - driver safety, belts, extinguisher/fire system, ROPS, seat mounts, and firewall/bulkheads.
+- P029 - fuel and fire safety, tank/cell/foam, filler caps, fuel/oil/brake lines, bulkheads, and catch tanks.
+- P030 - electrical safety, battery, master switch, and rear warning light.
+- P011, P012, P013 - fuel and oil systems when safety work overlaps fluid systems.
+- P025, P026 - harness, battery, charging/starting, and master switch when safety work overlaps electrical systems.
+
+Apply [../procedures/component-identification.md](../procedures/component-identification.md) before accepting any belt, extinguisher, fire system, fuel cell, battery, master switch, ROPS, or warning light as compliant.
+
+Use [../templates/safety-event-readiness-capture.md](../templates/safety-event-readiness-capture.md) to capture installed evidence before updating safety-related configuration, parts, or settings rows.
+
+## Evidence Packet Required Before Competition Use
+
+Capture:
+
+- Event target, date, sanctioning body, supplementary regulations, and whether FIA Appendix K/HTP applies.
+- HTP status, period/classification, homologation copy status, and any red-dot/black-dot history if applicable.
+- Belts: FIA standard, date, manufacturer, routing, shoulder angle, seat pass-throughs, anchor points, reinforcement plates, bolts, chafe points, and condition.
+- Seat/ROPS: seat mounting, back support, cage/roll-bar identity, weld/attachment condition, and any FIA Appendix K Appendix II relevance.
+- Fire: extinguisher or fire-system standard, date, capacity, agent, nozzles, pull handles, anti-torpedo mounting, and service record.
+- Fuel/fire: tank or cell maker/date/certification, foam condition, capacity, filler cap secondary device, vents, line material, line pressure rating, fittings, heat shielding, and bulkheads.
+- Oil containment: breather layout, catch tank capacity, or proof that retained closed-circuit breathing makes catch tanks unnecessary.
+- Electrical safety: battery chemistry/location/cover, terminal protection, cable routing, master-switch type/location/marking, engine-stop behavior, charging shutdown, fire-system circuit exception, and rear warning light.
+
+## Do Not Guess
+
+Do not declare the car event-ready or track-ready until installed safety equipment and the specific event rules are verified. Current Appendix K provides gates, not proof of compliance.

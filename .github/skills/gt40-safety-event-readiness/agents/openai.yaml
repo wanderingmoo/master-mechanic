@@ -1,0 +1,4 @@
+interface:
+  display_name: "GT40 Safety Event Readiness"
+  short_description: "FIA Appendix K safety readiness gates"
+  default_prompt: "Use $gt40-safety-event-readiness to assess GT40 safety evidence before event or track use."

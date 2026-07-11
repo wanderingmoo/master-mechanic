@@ -1,0 +1,4 @@
+interface:
+  display_name: "GT40 Component Identification"
+  short_description: "Identify GT40 parts before settings"
+  default_prompt: "Use $gt40-component-identification to identify GT40 parts, capture evidence, and decide whether settings or part orders are allowed."

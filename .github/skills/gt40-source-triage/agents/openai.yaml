@@ -1,0 +1,4 @@
+interface:
+  display_name: "GT40 Source Triage"
+  short_description: "Rank GT40 evidence before using specs"
+  default_prompt: "Use $gt40-source-triage to classify a GT40 source, update the portable indexes, and extract only evidence-backed facts."

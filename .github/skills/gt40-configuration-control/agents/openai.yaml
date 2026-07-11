@@ -1,0 +1,4 @@
+interface:
+  display_name: "GT40 Configuration Control"
+  short_description: "Track chassis-specific GT40 setup facts"
+  default_prompt: "Use $gt40-configuration-control to separate verified GT40 setup facts, FIA context, and assumptions before advising on work."
