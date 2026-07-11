@@ -256,3 +256,6 @@ tools:
   - id: "print_evidence_request"
     path: "tools/print-evidence-request.rb"
     tags: ["evidence", "request", "gaps", "mechanic-facing"]
+  - id: "print_coverage_audit"
+    path: "tools/print-coverage-audit.rb"
+    tags: ["coverage", "audit", "systems", "mechanic-facing"]
