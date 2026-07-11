@@ -24,15 +24,22 @@ Every actionable setting must include:
 The following remain blocked in this knowledge base:
 
 - Ignition advance curve.
+- Rev limit.
 - Valve lash.
 - Spark plug type and gap.
 - Weber jetting, choke size, float setting, idle mixture, and fuel pressure.
-- Engine oil type, quantity, and pressure target.
-- Transaxle oil, fill quantity, preload, backlash, gear setup, and shift linkage settings.
+- Weber pump volume and linkage synchronization.
+- Engine oil type, quantity, pressure target, relief setting, and priming procedure.
+- Coolant capacity, cap pressure, thermostat/restrictor value, and bleed method.
+- Transaxle oil, fill quantity, preload, backlash, gear ratios, final-drive selection, gear setup, and shift linkage settings.
+- Clutch adjustment and release geometry.
 - Camber, caster, toe, ride height, spring rates, damper settings, and anti-roll-bar settings.
-- Brake bias, master-cylinder sizing, pad bedding, fluid, and center-lock torque.
+- Brake bias, master-cylinder sizing, pad bedding, fluid, pressure targets, and center-lock torque.
+- Wheel-bearing or hub preload/end-float settings.
 - Tire pressure.
-- Fuse sizing, alternator output, and master switch layout.
+- Fuse sizing, alternator output, master switch layout, gauge/sender calibration, and warning thresholds.
+- Fastener torque values and torque sequences.
+- Structural repair dimensions, material specifications, and panel bonding/welding settings.
 
 ## Period regulation versus shop setting
 

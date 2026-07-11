@@ -78,6 +78,7 @@ The assistant can safely support:
 Do not provide final values for:
 
 - torque;
+- rev limit;
 - valve lash;
 - ignition timing or distributor curve;
 - spark plug type, reach, heat range, or gap;
@@ -89,7 +90,9 @@ Do not provide final values for:
 - ride height, corner weights, spring rates, damper settings, anti-roll-bar settings, camber, caster, toe, or bump-steer settings;
 - brake bias, master-cylinder sizing, pad bedding, fluid, pressure targets, or center-lock torque;
 - tire pressure;
-- fuse/relay ratings or wiring changes.
+- wheel-bearing or hub preload/end-float settings;
+- fuse/relay ratings, gauge/sender calibration, warning thresholds, or wiring changes;
+- structural repair dimensions, material specifications, bonding settings, or welding settings.
 
 These remain blocked until exact installed hardware and applicable source evidence are both available.
 
