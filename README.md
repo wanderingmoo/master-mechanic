@@ -135,6 +135,14 @@ ruby tools/print-facts.rb --source S015
 ruby tools/print-facts.rb --query "Hewland"
 ```
 
+Print source status, local notes, archives, and extracted fact coverage:
+
+```bash
+ruby tools/print-source-brief.rb --source S015
+ruby tools/print-source-brief.rb --status verified --format text
+ruby tools/print-source-brief.rb --query "Hewland"
+```
+
 ## Current State
 
 This is an evidence-controlled starter package. It establishes the index, source hierarchy, local archives, and assistant behavior before adding unsafe settings. The FIA Ford GT 40 homologation research copy and Hewland LG500/LG600 component manual are now archived locally with checksums. Chassis-specific service settings, torque values, carburetor jetting, alignment, and build clearances must still be tied to the exact installed hardware, original manuals, component maker data, engine build sheets, or measured as-found evidence before being treated as actionable. See [Phase Handoff](knowledge/05-phase-handoff.md) for the current milestone and remaining blockers.

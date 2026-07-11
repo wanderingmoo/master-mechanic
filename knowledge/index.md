@@ -125,6 +125,7 @@ This is the local table of contents for the GT40 mechanics knowledge base. Keep 
 | [../tools/print-settings-gates.rb](../tools/print-settings-gates.rb) | Prints setting gates and safe next actions by system or setting ID. |
 | [../tools/print-evidence-request.rb](../tools/print-evidence-request.rb) | Prints evidence requests by gap, system, priority, or status. |
 | [../tools/print-facts.rb](../tools/print-facts.rb) | Prints source-backed facts by system, source, label, or query. |
+| [../tools/print-source-brief.rb](../tools/print-source-brief.rb) | Prints source status, local source notes, archives, and extracted fact coverage by source, tier, status, or query. |
 | [../tools/print-agent-evaluation-plan.rb](../tools/print-agent-evaluation-plan.rb) | Prints the assistant regression prompts from the evaluation register. |
 | [../tools/print-coverage-audit.rb](../tools/print-coverage-audit.rb) | Prints register-driven coverage by system. |
 | [../tools/print-completion-audit.rb](../tools/print-completion-audit.rb) | Prints the completion audit against the full mechanics-assistant objective. |

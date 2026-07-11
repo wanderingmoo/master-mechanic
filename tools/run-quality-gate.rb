@@ -8,6 +8,7 @@ ROOT = File.expand_path("..", __dir__)
 COMMANDS = [
   ["ruby", "tools/validate-portable-index.rb"],
   ["ruby", "tools/print-completion-audit.rb", "--format", "text"],
+  ["ruby", "tools/print-source-brief.rb", "--source", "S015", "--format", "text"],
   ["ruby", "tools/print-coverage-audit.rb", "--system", "engine"],
   ["ruby", "tools/print-parts-config.rb", "--system", "engine", "--format", "text"],
   ["ruby", "tools/print-system-brief.rb", "--system", "general", "--format", "text"],
