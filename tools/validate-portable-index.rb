@@ -96,6 +96,11 @@ manifest_skill_paths.each do |path|
   match = content.match(/\A---\n(.*?)\n---/m)
   fail_with("missing YAML frontmatter: #{path}") unless match
   frontmatter = YAML.safe_load(match[1])
+  allowed_skill_frontmatter = %w[allowed-tools description license metadata name]
+  unexpected_skill_keys = frontmatter.keys - allowed_skill_frontmatter
+  unless unexpected_skill_keys.empty?
+    fail_with("unexpected skill frontmatter key(s) in #{path}: #{unexpected_skill_keys.sort.join(', ')}")
+  end
   fail_with("skill missing name: #{path}") unless frontmatter["name"]
   fail_with("skill missing description: #{path}") unless frontmatter["description"]
 

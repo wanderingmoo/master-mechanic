@@ -1,7 +1,6 @@
 ---
 name: gt40-mechanic-question-routing
 description: Route GT40 mechanic questions through the local index, coverage matrix, evidence registers, and specialist skills before answering.
-version: 0.1.0
 ---
 
 # GT40 Mechanic Question Routing
