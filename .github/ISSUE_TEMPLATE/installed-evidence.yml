@@ -1,0 +1,64 @@
+name: Installed vehicle evidence
+description: Submit photos, IDs, measurements, or as-found notes for the GT40 knowledge base.
+title: "Installed evidence: "
+labels:
+  - evidence
+  - installed-hardware
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for evidence from the car itself. Do not use it to request a setting value. Settings remain blocked until the exact installed component and an applicable source are both verified.
+  - type: dropdown
+    id: system
+    attributes:
+      label: Vehicle system
+      description: Pick the closest system used by the local registers.
+      options:
+        - identity
+        - chassis_body
+        - engine
+        - induction
+        - driveline
+        - suspension_steering
+        - brakes_wheels_tires
+        - fuel_oil_cooling
+        - electrical_instruments
+        - safety
+        - general
+    validations:
+      required: true
+  - type: input
+    id: related_registers
+    attributes:
+      label: Related register IDs
+      description: If known, list IDs such as C003, P006, ST030, or G014.
+      placeholder: "C003; P006; ST030; G014"
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence supplied
+      description: Describe the photo set, measurement, document, component tag, casting mark, serial number, or as-found observation.
+      placeholder: "Example: Four photos of right rear brake caliper, disc thickness measurement, pad backing markings, and master-cylinder bore markings."
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Provenance and capture context
+      description: Who captured it, when, where on the car, before/after cleaning or disassembly, and whether any parts were moved.
+      placeholder: "Captured by shop on 2026-07-11 before disassembly; left side not cleaned; wheel removed only."
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: Attached files or local paths
+      description: List filenames, links, or local paths. Prefer original-resolution photos/scans.
+      placeholder: "IMG_1234.JPG, IMG_1235.JPG, measurement-sheet.pdf"
+  - type: textarea
+    id: requested_update
+    attributes:
+      label: Requested knowledge-base update
+      description: State what this should update. Keep settings blocked unless the applicable source is also supplied.
+      placeholder: "Update P022 brake-corner identification evidence; do not unlock ST030 yet."

@@ -1,0 +1,67 @@
+name: Source or archive intake
+description: Submit a manual, archive scan, build sheet, drawing, race document, or official source path.
+title: "Source intake: "
+labels:
+  - source-intake
+  - triage-required
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for new source material. Claims must go through source triage before being promoted into facts, settings, or mechanic-facing advice.
+  - type: dropdown
+    id: source_type
+    attributes:
+      label: Source type
+      options:
+        - official manufacturer / component source
+        - official regulation / homologation source
+        - archive or museum record
+        - build sheet / restoration record
+        - service manual / parts list / drawing
+        - race program / entry list / scrutineering record
+        - secondary lead only
+    validations:
+      required: true
+  - type: input
+    id: source_title
+    attributes:
+      label: Source title
+      placeholder: "Example: JWA GT40 race-preparation sheet"
+    validations:
+      required: true
+  - type: input
+    id: source_location
+    attributes:
+      label: URL, archive citation, or local file path
+      placeholder: "https://... or sources/archive/example.pdf"
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Provenance / authority
+      description: Explain who published it, where it came from, date, accession number, page count, scan quality, or chain of custody.
+    validations:
+      required: true
+  - type: textarea
+    id: relevant_claims
+    attributes:
+      label: Relevant claims to extract
+      description: List the specific claims you think matter. Do not include inferred settings.
+      placeholder: "Example: identifies transaxle serial, gear stack, or brake caliper part number."
+  - type: textarea
+    id: affected_registers
+    attributes:
+      label: Expected affected register IDs
+      description: If known, list facts, parts, settings, gaps, or evaluation cases this may affect.
+      placeholder: "S0xx; F0xx; P016; ST008; G010"
+  - type: checkboxes
+    id: triage_ack
+    attributes:
+      label: Source triage acknowledgment
+      options:
+        - label: I understand this source must be added to the source register and, when useful, a source note before claims are promoted.
+          required: true
+        - label: I understand this source does not automatically unlock settings without installed-component applicability.
+          required: true

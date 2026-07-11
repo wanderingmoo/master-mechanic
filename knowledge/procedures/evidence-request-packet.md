@@ -6,6 +6,8 @@ Use this packet to collect the exact evidence needed to move `Master-Mechanic` f
 
 This is not a generic research wish list. Each request below is tied to a currently blocked setting, component identity, or source-acquisition gap.
 
+GitHub intake option: when evidence is submitted through the published repository, use the `Installed vehicle evidence` issue template for car/shop evidence and the `Source or archive intake` issue template for manuals, archive scans, build sheets, drawings, or official source paths. Then route the issue through the same source-triage, component-identification, and settings-governance rules below.
+
 ## How to use this packet
 
 1. Send the relevant request section to the owner, restorer, archive, component specialist, or event authority.
