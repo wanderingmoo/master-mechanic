@@ -191,6 +191,19 @@ function Card({ children, className = "", onClick }) {
   );
 }
 
+function AskGemmaButton({ onAsk, prompt, label = "Ask Gemma", className = "" }) {
+  return (
+    <button
+      type="button"
+      onClick={() => onAsk(prompt)}
+      className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-amber-200 bg-amber-50 text-xs font-semibold text-amber-800 hover:bg-amber-100 active:bg-amber-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${className}`}
+    >
+      <MessageSquare className="w-3.5 h-3.5" />
+      {label}
+    </button>
+  );
+}
+
 function StatusIcon({ status }) {
   if (status === "blocked") return <Lock className="w-4 h-4 text-red-500" />;
   if (status === "open") return <AlertCircle className="w-4 h-4 text-amber-500" />;
@@ -271,10 +284,10 @@ function Sidebar({ activeView, setActiveView }) {
 
 // --- Overview View ---
 
-function OverviewView() {
-  const p1Gaps = EVIDENCE_GAPS.filter(g => g.priority === "P1" && g.status === "open").length;
-  const blockedSettings = SETTINGS.filter(s => s.status === "blocked").length;
-  const unknownParts = PARTS.filter(p => p.status === "unknown").length;
+function OverviewView({ onAsk, settings = SETTINGS, evidenceGaps = EVIDENCE_GAPS, parts = PARTS }) {
+  const p1Gaps = evidenceGaps.filter(g => g.priority === "P1" && g.status === "open").length;
+  const blockedSettings = settings.filter(s => s.status === "blocked").length;
+  const unknownParts = parts.filter(p => p.status === "unknown").length;
 
   return (
     <div className="space-y-6">
@@ -285,7 +298,14 @@ function OverviewView() {
             <h2 className="text-xl font-bold text-gray-900">{VEHICLE.description}</h2>
             <p className="text-sm text-gray-600 mt-1">{VEHICLE.engine}</p>
           </div>
-          <Badge color="amber" size="md">Identification Required</Badge>
+          <div className="flex items-center gap-2">
+            <AskGemmaButton
+              onAsk={onAsk}
+              prompt="Summarize the current vehicle identity, readiness blockers, and safest next evidence to collect."
+              label="Ask Gemma for status"
+            />
+            <Badge color="amber" size="md">Identification Required</Badge>
+          </div>
         </div>
         <div className="grid grid-cols-2 gap-4 mt-4">
           <div className="space-y-2">
@@ -395,15 +415,15 @@ function OverviewView() {
 
 // --- Systems Coverage View ---
 
-function SystemsView() {
+function SystemsView({ onAsk, settings = SETTINGS, evidenceGaps = EVIDENCE_GAPS, parts = PARTS }) {
   const [expanded, setExpanded] = useState(null);
 
   return (
     <div className="space-y-3">
       {SYSTEMS.map(sys => {
-        const sysSettings = SETTINGS.filter(s => s.system === sys.id);
-        const sysGaps = EVIDENCE_GAPS.filter(g => g.system === sys.id);
-        const sysParts = PARTS.filter(p => p.system === sys.id);
+        const sysSettings = settings.filter(s => s.system === sys.id);
+        const sysGaps = evidenceGaps.filter(g => g.system === sys.id);
+        const sysParts = parts.filter(p => p.system === sys.id);
         const isExpanded = expanded === sys.id;
 
         return (
@@ -470,6 +490,13 @@ function SystemsView() {
                     ))}
                   </div>
                 )}
+                <div className="flex justify-end pt-1">
+                  <AskGemmaButton
+                    onAsk={onAsk}
+                    prompt={`Review the ${sys.label} system. Explain its verified facts, current blockers, and safest next action.`}
+                    label={`Ask about ${sys.label}`}
+                  />
+                </div>
               </div>
             )}
           </Card>
@@ -481,11 +508,12 @@ function SystemsView() {
 
 // --- Settings Gates View ---
 
-function SettingsView() {
+function SettingsView({ onAsk, settings = SETTINGS }) {
   const [filterSystem, setFilterSystem] = useState("all");
 
-  const filtered = filterSystem === "all" ? SETTINGS : SETTINGS.filter(s => s.system === filterSystem);
-  const systemIds = [...new Set(SETTINGS.map(s => s.system))];
+  const filtered = filterSystem === "all" ? settings : settings.filter(s => s.system === filterSystem);
+  const systemIds = [...new Set(settings.map(s => s.system))];
+  const blockedCount = settings.filter(setting => setting.status === "blocked").length;
 
   return (
     <div className="space-y-4">
@@ -493,7 +521,7 @@ function SettingsView() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Lock className="w-4 h-4 text-red-500" />
-            <p className="text-sm font-semibold text-gray-900">All {SETTINGS.length} settings are blocked until installed hardware and source evidence are verified.</p>
+            <p className="text-sm font-semibold text-gray-900">{blockedCount} of {settings.length} tracked settings are blocked until installed hardware and source evidence are verified.</p>
           </div>
           <select
             value={filterSystem}
@@ -525,6 +553,10 @@ function SettingsView() {
               <Badge color={SYSTEMS.find(s => s.id === setting.system)?.color || "gray"} size="xs">
                 {SYSTEMS.find(s => s.id === setting.system)?.label.split(" ")[0]}
               </Badge>
+              <AskGemmaButton
+                onAsk={onAsk}
+                prompt={`Explain setting ${setting.id} (${setting.setting}), why it is blocked, and the exact evidence needed to unblock it.`}
+              />
             </div>
           </Card>
         ))}
@@ -535,10 +567,10 @@ function SettingsView() {
 
 // --- Evidence Gaps View ---
 
-function EvidenceView() {
+function EvidenceView({ onAsk, evidenceGaps = EVIDENCE_GAPS }) {
   const [filterPriority, setFilterPriority] = useState("all");
 
-  const filtered = filterPriority === "all" ? EVIDENCE_GAPS : EVIDENCE_GAPS.filter(g => g.priority === filterPriority);
+  const filtered = filterPriority === "all" ? evidenceGaps : evidenceGaps.filter(g => g.priority === filterPriority);
 
   return (
     <div className="space-y-4">
@@ -553,7 +585,7 @@ function EvidenceView() {
                   filterPriority === p ? "bg-gray-900 text-white border-gray-900 shadow-sm" : "border-gray-200 text-gray-600 hover:border-gray-300 active:bg-gray-100"
                 }`}
               >
-                {p === "all" ? `All (${EVIDENCE_GAPS.length})` : `${p} (${EVIDENCE_GAPS.filter(g => g.priority === p).length})`}
+                {p === "all" ? `All (${evidenceGaps.length})` : `${p} (${evidenceGaps.filter(g => g.priority === p).length})`}
               </button>
             ))}
           </div>
@@ -580,6 +612,10 @@ function EvidenceView() {
               <Badge color={SYSTEMS.find(s => s.id === gap.system)?.color || "gray"} size="xs">
                 {SYSTEMS.find(s => s.id === gap.system)?.label.split(" ")[0] || gap.system}
               </Badge>
+              <AskGemmaButton
+                onAsk={onAsk}
+                prompt={`Explain evidence gap ${gap.id} (${gap.area}) and give a safe, specific capture plan to resolve it.`}
+              />
             </div>
           </Card>
         ))}
@@ -590,17 +626,17 @@ function EvidenceView() {
 
 // --- Parts Register View ---
 
-function PartsView() {
+function PartsView({ onAsk, parts = PARTS }) {
   const [filterSystem, setFilterSystem] = useState("all");
-  const systemIds = [...new Set(PARTS.map(p => p.system))];
-  const filtered = filterSystem === "all" ? PARTS : PARTS.filter(p => p.system === filterSystem);
+  const systemIds = [...new Set(parts.map(p => p.system))];
+  const filtered = filterSystem === "all" ? parts : parts.filter(p => p.system === filterSystem);
 
   return (
     <div className="space-y-4">
       <Card className="p-4">
         <div className="flex items-center justify-between">
           <p className="text-sm text-gray-700">
-            <span className="font-semibold">{PARTS.filter(p => p.status === "unknown").length}</span> of {PARTS.length} tracked assemblies are unidentified. Component identity gates block ordering, machining, and settings.
+            <span className="font-semibold">{parts.filter(p => p.status === "unknown").length}</span> of {parts.length} tracked assemblies are unidentified. Component identity gates block ordering, machining, and settings.
           </p>
           <select
             value={filterSystem}
@@ -624,6 +660,7 @@ function PartsView() {
               <th className="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider px-4 py-3">Part / Area</th>
               <th className="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider px-4 py-3">Status</th>
               <th className="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider px-4 py-3">Evidence Label</th>
+              <th className="text-right text-xs font-semibold text-gray-500 uppercase tracking-wider px-4 py-3">AI</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
@@ -640,6 +677,12 @@ function PartsView() {
                 <td className="px-4 py-3">
                   <span className="text-xs text-gray-500">{part.label.replace(/_/g, " ")}</span>
                 </td>
+                <td className="px-4 py-3 text-right">
+                  <AskGemmaButton
+                    onAsk={onAsk}
+                    prompt={`Explain how to identify part ${part.id} (${part.assembly}: ${part.part}), what evidence to capture, and which actions remain blocked.`}
+                  />
+                </td>
               </tr>
             ))}
           </tbody>
@@ -651,7 +694,7 @@ function PartsView() {
 
 // --- Diagnostics View ---
 
-function DiagnosticsView() {
+function DiagnosticsView({ onAsk }) {
   const [selectedPattern, setSelectedPattern] = useState(null);
 
   return (
@@ -697,8 +740,13 @@ function DiagnosticsView() {
                 {selectedPattern === pattern.id ? <ChevronUp className="w-4 h-4 text-gray-400" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
               </button>
               {selectedPattern === pattern.id && (
-                <div className="p-3 ml-4 mt-1 bg-white border-l-2 border-amber-300">
+                <div className="p-3 ml-4 mt-1 bg-white border-l-2 border-amber-300 space-y-3">
                   <p className="text-xs text-gray-700 leading-relaxed">{pattern.checks}</p>
+                  <AskGemmaButton
+                    onAsk={onAsk}
+                    prompt={`Use the vintage racecar diagnostic workflow for this symptom: ${pattern.label}. Start with immediate hazards and reversible checks; do not invent settings.`}
+                    label="Run with Gemma"
+                  />
                 </div>
               )}
             </div>
@@ -727,7 +775,7 @@ function DiagnosticsView() {
 
 // --- Sources View ---
 
-function SourcesView() {
+function SourcesView({ onAsk, sources = SOURCES_KEY }) {
   return (
     <div className="space-y-4">
       <Card className="p-4">
@@ -743,16 +791,23 @@ function SourcesView() {
               <th className="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider px-4 py-3">Source</th>
               <th className="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider px-4 py-3">Type</th>
               <th className="text-left text-xs font-semibold text-gray-500 uppercase tracking-wider px-4 py-3">Tier</th>
+              <th className="text-right text-xs font-semibold text-gray-500 uppercase tracking-wider px-4 py-3">AI</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
-            {SOURCES_KEY.map(src => (
+            {sources.map(src => (
               <tr key={src.id} className="hover:bg-gray-50 transition-colors duration-100">
                 <td className="px-4 py-3 text-xs font-mono text-gray-600">{src.id}</td>
                 <td className="px-4 py-3 text-sm text-gray-900 font-medium">{src.label}</td>
                 <td className="px-4 py-3 text-xs text-gray-600">{src.type}</td>
                 <td className="px-4 py-3">
                   <Badge color={src.tier === 1 ? "emerald" : "blue"} size="xs">Tier {src.tier}</Badge>
+                </td>
+                <td className="px-4 py-3 text-right">
+                  <AskGemmaButton
+                    onAsk={onAsk}
+                    prompt={`Explain what source ${src.id} can and cannot establish for this vehicle, including its applicability limits.`}
+                  />
                 </td>
               </tr>
             ))}
@@ -787,108 +842,6 @@ function SourcesView() {
 
 // --- Knowledge Expert Chat View ---
 
-// Question routing engine — mirrors gt40-mechanic-question-routing skill logic
-function routeQuestion(query) {
-  const q = query.toLowerCase();
-
-  // 1. Classify system
-  let system = null;
-  let systemLabel = "";
-  if (/chassis|tub|body|panel|fiberglass|door|clip|structur/i.test(q)) { system = "chassis_body"; systemLabel = "Chassis & Body"; }
-  else if (/engine|block|302|crank|piston|bore|stroke|compression|cam|valve|lash|rocker|rev.?limit|rpm/i.test(q)) { system = "engine"; systemLabel = "Engine"; }
-  else if (/head|weslake|gurney|cylinder.?head|chamber|port/i.test(q)) { system = "engine"; systemLabel = "Engine (Gurney-Weslake Heads)"; }
-  else if (/weber|carb|ida|jet|choke|induction|intake|fuel.?pressure|float|idle|mixture|linkage|throttle/i.test(q)) { system = "induction"; systemLabel = "Induction (Weber/IDA)"; }
-  else if (/trans|gearbox|gear.?ratio|hewland|zf|lsd|differential|clutch|halfshaft|driveline|final.?drive/i.test(q)) { system = "driveline"; systemLabel = "Driveline & Transaxle"; }
-  else if (/susp|spring|damper|shock|ride.?height|camber|caster|toe|corner.?weight|anti.?roll|steering|rack|bump.?steer/i.test(q)) { system = "suspension_steering"; systemLabel = "Suspension & Steering"; }
-  else if (/brake|caliper|disc|pad|bias|master.?cyl|wheel|tire|tyre|center.?lock|hub|bearing|pressure/i.test(q)) { system = "brakes_wheels_tires"; systemLabel = "Brakes, Wheels & Tires"; }
-  else if (/electric|wir|harness|fuse|relay|battery|master.?switch|gauge|sender|ignition(?!.*advance)|altern|starter|warning.?light/i.test(q)) { system = "electrical_instruments"; systemLabel = "Electrical & Instruments"; }
-  else if (/fuel(?!.*pressure)|oil|cool|radiat|water|pump|sump|dry.?sump|thermostat|catch.?tank|fire/i.test(q)) { system = "fuel_oil_cooling"; systemLabel = "Fuel, Oil & Cooling"; }
-  else if (/safe|appendix.?k|htp|belt|harness(?!.*wir)|extinguish|rops|cage|seat|event.?read|race.?read|track.?read/i.test(q)) { system = "safety"; systemLabel = "Safety Systems"; }
-  else if (/torque|fastener|bolt|nut|thread|locking/i.test(q)) { system = "general"; systemLabel = "Workshop & Fasteners"; }
-  else if (/vin|chassis.?number|identity|provenance|who.?built|history|registry/i.test(q)) { system = "identity"; systemLabel = "Identity & Provenance"; }
-  else if (/homolog|appendix.?j|fia|regulation|group.?4|recognition/i.test(q)) { system = "rules"; systemLabel = "Regulatory / Homologation"; }
-
-  // 2. Classify request type
-  let requestType = "fact_lookup";
-  if (/what.?torque|what.*set|how.?much|what.*pressure|what.*gap|what.*clearance|how.*adjust|spec|setting|value|number/i.test(q)) requestType = "setting_request";
-  else if (/diagnos|symptom|won't.?start|no.?start|misfire|rough|overheat|leak|pull|vibrat|noise|smoke|problem|issue|fault/i.test(q)) requestType = "diagnostic";
-  else if (/what.?part|identify|casting|serial|stamp|mark|what.*installed|which.*model/i.test(q)) requestType = "part_identification";
-  else if (/source|where.*find|document|manual|reference|archive/i.test(q)) requestType = "source_acquisition";
-  else if (/can.?i|safe|ready|complian|legal|allowed|permitted/i.test(q)) requestType = "safety_check";
-
-  // 3. Gather relevant register data
-  const relatedSettings = system ? SETTINGS.filter(s => s.system === system) : [];
-  const relatedGaps = system ? EVIDENCE_GAPS.filter(g => g.system === system) : [];
-  const relatedParts = system ? PARTS.filter(p => p.system === system) : [];
-  const systemInfo = system ? SYSTEMS.find(s => s.id === system) : null;
-
-  // 4. Build structured response
-  let answerType = "";
-  let verified = "";
-  let blocked = "";
-  let safeNextAction = "";
-  let sources = "";
-  let stopCondition = "";
-
-  if (requestType === "setting_request") {
-    answerType = "Blocked setting";
-    if (relatedSettings.length > 0) {
-      blocked = relatedSettings.map(s => `${s.id}: ${s.setting} — requires ${s.blocking}`).join("\n");
-    } else {
-      blocked = "No matching setting found in the register. This may be outside the tracked scope.";
-    }
-    verified = systemInfo ? `System coverage: ${systemInfo.status.replace(/_/g, " ")}. Homologation No. 224 baseline captured.` : "System not identified — rephrase with system context.";
-    safeNextAction = "Identify and photograph the installed component. Record evidence per the applicable capture template before applying any numeric value.";
-    sources = relatedSettings.length > 0 ? "settings-register.csv, evidence-gap-register.csv" : "";
-  } else if (requestType === "diagnostic") {
-    answerType = "Diagnostic workflow";
-    verified = "Diagnostic loop: 1) Define symptom 2) Safety hazards 3) Freeze config 4) List systems 5) One variable 6) Record result 7) Update KB";
-    blocked = relatedGaps.length > 0 ? `Evidence gaps in ${systemLabel}: ${relatedGaps.map(g => g.area).join(", ")}` : "";
-    safeNextAction = "Apply the vintage racecar diagnostics loop. Stop if fuel leaks, unknown oil pressure, brake/steering uncertainty, electrical smoke, or un-preoiled engine.";
-    stopCondition = "Do not run engine or move car until safety-stop conditions are cleared.";
-    sources = "vintage-racecar-diagnostics/SKILL.md, diagnostic-patterns.md";
-  } else if (requestType === "part_identification") {
-    answerType = "Component identification task";
-    if (relatedParts.length > 0) {
-      verified = relatedParts.map(p => `${p.id}: ${p.assembly} — ${p.part} (status: ${p.status}, label: ${p.label.replace(/_/g, " ")})`).join("\n");
-    } else {
-      verified = "No matching parts in this system's register.";
-    }
-    blocked = "Installed hardware identity is unknown. Do not order, machine, or apply settings until identification is complete.";
-    safeNextAction = "Photograph all markings, casting numbers, stamps, serials, and foundry marks before cleaning. Use the component-identification procedure.";
-    sources = "parts-register.csv, configuration-register.csv, procedures/component-identification.md";
-  } else if (requestType === "safety_check") {
-    answerType = "Safety/event-readiness gate";
-    const safetyGaps = EVIDENCE_GAPS.filter(g => g.system === "safety");
-    verified = "Current FIA Appendix K (S019) safety gates are captured. Installed safety equipment is NOT verified.";
-    blocked = safetyGaps.map(g => `${g.id}: ${g.area} — needs: ${g.evidence}`).join("\n");
-    safeNextAction = "Build a safety evidence packet. Do not declare track-ready, race-ready, or Appendix K compliant until installed equipment, event rules, and HTP state are captured.";
-    stopCondition = "Never declare the car safe or event-ready based on homologation baseline alone.";
-    sources = "S019, gt40-safety-event-readiness/SKILL.md, safety-systems.md";
-  } else if (requestType === "source_acquisition") {
-    answerType = "Source/research task";
-    verified = "Key captured sources: S009 (Appendix J 1968), S015 (Homologation 224), S016 (Hewland LG500/600), S018 (Weber/IDA support), S019 (Appendix K), S024 (Gurney-Weslake), S025 (ACO 1968 API).";
-    blocked = "Period service manuals, race-prep sheets, engine build data, and installed-car evidence are still missing.";
-    safeNextAction = "Target S020–S022 and S028 (Dave Friedman Collection) for Ford/JWA GT40 302 material. For installed car: photograph chassis, engine, carburetors, transaxle, brakes, wheels.";
-    sources = "source-register.csv, knowledge/index.md, 03-research-backlog.md";
-  } else {
-    // General fact lookup
-    answerType = "Fact lookup / evidence boundary";
-    if (systemInfo) {
-      verified = `System: ${systemLabel}. Coverage: ${systemInfo.status.replace(/_/g, " ")}. Page: knowledge/${systemInfo.page}`;
-      if (relatedGaps.length > 0) {
-        blocked = `Open evidence gaps: ${relatedGaps.map(g => `${g.id} (${g.area})`).join(", ")}`;
-      }
-    } else {
-      verified = "Could not classify to a specific system. Try rephrasing with system keywords (engine, brakes, suspension, electrical, etc.)";
-    }
-    safeNextAction = relatedGaps.length > 0 ? `Resolve ${relatedGaps[0]?.id}: ${relatedGaps[0]?.evidence}` : "Consult the knowledge index for the relevant system page.";
-    sources = "knowledge/index.md, fact-register.csv";
-  }
-
-  return { system, systemLabel, requestType, answerType, verified, blocked, safeNextAction, sources, stopCondition, relatedSettings, relatedGaps, relatedParts };
-}
-
 const EXAMPLE_QUESTIONS = [
   "What's the valve lash spec for the Gurney-Weslake heads?",
   "Can I use 5W-30 in this engine?",
@@ -900,141 +853,207 @@ const EXAMPLE_QUESTIONS = [
   "Where can I find the original service manual?",
 ];
 
-function ExpertChatView() {
-  const [messages, setMessages] = useState([
-    {
-      id: 0,
-      role: "assistant",
-      content: "I'm the GT40 Knowledge Expert. Ask me anything about this 1968-era Ford GT40 Mk I with Gurney-Weslake 302.\n\nI'll route your question through the local knowledge base — checking coverage, registers, evidence gates, and source policy — and give you a structured answer with what's verified, what's blocked, and the safe next action.\n\nI will never invent torque values, clearances, jetting, timing, pressures, or fluid quantities.",
-      data: null,
-    },
-  ]);
+function InlineAnswerText({ text }) {
+  return text.split(/(\*\*.*?\*\*|`.*?`)/g).filter(Boolean).map((part, index) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={index} className="font-semibold">{part.slice(2, -2)}</strong>;
+    }
+    if (part.startsWith("`") && part.endsWith("`")) {
+      return <code key={index} className="px-1 py-0.5 rounded bg-gray-100 font-mono text-xs">{part.slice(1, -1)}</code>;
+    }
+    return <span key={index}>{part}</span>;
+  });
+}
+
+function ExpertAnswer({ content }) {
+  const headingPattern = /^(Answer type|Verified from local KB|Blocked \/ not yet known|Safe next action|Sources \/ local indexes):\s*(.*)$/i;
+
+  return (
+    <div className="space-y-1.5 text-sm text-gray-800 leading-relaxed">
+      {content.split("\n").map((line, index) => {
+        const trimmed = line.trim();
+        if (!trimmed) return <div key={index} className="h-1" />;
+        const heading = trimmed.match(headingPattern);
+        if (heading) {
+          return (
+            <div key={index} className="pt-1">
+              <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">{heading[1]}:</p>
+              {heading[2] && <p className="mt-1 whitespace-pre-wrap"><InlineAnswerText text={heading[2]} /></p>}
+            </div>
+          );
+        }
+        return <p key={index} className="whitespace-pre-wrap"><InlineAnswerText text={line} /></p>;
+      })}
+    </div>
+  );
+}
+
+const EXPERT_INTRO_MESSAGE = {
+  id: "intro",
+  role: "assistant",
+  content: "I'm the GT40 Knowledge Expert, powered locally by Gemma through Ollama.\n\nI route each question through the live repository briefs, registers, evidence gates, and specialist skills before answering. I will not invent blocked settings or treat generic GT40 information as proof of this car's installed configuration.",
+  status: "complete",
+  meta: null,
+};
+
+function loadExpertMessages() {
+  try {
+    const saved = sessionStorage.getItem("master-mechanic-expert-messages");
+    const messages = saved ? JSON.parse(saved) : null;
+    return Array.isArray(messages) && messages.length ? messages : [EXPERT_INTRO_MESSAGE];
+  } catch {
+    return [EXPERT_INTRO_MESSAGE];
+  }
+}
+
+function AIExpertChatView({ initialRequest, onRequestConsumed }) {
+  const [messages, setMessages] = useState(loadExpertMessages);
   const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [backend, setBackend] = useState({ status: "checking", model: "gemma4:e4b-mlx", message: "Checking Ollama…" });
   const messagesEndRef = useRef(null);
+  const consumedRequestRef = useRef(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/health")
+      .then(async response => ({ ok: response.ok, data: await response.json() }))
+      .then(({ ok, data }) => {
+        if (cancelled) return;
+        if (ok && data.connected && data.modelAvailable) {
+          setBackend({ status: "online", model: data.model, message: `${data.model} ready` });
+        } else {
+          setBackend({ status: "offline", model: data.model || "Gemma", message: data.error || `${data.model} is not installed` });
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setBackend({ status: "offline", model: "Gemma", message: "Ollama backend unavailable" });
+      });
+    return () => { cancelled = true; };
+  }, []);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    sessionStorage.setItem("master-mechanic-expert-messages", JSON.stringify(messages));
   }, [messages]);
 
-  const handleSend = () => {
-    if (!input.trim()) return;
-    const userMsg = { id: messages.length, role: "user", content: input.trim(), data: null };
+  const handleSend = async (questionOverride) => {
+    const question = (typeof questionOverride === "string" ? questionOverride : input).trim();
+    if (!question || isLoading) return;
 
-    // Route question
-    const result = routeQuestion(input.trim());
-    const assistantMsg = {
-      id: messages.length + 1,
+    const history = messages
+      .filter(message => message.id !== "intro" && message.status === "complete" && message.content)
+      .map(message => ({ role: message.role, content: message.content }))
+      .slice(-8);
+    const requestId = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    const userMessage = { id: `${requestId}-user`, role: "user", content: question, status: "complete", meta: null };
+    const pendingMessage = {
+      id: `${requestId}-assistant`,
       role: "assistant",
-      content: null,
-      data: result,
+      content: "Gemma is checking the live evidence registers…",
+      status: "pending",
+      meta: null,
     };
 
-    setMessages(prev => [...prev, userMsg, assistantMsg]);
+    setMessages(previous => [...previous, userMessage, pendingMessage]);
     setInput("");
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: question, history }),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "The local AI backend could not answer.");
+
+      setMessages(previous => previous.map(message => message.id === pendingMessage.id
+        ? { ...message, content: result.answer, status: "complete", meta: result }
+        : message));
+      setBackend({ status: "online", model: result.model, message: `${result.model} ready` });
+    } catch (error) {
+      setMessages(previous => previous.map(message => message.id === pendingMessage.id
+        ? { ...message, content: error.message, status: "error", meta: null }
+        : message));
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  const handleExample = (question) => {
-    setInput(question);
-  };
+  useEffect(() => {
+    if (!initialRequest || consumedRequestRef.current === initialRequest.id) return;
+    consumedRequestRef.current = initialRequest.id;
+    onRequestConsumed(initialRequest.id);
+    handleSend(initialRequest.text);
+  }, [initialRequest]);
+
+  const statusColor = backend.status === "online" ? "bg-emerald-500" : backend.status === "checking" ? "bg-amber-400" : "bg-red-500";
 
   return (
     <div className="flex flex-col h-full min-h-0">
-      {/* Chat Messages */}
-      <div className="flex-1 overflow-y-auto space-y-4 pb-4 scroll-smooth">
-        {messages.map(msg => (
-          <div key={msg.id} className={`flex gap-3 animate-[fadeIn_0.2s_ease-out] ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
-            {msg.role === "assistant" && (
-              <div className="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
-                <Bot className="w-4 h-4 text-amber-700" />
+      <div className="flex items-center justify-between pb-3 mb-3 border-b border-gray-200">
+        <div className="flex items-center gap-2 min-w-0">
+          <span className={`w-2 h-2 rounded-full flex-shrink-0 ${statusColor} ${backend.status === "checking" ? "animate-pulse" : ""}`} />
+          <p className="text-xs text-gray-600 truncate" title={backend.message}>{backend.message}</p>
+        </div>
+        <div className="flex items-center gap-2">
+          {messages.length > 1 && (
+            <button
+              type="button"
+              onClick={() => setMessages([EXPERT_INTRO_MESSAGE])}
+              disabled={isLoading}
+              className="text-xs font-medium text-gray-500 hover:text-gray-800 disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded"
+            >
+              Clear chat
+            </button>
+          )}
+          <Badge color={backend.status === "online" ? "emerald" : backend.status === "checking" ? "amber" : "red"} size="xs">
+            Local Ollama
+          </Badge>
+        </div>
+      </div>
+
+      <div className="flex-1 overflow-y-auto space-y-4 pb-4 scroll-smooth" aria-live="polite">
+        {messages.map(message => (
+          <div key={message.id} className={`flex gap-3 ${message.role === "user" ? "justify-end" : "justify-start"}`}>
+            {message.role === "assistant" && (
+              <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-1 shadow-sm ${message.status === "error" ? "bg-red-100" : "bg-amber-100"}`}>
+                {message.status === "pending"
+                  ? <Activity className="w-4 h-4 text-amber-700 animate-pulse" />
+                  : message.status === "error"
+                    ? <AlertCircle className="w-4 h-4 text-red-700" />
+                    : <Bot className="w-4 h-4 text-amber-700" />}
               </div>
             )}
-            <div className={`max-w-2xl ${msg.role === "user" ? "bg-gray-900 text-white rounded-2xl rounded-br-md px-4 py-3 shadow-sm" : "bg-white border border-gray-200 rounded-2xl rounded-bl-md shadow-sm"}`}>
-              {msg.role === "user" && <p className="text-sm">{msg.content}</p>}
-              {msg.role === "assistant" && !msg.data && (
-                <div className="px-4 py-3">
-                  <p className="text-sm text-gray-700 whitespace-pre-line">{msg.content}</p>
+            <div className={`max-w-3xl ${message.role === "user"
+              ? "bg-gray-900 text-white rounded-2xl rounded-br-md px-4 py-3 shadow-sm"
+              : `bg-white border rounded-2xl rounded-bl-md shadow-sm px-4 py-3 ${message.status === "error" ? "border-red-200" : "border-gray-200"}`}`}>
+              {message.role === "user" && <p className="text-sm">{message.content}</p>}
+              {message.role === "assistant" && message.status === "complete" && (
+                message.id === "intro"
+                  ? <p className="text-sm text-gray-700 whitespace-pre-line">{message.content}</p>
+                  : <ExpertAnswer content={message.content} />
+              )}
+              {message.role === "assistant" && message.status === "pending" && (
+                <p className="text-sm text-gray-500">{message.content}</p>
+              )}
+              {message.role === "assistant" && message.status === "error" && (
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-red-700 mb-1">Backend error</p>
+                  <p className="text-sm text-red-800">{message.content}</p>
                 </div>
               )}
-              {msg.role === "assistant" && msg.data && (
-                <div className="px-4 py-4 space-y-3">
-                  {/* Classification header */}
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <Badge color="indigo" size="sm">{msg.data.requestType.replace(/_/g, " ")}</Badge>
-                    {msg.data.systemLabel && <Badge color={SYSTEMS.find(s => s.id === msg.data.system)?.color || "gray"} size="sm">{msg.data.systemLabel}</Badge>}
-                  </div>
-
-                  {/* Answer type */}
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Answer type:</span>
-                    <span className="text-sm font-medium text-gray-900">{msg.data.answerType}</span>
-                  </div>
-
-                  {/* Verified */}
-                  {msg.data.verified && (
-                    <div className="p-3 bg-blue-50 rounded-lg border border-blue-100">
-                      <p className="text-xs font-semibold text-blue-700 uppercase tracking-wider mb-1">Verified from local KB:</p>
-                      <p className="text-xs text-gray-800 whitespace-pre-line leading-relaxed">{msg.data.verified}</p>
-                    </div>
-                  )}
-
-                  {/* Blocked */}
-                  {msg.data.blocked && (
-                    <div className="p-3 bg-red-50 rounded-lg border border-red-100">
-                      <div className="flex items-center gap-1.5 mb-1">
-                        <Lock className="w-3 h-3 text-red-500" />
-                        <p className="text-xs font-semibold text-red-700 uppercase tracking-wider">Blocked / not yet known:</p>
-                      </div>
-                      <p className="text-xs text-gray-800 whitespace-pre-line leading-relaxed">{msg.data.blocked}</p>
-                    </div>
-                  )}
-
-                  {/* Stop condition */}
-                  {msg.data.stopCondition && (
-                    <div className="p-3 bg-rose-50 rounded-lg border border-rose-100">
-                      <div className="flex items-center gap-1.5 mb-1">
-                        <XCircle className="w-3 h-3 text-rose-600" />
-                        <p className="text-xs font-semibold text-rose-700 uppercase tracking-wider">Safety stop:</p>
-                      </div>
-                      <p className="text-xs text-gray-800">{msg.data.stopCondition}</p>
-                    </div>
-                  )}
-
-                  {/* Safe next action */}
-                  {msg.data.safeNextAction && (
-                    <div className="p-3 bg-emerald-50 rounded-lg border border-emerald-100">
-                      <div className="flex items-center gap-1.5 mb-1">
-                        <ArrowRight className="w-3 h-3 text-emerald-600" />
-                        <p className="text-xs font-semibold text-emerald-700 uppercase tracking-wider">Safe next action:</p>
-                      </div>
-                      <p className="text-xs text-gray-800">{msg.data.safeNextAction}</p>
-                    </div>
-                  )}
-
-                  {/* Sources */}
-                  {msg.data.sources && (
-                    <div className="flex items-start gap-1.5 pt-1">
-                      <Database className="w-3 h-3 text-gray-400 mt-0.5" />
-                      <p className="text-xs text-gray-500">{msg.data.sources}</p>
-                    </div>
-                  )}
-
-                  {/* Related settings summary */}
-                  {msg.data.relatedSettings.length > 0 && msg.data.requestType === "setting_request" && msg.data.relatedSettings.length <= 4 && (
-                    <div className="pt-2 border-t border-gray-100 space-y-1">
-                      <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Related blocked settings:</p>
-                      {msg.data.relatedSettings.slice(0, 4).map(s => (
-                        <div key={s.id} className="flex items-center gap-2">
-                          <Lock className="w-3 h-3 text-red-400" />
-                          <span className="text-xs font-mono text-gray-500">{s.id}</span>
-                          <span className="text-xs text-gray-700">{s.setting}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
+              {message.meta && (
+                <div className="mt-3 pt-2 border-t border-gray-100 flex flex-wrap items-center gap-2 text-xs text-gray-500">
+                  <Badge color="indigo" size="xs">{message.meta.route.requestType.replace(/_/g, " ")}</Badge>
+                  {message.meta.route.system && <Badge color="slate" size="xs">{message.meta.route.systemLabel}</Badge>}
+                  <span>{(message.meta.durationMs / 1000).toFixed(1)}s</span>
+                  <span title={message.meta.contextSources.join("\n")}>{message.meta.contextSources.length} local evidence inputs</span>
                 </div>
               )}
             </div>
-            {msg.role === "user" && (
+            {message.role === "user" && (
               <div className="w-8 h-8 rounded-lg bg-gray-200 flex items-center justify-center flex-shrink-0 mt-1">
                 <User className="w-4 h-4 text-gray-600" />
               </div>
@@ -1044,48 +1063,50 @@ function ExpertChatView() {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Example Questions */}
       {messages.length <= 1 && (
         <div className="flex-shrink-0 pb-3">
           <p className="text-xs font-medium text-gray-500 mb-2.5 uppercase tracking-wider">Try asking:</p>
           <div className="flex flex-wrap gap-2">
-            {EXAMPLE_QUESTIONS.map((q, i) => (
+            {EXAMPLE_QUESTIONS.map(question => (
               <button
-                key={i}
-                onClick={() => handleExample(q)}
-                className="px-3 py-2 bg-white border border-gray-200 rounded-lg text-xs text-gray-700 hover:border-amber-300 hover:bg-amber-50 active:bg-amber-100 transition-all duration-150 shadow-sm hover:shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+                key={question}
+                type="button"
+                onClick={() => handleSend(question)}
+                disabled={isLoading}
+                className="px-3 py-2 bg-white border border-gray-200 rounded-lg text-xs text-gray-700 hover:border-amber-300 hover:bg-amber-50 active:bg-amber-100 transition-all duration-150 shadow-sm hover:shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 disabled:opacity-50"
               >
-                {q}
+                {question}
               </button>
             ))}
           </div>
         </div>
       )}
 
-      {/* Input */}
       <div className="flex-shrink-0 border-t border-gray-200 pt-4 pb-2 bg-gray-100">
         <div className="flex gap-3">
           <input
             type="text"
             value={input}
-            onChange={e => setInput(e.target.value)}
-            onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); handleSend(); } }}
-            placeholder="Ask about settings, diagnostics, parts, sources, or safety..."
-            className="flex-1 px-4 py-3 border border-gray-300 rounded-xl text-sm bg-white shadow-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus-visible:outline-none transition-shadow placeholder:text-gray-400"
+            onChange={event => setInput(event.target.value)}
+            onKeyDown={event => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); handleSend(); } }}
+            disabled={isLoading}
+            placeholder="Ask me a question, I'm William's second-brain."
+            className="flex-1 px-4 py-3 border border-gray-300 rounded-xl text-sm bg-white shadow-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus-visible:outline-none transition-shadow placeholder:text-gray-400 disabled:bg-gray-50 disabled:text-gray-400"
             aria-label="Ask the knowledge expert a question"
           />
           <button
-            onClick={handleSend}
-            disabled={!input.trim()}
+            type="button"
+            onClick={() => handleSend()}
+            disabled={!input.trim() || isLoading}
             className="px-5 py-3 bg-amber-500 text-gray-950 rounded-xl font-semibold text-sm hover:bg-amber-400 active:bg-amber-600 transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2"
             aria-label="Send question"
           >
-            <Send className="w-4 h-4" />
-            Ask
+            {isLoading ? <Activity className="w-4 h-4 animate-pulse" /> : <Send className="w-4 h-4" />}
+            {isLoading ? "Thinking" : "Ask"}
           </button>
         </div>
         <p className="text-xs text-gray-400 mt-2 text-center">
-          Answers are routed through local registers. No folklore, no guessing. Blocked = evidence required before actionable.
+          Gemma runs locally through Ollama. Answers are grounded in live repository briefs and remain evidence-gated.
         </p>
       </div>
     </div>
@@ -1096,6 +1117,37 @@ function ExpertChatView() {
 
 export default function MasterMechanic() {
   const [activeView, setActiveView] = useState("overview");
+  const [expertRequest, setExpertRequest] = useState(null);
+  const [knowledgeData, setKnowledgeData] = useState(null);
+  const [knowledgeStatus, setKnowledgeStatus] = useState("loading");
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/knowledge")
+      .then(async response => {
+        if (!response.ok) throw new Error("Knowledge API unavailable");
+        return response.json();
+      })
+      .then(data => {
+        if (cancelled) return;
+        setKnowledgeData(data);
+        setKnowledgeStatus("live");
+      })
+      .catch(() => {
+        if (!cancelled) setKnowledgeStatus("fallback");
+      });
+    return () => { cancelled = true; };
+  }, []);
+
+  const liveSettings = knowledgeData?.settings || SETTINGS;
+  const liveEvidenceGaps = knowledgeData?.evidenceGaps || EVIDENCE_GAPS;
+  const liveParts = knowledgeData?.parts || PARTS;
+  const liveSources = knowledgeData?.sources || SOURCES_KEY;
+
+  const askGemma = (text) => {
+    setExpertRequest({ id: `${Date.now()}-${Math.random().toString(36).slice(2)}`, text });
+    setActiveView("expert");
+  };
 
   const viewTitles = {
     overview: "Vehicle Overview",
@@ -1124,18 +1176,47 @@ export default function MasterMechanic() {
       <Sidebar activeView={activeView} setActiveView={setActiveView} />
       <main className="ml-60 flex-1 flex flex-col h-screen overflow-hidden">
         <header className="flex-shrink-0 px-8 pt-8 pb-4 border-b border-gray-200 bg-gray-100">
-          <h1 className="text-2xl font-bold text-gray-900 tracking-tight">{viewTitles[activeView]}</h1>
-          <p className="text-sm text-gray-500 mt-1">{viewDescriptions[activeView]}</p>
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900 tracking-tight">{viewTitles[activeView]}</h1>
+              <p className="text-sm text-gray-500 mt-1">{viewDescriptions[activeView]}</p>
+            </div>
+            <Badge
+              color={knowledgeStatus === "live" ? "emerald" : knowledgeStatus === "loading" ? "amber" : "red"}
+              size="xs"
+            >
+              {knowledgeStatus === "live" ? "Live KB" : knowledgeStatus === "loading" ? "Loading KB" : "KB fallback"}
+            </Badge>
+          </div>
         </header>
         <div className={`flex-1 overflow-y-auto ${activeView === "expert" ? "px-8 pt-6" : "p-8"}`}>
-          {activeView === "overview" && <OverviewView />}
-          {activeView === "expert" && <ExpertChatView />}
-          {activeView === "systems" && <SystemsView />}
-          {activeView === "settings" && <SettingsView />}
-          {activeView === "evidence" && <EvidenceView />}
-          {activeView === "parts" && <PartsView />}
-          {activeView === "diagnostics" && <DiagnosticsView />}
-          {activeView === "sources" && <SourcesView />}
+          {activeView === "overview" && (
+            <OverviewView
+              onAsk={askGemma}
+              settings={liveSettings}
+              evidenceGaps={liveEvidenceGaps}
+              parts={liveParts}
+            />
+          )}
+          {activeView === "expert" && (
+            <AIExpertChatView
+              initialRequest={expertRequest}
+              onRequestConsumed={() => setExpertRequest(null)}
+            />
+          )}
+          {activeView === "systems" && (
+            <SystemsView
+              onAsk={askGemma}
+              settings={liveSettings}
+              evidenceGaps={liveEvidenceGaps}
+              parts={liveParts}
+            />
+          )}
+          {activeView === "settings" && <SettingsView onAsk={askGemma} settings={liveSettings} />}
+          {activeView === "evidence" && <EvidenceView onAsk={askGemma} evidenceGaps={liveEvidenceGaps} />}
+          {activeView === "parts" && <PartsView onAsk={askGemma} parts={liveParts} />}
+          {activeView === "diagnostics" && <DiagnosticsView onAsk={askGemma} />}
+          {activeView === "sources" && <SourcesView onAsk={askGemma} sources={liveSources} />}
         </div>
       </main>
     </div>

@@ -51,6 +51,46 @@ No database or proprietary file format is required. Search locally with:
 rg "GT40|Gurney|Weslake|302|ZF" .
 ```
 
+## Run the React Interface
+
+The Expert view uses the local `gemma4:e4b-mlx` model through Ollama. Confirm Ollama is running and the model is installed:
+
+```bash
+ollama serve
+ollama list
+```
+
+In a second terminal, install the JavaScript dependencies and start the application server:
+
+```bash
+npm install
+npm run dev
+```
+
+Open `http://127.0.0.1:5173`. The same local server hosts the React app and the evidence-grounded `/api/chat` endpoint, so no browser CORS configuration is required.
+
+Override the Ollama model or URL when needed:
+
+```bash
+OLLAMA_MODEL=gemma4:e4b-mlx npm run dev
+OLLAMA_URL=http://127.0.0.1:11434 npm run dev
+```
+
+Create and run a production build with:
+
+```bash
+npm run build
+npm start
+```
+
+The backend classifies each question, loads the applicable system brief and specialist skill, and sends that live repository context to Gemma. Numeric settings and safety claims remain blocked unless the installed component and applicable source are verified in the local registers.
+
+With the app server running, execute all active agent evaluation cases against Ollama:
+
+```bash
+npm run evaluate:ai
+```
+
 Validate the portable index with:
 
 ```bash

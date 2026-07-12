@@ -1,0 +1,27 @@
+{
+  "name": "master-mechanic",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node server/index.js --dev",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "preview": "npm run start",
+    "test": "node --test server/*.test.js",
+    "evaluate:ai": "node tools/evaluate-ollama.mjs"
+  },
+  "dependencies": {
+    "csv-parse": "^7.0.1",
+    "express": "^5.2.1",
+    "lucide-react": "^1.24.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.2",
+    "@vitejs/plugin-react": "^6.0.3",
+    "tailwindcss": "^4.3.2",
+    "vite": "^8.1.4"
+  }
+}

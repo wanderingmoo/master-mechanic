@@ -153,6 +153,14 @@ end
   "knowledge/data/evaluation-register.csv"
 ].each do |path|
   full = assert_file(path)
+  raw_rows = CSV.read(full)
+  expected_columns = raw_rows.first&.length.to_i
+  raw_rows.drop(1).each_with_index do |row, index|
+    line = index + 2
+    unless row.length == expected_columns
+      fail_with("CSV column count mismatch at #{path}:#{line}; expected #{expected_columns}, got #{row.length}")
+    end
+  end
   CSV.foreach(full, headers: true).with_index(2) do |row, line|
     fail_with("blank CSV row at #{path}:#{line}") if row.fields.compact.empty?
   end
